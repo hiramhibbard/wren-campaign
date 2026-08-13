@@ -23,8 +23,9 @@ This index routes canonical campaign state. Absence from the current working set
 - Mara, Elia, Wren's deceased father, and player-facing witch/mentor facts: `state/character/wren.md`
 - DM-only witch/mentor truth: `state/dm/campaign.md`
 
-## Threads
+## Threads and clues
 - Active player-facing threads: `state/threads/active.md`
+- Active player-facing clues, rumors, and inference boundaries: `state/clues/active.md`
 
 ## Locations
 - Location routing index: `state/locations/index.md`
