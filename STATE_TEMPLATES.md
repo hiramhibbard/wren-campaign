@@ -2,7 +2,7 @@
 
 This file is a normative companion to `STATE_SCHEMA.md`. It defines reusable structures for campaign growth without requiring empty live-state files. Instantiate only the fields and entity files that play actually needs.
 
-Exact AD&D 2e mechanics, modifiers, tables, class rules, morale values, henchman limits, encounter frequencies, travel rates, training costs, spell research rules, and similar sourced details remain governed by Hiram's uploaded source material. These templates define what campaign state to preserve and when to retrieve the governing source.
+Exact AD&D 2e mechanics, modifiers, tables, class rules, alignment restrictions, morale values, henchman limits, encounter frequencies, travel rates, training costs, spell research rules, and similar sourced details remain governed by Hiram's uploaded source material. These templates define what campaign state to preserve and when to retrieve the governing source.
 
 ## General entity rules
 
@@ -12,6 +12,23 @@ Exact AD&D 2e mechanics, modifiers, tables, class rules, morale values, henchman
 - Published NPCs, monsters, adventures, locations, and rules must be sourced from the uploaded material when exact details matter.
 - Create only as much detail as play requires. Promote entities to richer records when their importance grows.
 - A field may be `unestablished`, `unknown to Wren`, or omitted. Missing optional detail is preferable to invented precision.
+
+## NPC generation and adjudication protocol
+
+NPCs should be generated context-first rather than by unconstrained random rolls. Randomness is useful for variation, but the resulting person must fit the established world and the role they plausibly occupy.
+
+Use this order when a new NPC requires more than walk-on detail:
+
+1. **Published/source facts first.** If the NPC comes from published material, preserve published identity, alignment, class, level, abilities, personality, motives, relationships, equipment, and other established details. Fill only genuinely unspecified gaps.
+2. **Established world context.** Determine what is already constrained by location, culture, race/species, age, social class, religion, faction, occupation, education/access to training, local institutions, economic conditions, and why this NPC is present.
+3. **Role requirements.** Determine the capabilities the role plausibly requires. A skilled mapmaker should possess relevant knowledge; an experienced ship captain should be competent at seamanship; a scholarly magical mentor must satisfy the mental, magical, educational, and source-rule requirements of that role. Do not give an NPC a job or status that their established capabilities cannot plausibly support unless there is an intentional explanation.
+4. **Class/race/alignment constraints.** When class, kit, race/species, religion, spell access, magical item use, or published setting rules impose restrictions or strong tendencies, retrieve and honor them before finalizing the NPC.
+5. **Constrained variation.** Use randomness or DM choice to determine remaining uncertain details inside the plausible space: exact ability values, age, temperament, appearance, secondary skills, background events, resources, quirks, and similar variation. Avoid repeatedly producing the same convenient archetype.
+6. **Personality/history synthesis.** Reconcile ability profile, alignment, occupation, culture, education, social position, relationships, life history, and current pressures into a coherent individual. Personality is not mechanically dictated by one score or by alignment.
+7. **Consistency pass.** Before the NPC becomes consequential, ask whether the person could plausibly have reached the established position with these abilities, skills, resources, history, alignment, and relationships. If an unusual combination appears, either establish a plausible hidden explanation or revise it before the NPC affects play.
+8. **Canonicalize when consequential.** Once a generated ability, alignment, personality trait, motive, professional skill, relationship, secret, or other detail has informed meaningful play, treat it as fixed hidden/player-facing state as appropriate. Do not regenerate it later for convenience.
+
+Unusual people should exist. A brilliant laborer, illiterate genius, charismatic criminal, foolish noble, highly wise but poorly educated fisher, or unexpectedly compassionate evil-aligned NPC can all be coherent when their circumstances support them. Social position and opportunity influence education, vocabulary, profession, resources, and exposure; they do not rigidly determine innate ability scores.
 
 ## NPC significance tiers
 
@@ -24,7 +41,8 @@ Minimum useful state:
 - physical impression if relevant;
 - one or two personality/behavior cues;
 - immediate attitude/motive;
-- location/affiliation.
+- location/affiliation;
+- alignment only if already sourced, mechanically relevant, or needed as a quick behind-the-screen guide.
 
 Do not generate a full character sheet for an innkeeper, groom, dock worker, shopkeeper, or similar walk-on unless mechanics become relevant.
 
@@ -35,6 +53,7 @@ Add as relevant:
 - canonical name and aliases;
 - race/species, culture/origin, age, sex/gender when established/relevant;
 - occupation, profession, social role, rank/title;
+- alignment/worldview when established or useful, with player-knowledge status kept separate;
 - relationship to Wren and relationship trajectory;
 - what the NPC knows about Wren;
 - what Wren knows/believes about the NPC;
@@ -51,6 +70,7 @@ Use when the NPC may adventure, fight, cast spells, perform difficult tasks, tra
 
 Add only what is relevant and established/prepared:
 - class/kit and level, or monster/NPC type;
+- alignment and any class/religion/item restrictions it affects;
 - ability scores or qualitative ability profile;
 - AC, HP, THAC0/attack routine, saves, movement, morale when needed;
 - proficiencies, languages, literacy, professional skills, spell access, special abilities;
@@ -67,12 +87,13 @@ Use Tier 2 plus a persistent relationship and independence model:
 - agreed compensation, treasure share, room/board, equipment, training, healing, or other obligations;
 - degree of player control currently appropriate;
 - personal goals and lines the NPC will not cross;
+- alignment/worldview tensions or affinities that can affect the relationship;
 - secrets kept from Wren;
 - advancement/XP if the rules require it;
 - independent off-screen actions and scheduled obligations;
 - consequences if neglected, exploited, humiliated, betrayed, or endangered.
 
-Henchmen remain NPCs with their own personalities and interests. Increased player control never erases the DM's responsibility to overrule behavior that would be out of character or inconsistent with established loyalty/motives.
+Henchmen remain NPCs with their own personalities and interests. Increased player control never erases the DM's responsibility to overrule behavior that would be out of character or inconsistent with established loyalty/motives/alignment.
 
 ## NPC personality and portrayal schema
 
@@ -94,6 +115,23 @@ Use as relevant:
 - trust style;
 - attitude toward authority, wealth, danger, magic, religion, foreigners, social class, etc. when relevant.
 
+### Alignment and worldview
+Alignment is a durable AD&D game trait when established. It should inform tendencies in moral judgment, social assumptions, loyalties, methods, conflicts, reactions, and relationship compatibility, and it may have direct mechanical consequences under class, spell, religion, monster, or magical-item rules.
+
+Use alignment as a guide to likely choices rather than a complete personality script. NPCs should generally act consistently with alignment, while still possessing individual motives, contradictions, habits, affections, prejudices, fears, professional duties, and situational pressures. Two NPCs of the same alignment should not therefore sound or behave identically.
+
+Track as relevant:
+- exact alignment, if established;
+- whether that alignment is source-canonical, generated/prepared, or later changed through play;
+- class/religion/faction implications;
+- strong alignment convictions versus loose practical adherence;
+- recurring ethical principles or methods that express the alignment;
+- known tensions between alignment and personal goals/relationships;
+- alignment change/drift only when supported by sustained actions or governing rules;
+- whether Wren knows, suspects, misreads, or has no knowledge of the NPC's alignment.
+
+Do not narrate hidden alignment directly unless Wren has a legitimate source of that knowledge. Alignment detection and related magic use the exact governing source rules.
+
 ### Cognitive profile
 Ability scores are mechanical facts when established, but they also inform portrayal.
 
@@ -101,7 +139,7 @@ Ability scores are mechanical facts when established, but they also inform portr
 - **Wisdom:** judgment, common sense, intuition, perceptiveness, self-control, practical understanding, and awareness of consequences. A clever NPC can still have poor judgment; a less scholarly NPC can be very wise.
 - **Charisma:** social presence, force of personality, persuasiveness, leadership, magnetism, or intimidation. High Charisma does not imply kindness, education, or eloquence; low Charisma does not imply low Intelligence.
 
-Do not reduce portrayal to one ability score. Education, culture, occupation, age, language fluency, personality, emotional state, social rank, and lived experience should also shape how the NPC thinks and speaks.
+Do not reduce portrayal to one ability score. Alignment, education, culture, occupation, age, language fluency, personality, emotional state, social rank, and lived experience should also shape how the NPC thinks and speaks.
 
 Avoid caricature. A low-Intelligence NPC should sound and reason consistently with limited mental acuity without becoming a comic stereotype unless that personality is separately established. A brilliant NPC should not automatically know facts they have had no opportunity to learn.
 
@@ -142,7 +180,7 @@ Relationships evolve from events rather than from arbitrary status changes. Trac
 - generosity or exploitation;
 - fulfilled or broken promises;
 - payment and treasure shares;
-- ideological affinity/conflict;
+- ideological/alignment affinity or conflict;
 - humiliation, betrayal, neglect, or abuse.
 
 When a relationship plausibly crosses into henchman status, retrieve the governing AD&D 2e henchman/Charisma/loyalty rules before finalizing mechanical consequences.
@@ -188,7 +226,7 @@ Random encounters supplement prepared world state. They do not replace prepared 
 
 ## Reaction and morale scaffold
 
-Use reaction procedures when an NPC/creature's initial response is genuinely uncertain and not already fixed by established motive, circumstance, or published adventure state. Interpret the result through the NPC's personality, goals, knowledge, culture, and current situation.
+Use reaction procedures when an NPC/creature's initial response is genuinely uncertain and not already fixed by established motive, circumstance, or published adventure state. Interpret the result through the NPC's alignment, personality, goals, knowledge, culture, and current situation.
 
 Use morale when the governing combat/NPC rules or circumstances call for it, including fear, losses, hopeless danger, temptation, betrayal pressure, or continued service where applicable. Preserve secret morale/loyalty values and rolls as DM-only information.
 
@@ -203,6 +241,7 @@ For a durable faction track as relevant:
 - territory/reach;
 - public purpose;
 - Established DM Truth about purpose;
+- dominant ethos/alignment tendencies where meaningful without assuming every member shares one alignment;
 - resources and capabilities;
 - current goals;
 - current plan/next actions;
@@ -291,6 +330,7 @@ Use when an item has durable mechanical, narrative, financial, or investigative 
 - hidden/unknown properties kept DM-only;
 - charges/uses/durability/condition;
 - curse/intelligence/ego or other special state when applicable;
+- alignment restrictions/affinities when applicable;
 - known/estimated value;
 - source reference;
 - linked clues/history/owners;
