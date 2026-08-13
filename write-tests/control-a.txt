@@ -1,0 +1,4 @@
+Wren persistence write-path diagnostic.
+Test: control-a
+Payload: harmless short UTF-8 text.
+Expected behavior: create succeeds and can be read back unchanged.
