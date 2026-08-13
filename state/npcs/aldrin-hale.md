@@ -1,7 +1,5 @@
 # Aldrin Hale
 
-Materialized from the canonical ledger without changing campaign facts.
-
 - Role: traveling measurer/mapmaker/surveyor; uses and repairs an astrolabe.
 - Appearance known to Wren: older, wind-burned face, trim gray beard, dark traveling cloak.
 - Session-1 location: temporary camp in a small coastal hollow near low cliffs, accessible from a sheltered shingle cove.
