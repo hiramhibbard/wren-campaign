@@ -32,6 +32,14 @@ Before narrating, resolving an action, advancing time, or otherwise resuming Wre
 
 This happens automatically. Hiram does not need to request it.
 
+### Short session initializer
+
+In a fresh chat inside the Wren Project, the single word **`Wren`** is sufficient to start a gameplay session. Treat capitalization and terminal punctuation as immaterial.
+
+`Wren` means: perform the full mandatory session-start procedure above, load a practical current working set broad enough for likely Live Voice play including relevant DM-only state, determine maintenance status, and prepare this same chat to enter Voice. Do not advance gameplay during initialization. Confirm readiness only after canonical loading succeeds.
+
+Hiram may still use any longer natural-language request if desired; he does not need to memorize one.
+
 ## AUTOMATIC CANONICAL RETRIEVAL — MANDATORY
 
 Hiram should speak and play naturally. He does not administer repository retrieval.
