@@ -87,3 +87,19 @@ Starting slot accounting: mage initial NWP slots 4 + INT 18 bonus slots 7 = 11 t
 - Comes from a small/remote coastal or waterside community.
 - Sometimes pilots a small boat alone.
 - Practical proficiencies reflect water, weather, fishing, ropes, and self-sufficiency.
+
+## Family
+- **Mara**, mother: alive; early-to-mid forties; dark hair beginning to gray at the temples, usually tied back; weathered hands, strong features; practical, warm with Wren, perceptive.
+- Father: deceased from illness or similar cause; exact name unestablished. His former modest small coastal working boat now belongs to Wren.
+- **Elia**, younger sister: alive, roughly 15–16; shorter often-untidy dark hair, expressive face, quick grin; more openly social and comfortable with village life than Wren; fond of teasing him.
+- Wren is close to his family; they understand that he is itching to leave and see the wider world.
+
+## Witch / Mentor — player-facing established facts
+- Older female witch/mentor figure; pretty, wild-looking, unkempt, cunning, alluring.
+- Villagers fear her; she keeps largely to herself.
+- Wren has helped her and learned some magic from her over roughly 2–3 years through obligations/errands and informal magical teaching.
+- Her teaching is not simple kindness and is not free.
+- Wren suspects manipulation or a darker motive may exist, but his desire for knowledge/freedom outweighs much of his caution.
+- Her exact name, ultimate motive, and full agenda are not player-established prior facts.
+
+DM-only truth about the mentor is stored separately in `state/dm/campaign.md` and must not be exposed merely because it is loaded.
