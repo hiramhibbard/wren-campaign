@@ -7,6 +7,7 @@
 **Rules baseline:** AD&D 2nd Edition  
 **Schema:** `STATE_SCHEMA.md`  
 **Persistence transaction protocol:** `PERSISTENCE_PROTOCOL.md`  
+**Growth and sharding policy:** `GROWTH_POLICY.md`  
 **Full operating protocol:** `CAMPAIGN_BOOTSTRAP.md`
 
 ## Canonical State Metadata
@@ -32,13 +33,14 @@ The pre-sharding monolithic ledger remains recoverable in Git history and the ea
 
 Before gameplay:
 
-1. Fetch and obey `CAMPAIGN_BOOTSTRAP.md`, `STATE_SCHEMA.md`, and `PERSISTENCE_PROTOCOL.md`.
+1. Fetch and obey `CAMPAIGN_BOOTSTRAP.md`, `STATE_SCHEMA.md`, `PERSISTENCE_PROTOCOL.md`, and `GROWTH_POLICY.md`.
 2. Fetch this root manifest and `state/INDEX.md`.
 3. Load the Current Resume Working Set below.
 4. List `checkpoints/` and apply every **real campaign** checkpoint with sequence greater than `checkpoint_baseline` in strict numerical order.
 5. Validate checkpoint sequence/parent identity according to `PERSISTENCE_PROTOCOL.md`, then verify the Current Resume Packet against Wren's character/resources, chronology/location, active threads, relevant NPC state, and DM-only state.
 6. If any conflict, missing canonical file, checkpoint gap, duplicate transaction, parent mismatch, or ambiguity is detected, stop and reconcile before advancing play.
 7. Derive maintenance status from the baseline and real checkpoints according to `STATE_SCHEMA.md`.
+8. Evaluate structural growth status according to `GROWTH_POLICY.md`; perform safe local promotions automatically and remind Hiram only when growth-driven maintenance is recommended, due, or required.
 
 ## Current Resume Packet
 
@@ -85,6 +87,7 @@ Before gameplay:
 Always load for resumed play:
 
 - `PERSISTENCE_PROTOCOL.md`
+- `GROWTH_POLICY.md`
 - `state/INDEX.md`
 - `state/character/wren.md`
 - `state/character/inventory.md`
@@ -116,6 +119,8 @@ Exact published rules/source content remain governed by Hiram's uploaded AD&D 2e
 
 `PERSISTENCE_PROTOCOL.md` is the normative transaction-hardening companion to `STATE_SCHEMA.md`. It governs stable transaction identity, structured pending deltas, Voice transaction continuity, exactly-once/idempotent saves, parent checkpoint identity, concurrency reconciliation, checkpoint envelopes, and readback state transitions.
 
+`GROWTH_POLICY.md` is the normative automatic-growth companion to `STATE_SCHEMA.md`. It governs entity promotion, sharding, archival, regional/index growth, Voice working-set packets, major-transition maintenance, and the thresholds for healthy, recommended, due, and required structural maintenance.
+
 ## Knowledge Boundaries
 
 Preserve distinctions among player-known established fact, rumor/hearsay, Wren's suspicion/inference, unresolved question, Prepared Possibility, Established DM Truth, and source canon not yet instantiated into campaign canon.
@@ -131,6 +136,8 @@ Real checkpoints should include applicable dirty-domain routing hints from `STAT
 If an automatic connector write is blocked, preserve the exact prepared transaction and its transaction ID, invoke the explicit manual transport fallback, and keep all changes pending until the transported checkpoint is fetched and reaches `VERIFIED`. Do not create a second logical checkpoint merely because an acknowledgement was lost or a retry is needed.
 
 At session start and session end, derive maintenance status from canonical checkpoint state. At **10 or more uncompacted real campaign checkpoints**, proactively remind Hiram to run maintenance in Work/Codex according to `CAMPAIGN_BOOTSTRAP.md`.
+
+Also evaluate `GROWTH_POLICY.md` automatically at session start/end. Structural growth can recommend maintenance before the checkpoint threshold, or require maintenance if retrieval/integrity is no longer reliable. Safe local entity promotion should happen without burdening Hiram with routine infrastructure decisions.
 
 ## Migration / Provenance
 
