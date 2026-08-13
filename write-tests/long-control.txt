@@ -1,0 +1,5 @@
+Wren persistence write-path diagnostic.
+Test: long-control
+This file intentionally contains a longer harmless payload to test whether content length materially changes create reliability. It does not represent campaign state. The purpose is to characterize the connector's behavior using ordinary UTF-8 text in a neutral diagnostic path. Repeated sentences follow to increase payload size without introducing special instructions or sensitive content.
+
+Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu.
