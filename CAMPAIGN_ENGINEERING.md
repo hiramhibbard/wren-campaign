@@ -25,6 +25,14 @@ When Hiram asks to continue improving the campaign system, architecture, persist
 6. Administrative architecture changes do not require a gameplay checkpoint unless they also change actual campaign state.
 7. Verify every repository write by canonical readback before reporting it complete.
 
+## Short gameplay-session initializer
+
+In a fresh chat inside the Wren Project, the single word **`Wren`** (punctuation/capitalization immaterial) is the canonical shorthand for:
+
+> Load and verify the canonical campaign state, reconstruct all required post-baseline checkpoints, load a practical working set for likely play including relevant DM-only state, determine maintenance status, and prepare this same chat to enter Live Voice. Do not advance gameplay during initialization.
+
+Hiram may use a longer natural-language request if desired, but `Wren` alone is sufficient. The DM should confirm readiness only after the required canonical load succeeds. If canonical retrieval fails, report the failure rather than pretending initialization completed.
+
 ## Settled architecture decisions
 
 ### Canonical backend and retrieval
@@ -49,6 +57,7 @@ When Hiram asks to continue improving the campaign system, architecture, persist
 
 ### Live Voice
 - Ordinary Project chat/Live Voice is the game table; Work/Codex is the maintenance console.
+- A fresh gameplay chat may be initialized by sending only `Wren` before entering Voice.
 - Before Live Voice, load a practical working set broad enough for likely play.
 - If Voice cannot access GitHub and an obscure canonical fact is needed, do not guess. Preserve the pending lookup and automatically resolve it in text mode in the same conversation after Voice ends.
 - Voice-session durable changes remain pending until a post-Voice checkpoint is written and verified.
@@ -108,12 +117,13 @@ These are generally instantiated only when play makes them relevant rather than 
 - NPC state files have a consistent Markdown precedent and current routes use `state/npcs/edric-hale.md`.
 - XP automation policy has been added and verified.
 - Long-term DM scaffolds and NPC generation/alignment protocol have been added and verified.
+- Short gameplay-session initializer accepted: `Wren` means canonical bootstrap + Voice preparation without gameplay advancement.
 
 ## Next major validation work
 
 ### Live Voice continuity test
-1. Start a fresh Project chat and load the campaign normally.
-2. Enter Live Voice without advancing gameplay unless explicitly intended.
+1. Start a fresh Project chat and send `Wren`.
+2. Wait for canonical load/readiness confirmation, then enter Live Voice without advancing gameplay unless explicitly intended.
 3. Verify the current state carries into Voice.
 4. Ask about an obscure canonical fact that was deliberately not preloaded.
 5. Expected behavior while Voice retrieval is unavailable: the DM says a canonical lookup is required and preserves the pending context instead of guessing.
