@@ -6,6 +6,7 @@
 **Branch:** `main`  
 **Rules baseline:** AD&D 2nd Edition  
 **Schema:** `STATE_SCHEMA.md`  
+**Persistence transaction protocol:** `PERSISTENCE_PROTOCOL.md`  
 **Full operating protocol:** `CAMPAIGN_BOOTSTRAP.md`
 
 ## Canonical State Metadata
@@ -13,11 +14,13 @@
 - `schema_version`: **1**
 - `snapshot_generation`: **1**
 - `checkpoint_baseline`: **1**
-- `latest_checkpoint_sequence`: **1**
-- `latest_real_campaign_checkpoint_sequence`: **0**
+- `checkpoint_head_at_snapshot`: **1**
+- `real_campaign_checkpoint_head_at_snapshot`: **0**
 - `migration_status`: **sharded snapshot generation 1 active**
 
 Checkpoint `000001-persistence-protocol-test.md` is an administrative `state-change: none` test and is incorporated into the baseline. It does not alter Wren's campaign state and does not count toward maintenance thresholds.
+
+The two checkpoint-head fields above describe the head incorporated when snapshot generation 1 was materialized; they are not a live head cache. Ordinary append-only saves do not rewrite this manifest. The authoritative current checkpoint head is discovered from canonical `checkpoints/` according to `PERSISTENCE_PROTOCOL.md`.
 
 Current canonical truth is reconstructed as:
 
@@ -29,12 +32,12 @@ The pre-sharding monolithic ledger remains recoverable in Git history and the ea
 
 Before gameplay:
 
-1. Fetch and obey `CAMPAIGN_BOOTSTRAP.md` and `STATE_SCHEMA.md`.
+1. Fetch and obey `CAMPAIGN_BOOTSTRAP.md`, `STATE_SCHEMA.md`, and `PERSISTENCE_PROTOCOL.md`.
 2. Fetch this root manifest and `state/INDEX.md`.
 3. Load the Current Resume Working Set below.
 4. List `checkpoints/` and apply every **real campaign** checkpoint with sequence greater than `checkpoint_baseline` in strict numerical order.
-5. Verify the Current Resume Packet against Wren's character/resources, chronology/location, active threads, relevant NPC state, and DM-only state.
-6. If any conflict, missing canonical file, checkpoint gap, or ambiguity is detected, stop and reconcile before advancing play.
+5. Validate checkpoint sequence/parent identity according to `PERSISTENCE_PROTOCOL.md`, then verify the Current Resume Packet against Wren's character/resources, chronology/location, active threads, relevant NPC state, and DM-only state.
+6. If any conflict, missing canonical file, checkpoint gap, duplicate transaction, parent mismatch, or ambiguity is detected, stop and reconcile before advancing play.
 7. Derive maintenance status from the baseline and real checkpoints according to `STATE_SCHEMA.md`.
 
 ## Current Resume Packet
@@ -81,6 +84,7 @@ Before gameplay:
 
 Always load for resumed play:
 
+- `PERSISTENCE_PROTOCOL.md`
 - `state/INDEX.md`
 - `state/character/wren.md`
 - `state/character/inventory.md`
@@ -110,6 +114,8 @@ Exact published rules/source content remain governed by Hiram's uploaded AD&D 2e
 
 `STATE_TEMPLATES.md` is the long-term operational scaffold for NPC/henchman, world-clock, encounter, faction, clue, travel, downtime, significant-item, source-registry, entity-promotion, and incremental-maintenance state. It is consulted automatically when those records become relevant.
 
+`PERSISTENCE_PROTOCOL.md` is the normative transaction-hardening companion to `STATE_SCHEMA.md`. It governs stable transaction identity, structured pending deltas, Voice transaction continuity, exactly-once/idempotent saves, parent checkpoint identity, concurrency reconciliation, checkpoint envelopes, and readback state transitions.
+
 ## Knowledge Boundaries
 
 Preserve distinctions among player-known established fact, rumor/hearsay, Wren's suspicion/inference, unresolved question, Prepared Possibility, Established DM Truth, and source canon not yet instantiated into campaign canon.
@@ -118,9 +124,11 @@ DM-only state is stored separately under `state/dm/` and must never be surfaced 
 
 ## Persistence
 
-Use the append-only checkpoint protocol in `STATE_SCHEMA.md`. Ordinary saves create one immutable checkpoint and require canonical readback verification. If an automatic connector write is blocked, invoke the explicit manual checkpoint fallback and keep all changes pending until the manually transported checkpoint is fetched and verified.
+Use the append-only checkpoint architecture in `STATE_SCHEMA.md` together with the stricter transaction rules in `PERSISTENCE_PROTOCOL.md`. Ordinary saves create one immutable checkpoint with a stable transaction ID, explicit parent checkpoint identity, structured semantic deltas, idempotency checks, and canonical readback verification.
 
 Real checkpoints should include applicable dirty-domain routing hints from `STATE_TEMPLATES.md` so routine maintenance can update only affected shards plus necessary indexes/cross-links.
+
+If an automatic connector write is blocked, preserve the exact prepared transaction and its transaction ID, invoke the explicit manual transport fallback, and keep all changes pending until the transported checkpoint is fetched and reaches `VERIFIED`. Do not create a second logical checkpoint merely because an acknowledgement was lost or a retry is needed.
 
 At session start and session end, derive maintenance status from canonical checkpoint state. At **10 or more uncompacted real campaign checkpoints**, proactively remind Hiram to run maintenance in Work/Codex according to `CAMPAIGN_BOOTSTRAP.md`.
 
