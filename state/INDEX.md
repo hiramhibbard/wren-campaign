@@ -10,6 +10,9 @@ This index routes canonical campaign state. Absence from the current working set
 - Inventory, funds, encumbrance, inherited boat, boat-stored gear: `state/character/inventory.md`
 - Spellbook, known/memorized magic, unresolved magic-rule items: `state/character/magic.md`
 
+## Campaign context
+- Campaign framing, low-level/earned-growth constraints, player discovery preference, and setting status: `state/campaign/context.md`
+
 ## Chronology
 - Current resume position and played chronology: `state/chronology/current.md`
 
@@ -30,6 +33,7 @@ This index routes canonical campaign state. Absence from the current working set
 
 ## Rulings
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
+- Dice protocol: `state/rulings/dice-protocol.md`
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
