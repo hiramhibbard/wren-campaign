@@ -90,20 +90,24 @@ Always load for resumed play:
 - `state/locations/harbor/current.md`
 - `state/npcs/edric-hale.md`
 - `state/dm/campaign.md`
+- `state/rulings/dm-procedure-triggers.md`
 
 Load when immediately relevant or referenced:
 
+- `state/npcs/index.md`
 - `state/npcs/aldrin-hale.md`
 - `state/locations/index.md`
 - `state/rulings/adnd2e-campaign-rulings.md`
+- `state/rulings/dice-protocol.md`
+- `STATE_TEMPLATES.md`
 
 Exact published rules/source content remain governed by Hiram's uploaded AD&D 2e materials.
 
 ## Canonical Routing
 
-`state/INDEX.md` is the authoritative routing index for snapshot generation 1. Follow explicit routes first; use repository search only as a fallback for fuzzy references. Current-context absence never establishes campaign absence.
+`state/INDEX.md` is the authoritative routing index for snapshot generation 1. Follow explicit routes first; use domain indexes where relevant; use repository search only as a fallback for fuzzy references. Current-context absence never establishes campaign absence.
 
-The secondary `state/npcs/index.md` is not required for generation-1 loading until it is refreshed; canonical NPC routes are in `state/INDEX.md`.
+`STATE_TEMPLATES.md` is the long-term operational scaffold for NPC/henchman, world-clock, encounter, faction, clue, travel, downtime, significant-item, source-registry, entity-promotion, and incremental-maintenance state. It is consulted automatically when those records become relevant.
 
 ## Knowledge Boundaries
 
@@ -114,6 +118,8 @@ DM-only state is stored separately under `state/dm/` and must never be surfaced 
 ## Persistence
 
 Use the append-only checkpoint protocol in `STATE_SCHEMA.md`. Ordinary saves create one immutable checkpoint and require canonical readback verification. If an automatic connector write is blocked, invoke the explicit manual checkpoint fallback and keep all changes pending until the manually transported checkpoint is fetched and verified.
+
+Real checkpoints should include applicable dirty-domain routing hints from `STATE_TEMPLATES.md` so routine maintenance can update only affected shards plus necessary indexes/cross-links.
 
 At session start and session end, derive maintenance status from canonical checkpoint state. At **10 or more uncompacted real campaign checkpoints**, proactively remind Hiram to run maintenance in Work/Codex according to `CAMPAIGN_BOOTSTRAP.md`.
 
