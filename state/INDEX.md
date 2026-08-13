@@ -17,12 +17,11 @@ This index routes canonical campaign state. Absence from the current working set
 - Current resume position and played chronology: `state/chronology/current.md`
 
 ## NPCs
+- NPC routing and promotion guidance: `state/npcs/index.md`
 - Aldrin Hale: `state/npcs/aldrin-hale.md`
 - Edric Hale: `state/npcs/edric-hale.md`
 - Mara, Elia, Wren's deceased father, and player-facing witch/mentor facts: `state/character/wren.md`
 - DM-only witch/mentor truth: `state/dm/campaign.md`
-
-`state/npcs/index.md` is not required for canonical loading in snapshot generation 1; use the routes in this file until that secondary index is refreshed.
 
 ## Threads
 - Active player-facing threads: `state/threads/active.md`
@@ -31,16 +30,23 @@ This index routes canonical campaign state. Absence from the current working set
 - Location routing index: `state/locations/index.md`
 - Current harbor/boarding-house state: `state/locations/harbor/current.md`
 
-## Rulings
+## Rulings / DM procedures
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
+- DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
 
+## Long-term state scaffolds
+- Reusable NPC, henchman, world-clock, encounter, faction, clue, travel, downtime, item, source-registry, entity-promotion, and incremental-maintenance templates: `STATE_TEMPLATES.md`
+
+These templates are operational schemas rather than live facts. Instantiate records only when play makes them relevant.
+
 ## Protocol
 - Full operating protocol: `CAMPAIGN_BOOTSTRAP.md`
 - State architecture: `STATE_SCHEMA.md`
+- State templates/scaffolds: `STATE_TEMPLATES.md`
 - Root manifest/resume/baseline: `Wren_Campaign_Ledger.md`
 
 Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient.
