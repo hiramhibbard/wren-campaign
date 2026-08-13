@@ -1,0 +1,8 @@
+Sequence 000778
+Diagnostic only
+No campaign state change
+Current scene unchanged
+Player state unchanged
+Hidden state unchanged
+Resume state unchanged
+This disposable file tests a small append-only save-shaped record.
