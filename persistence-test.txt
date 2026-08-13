@@ -1,0 +1,3 @@
+WREN GITHUB PERSISTENCE TEST
+phase=create
+value=amber-fox-27
