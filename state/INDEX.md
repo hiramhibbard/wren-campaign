@@ -6,18 +6,20 @@ Snapshot generation: 1
 This index routes canonical campaign state. Absence from the current working set does not mean absence from the campaign.
 
 ## Character
-- Wren identity, ability scores, combat values, saves, proficiencies, family summary: `state/character/wren.md`
-- Inventory, funds, encumbrance, boat-stored gear: `state/character/inventory.md`
+- Wren identity, ability scores, combat values, saves, proficiencies, personality, family, and player-facing witch/mentor state: `state/character/wren.md`
+- Inventory, funds, encumbrance, inherited boat, boat-stored gear: `state/character/inventory.md`
 - Spellbook, known/memorized magic, unresolved magic-rule items: `state/character/magic.md`
 
 ## Chronology
 - Current resume position and played chronology: `state/chronology/current.md`
 
 ## NPCs
-- NPC routing index: `state/npcs/index.md`
 - Aldrin Hale: `state/npcs/aldrin-hale.md`
 - Edric Hale: `state/npcs/edric-hale.txt`
-- Family and witch/mentor state: `state/npcs/family-and-mentor.md`
+- Mara, Elia, Wren's deceased father, and player-facing witch/mentor facts: `state/character/wren.md`
+- DM-only witch/mentor truth: `state/dm/campaign.md`
+
+`state/npcs/index.md` is not required for canonical loading in snapshot generation 1; use the routes in this file until that secondary index is refreshed.
 
 ## Threads
 - Active player-facing threads: `state/threads/active.md`
@@ -30,7 +32,7 @@ This index routes canonical campaign state. Absence from the current working set
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 
 ## DM-only
-- Hidden established truths, prepared possibilities, outside forces, clocks/foreshadowing commitments: `state/dm/campaign.md`
+- Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
 
 ## Protocol
 - Full operating protocol: `CAMPAIGN_BOOTSTRAP.md`
