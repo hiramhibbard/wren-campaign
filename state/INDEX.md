@@ -45,15 +45,28 @@ This index routes canonical campaign state. Absence from the current working set
 
 These templates are operational schemas rather than live facts. Instantiate records only when play makes them relevant.
 
+## Context and retrieval architecture
+- Mandatory context-assembly policy: `CONTEXT_ARCHITECTURE.md`
+- Mandatory derived-retrieval authority/safety policy: `DERIVED_INDEX_POLICY.md`
+
+Because this index is part of the always-loaded resume working set, resumed play must obey both policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines future full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established facts are asserted.
+
 ## Engineering
-- Architecture decisions, operational status, known limitations, validation plan, and future-work roadmap: `CAMPAIGN_ENGINEERING.md`
-- Load that file when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, DM behavior, maintenance, or related system design.
+- Architecture decisions, operational status, known limitations, validation plan, and prior future-work notes: `CAMPAIGN_ENGINEERING.md`
+- Durable standalone-product evolution roadmap: `docs/APPLICATION_ROADMAP.md`
+- Load engineering documents when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, application/product development, maintenance, scaling, performance, or related system design.
+- `docs/APPLICATION_ROADMAP.md` is deliberately non-canonical product planning. Runtime invariants belong in the normative policy/protocol files, not roadmap prose.
 
 ## Protocol
 - Full operating protocol: `CAMPAIGN_BOOTSTRAP.md`
 - State architecture: `STATE_SCHEMA.md`
+- Persistence transaction hardening: `PERSISTENCE_PROTOCOL.md`
+- Automatic growth/sharding policy: `GROWTH_POLICY.md`
+- Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
+- Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
 - Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
+- Standalone application evolution roadmap: `docs/APPLICATION_ROADMAP.md`
 - Root manifest/resume/baseline: `Wren_Campaign_Ledger.md`
 
-Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient.
+Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient. Derived retrieval may identify candidates, but canonical records remain authoritative.
