@@ -24,6 +24,8 @@ The root `Wren_Campaign_Ledger.md` is a compact manifest/resume document, not th
 8. Player-facing and DM-only knowledge boundaries must be preserved during retrieval, narration, summaries, checkpoints, and verification.
 9. A write is not considered saved until its stored representation is independently read back and verified.
 10. Concurrency or ambiguity causes stop/refetch/reconcile behavior, never blind overwrite.
+11. Automatic connector writes are best-effort; a blocked external write must fall back to an explicit human-transported transaction rather than losing pending state.
+12. Hiram must be proactively reminded whenever manual action is required or maintenance is due.
 
 ## Repository layout
 
@@ -107,6 +109,18 @@ Retrieval escalation order:
 7. Only after canonical retrieval cannot resolve a genuine ambiguity should Hiram be asked for clarification or told the established answer cannot be located.
 
 Do not answer "I don't know" merely because a fact is absent from conversational context. Do not silently invent it either.
+
+### Live Voice retrieval rule
+
+During ordinary Live Voice, GitHub/connected-app retrieval may be unavailable. Before entering Voice, load a practical current working set broad enough for likely play.
+
+If a needed established fact is not already verified in the current conversation while Voice retrieval is unavailable:
+
+1. Do not guess, invent, or claim the fact is absent.
+2. Briefly tell Hiram that the detail needs a canonical lookup.
+3. Preserve the pending lookup and the exact gameplay/question context in the same conversation.
+4. When Voice ends and text-mode GitHub tools return, automatically perform the lookup without requiring Hiram to repeat the question or say "check GitHub."
+5. Continue only after the canonical result is available or genuine ambiguity remains.
 
 ### Current working set
 
@@ -193,14 +207,31 @@ At a checkpoint:
 1. Fetch the root ledger and list/inspect the checkpoint directory sufficiently to establish the current baseline/latest sequence and detect concurrency.
 2. Reconcile all pending player-facing and DM-secret durable changes from the current conversation.
 3. Choose the next sequence only after verifying it is unused.
-4. Create exactly one new immutable checkpoint containing the complete durable delta for that transaction.
-5. Read the created checkpoint back from GitHub and verify sequence, identity, and critical intended changes.
-6. Re-list or otherwise verify the checkpoint is discoverable in canonical `main` when needed.
-7. Only then report the checkpoint as saved.
+4. Construct exactly one complete immutable checkpoint containing the full durable delta for that transaction.
+5. Attempt to create the checkpoint automatically in GitHub.
+6. If creation succeeds, read the created checkpoint back and verify sequence, identity, and critical intended changes. Re-list/verify discoverability when needed.
+7. Only after successful readback may the checkpoint be reported as saved.
 
 If the intended sequence already exists or canonical state advanced concurrently, stop, refetch, reconcile, and choose the correct next transaction. Never overwrite an existing checkpoint.
 
 A failed checkpoint creation leaves canonical state unchanged and pending state unsaved.
+
+### Manual checkpoint fallback
+
+OpenAI's external-write safety layer may block otherwise valid connector writes. Automatic GitHub mutation is therefore best-effort rather than assumed deterministic.
+
+If an automatic checkpoint write is blocked or cannot be safely completed:
+
+1. Do not discard or summarize away the pending transaction.
+2. Preserve the exact complete checkpoint payload in the current conversation.
+3. Immediately tell Hiram that manual intervention is required.
+4. Provide the exact target path/filename and a ready-to-commit payload or downloadable artifact when available. Hiram should only transport the prepared transaction; he should not have to reconcile campaign facts himself.
+5. Keep all session changes pending and do not say they are saved.
+6. After Hiram reports the manual commit/upload complete, fetch that exact checkpoint from canonical `main` and verify sequence, identity, and critical player-facing/DM-secret changes.
+7. Only after successful readback clear pending state and report the checkpoint saved.
+8. If verification fails, tell Hiram exactly what remains unsaved and exactly what action is needed next.
+
+Do not endlessly retry a write that the safety layer has blocked. Preserve the transaction and move to the human-transport fallback.
 
 ## Loading checkpoints
 
@@ -215,36 +246,78 @@ The root ledger declares `checkpoint_baseline`. On load:
 
 Historical checkpoints at or below the baseline are audit/recovery history and need not be replayed during ordinary startup.
 
+## Maintenance status and reminders
+
+Maintenance status must be derived from canonical repository state, not remembered conversationally.
+
+At session start and session end:
+
+1. Read `checkpoint_baseline` from the root manifest.
+2. Determine the latest real campaign checkpoint sequence from the canonical checkpoint directory.
+3. Count uncompacted real campaign checkpoints after baseline. Administrative diagnostics/tests marked `state-change: none` do not count toward the threshold.
+4. Apply the thresholds below and proactively remind Hiram when action is due.
+
+### Default thresholds
+
+- **Maintenance due:** 10 or more uncompacted real campaign checkpoints.
+- **Early maintenance recommended:** major adventure/arc/region transition, materially expensive replay, or a state shard/index becoming unwieldy.
+- **Maintenance required before further gameplay:** only when reconstruction/replay size, integrity uncertainty, checkpoint conflict/gap, or repository condition makes continued loading unsafe or materially unreliable.
+
+When maintenance is due but play remains safe, the reminder should be concise and should not block play:
+
+`Wren maintenance is due. Current state is still safe to play from. When convenient, open Work/Codex in the Wren Project and say: "Run Wren maintenance."`
+
+After maintenance, a fresh ordinary Project chat must verify the new `snapshot_generation` and `checkpoint_baseline`. Once canonical state proves the maintenance completed, stop issuing that reminder.
+
+## Required human-action reminders
+
+The DM must proactively notify Hiram whenever progress depends on his action. Silent operational debt is not allowed.
+
+Examples:
+
+- automatic checkpoint write blocked -> provide exact manual commit/upload action;
+- manually transported checkpoint awaits verification -> tell Hiram what must be done/verified;
+- Live Voice lookup must wait for text-mode retrieval -> say so and automatically perform it afterward;
+- maintenance due -> remind Hiram with the exact Work/Codex command;
+- maintenance/recovery/verification failure -> state the exact next required action.
+
+Once a required action is verified complete, remove that reminder from active operational state.
+
 ## Compaction
 
-Compaction is automatic DM infrastructure. Hiram does not need to request it.
+Compaction is automatic DM infrastructure. Hiram does not need to count checkpoints or decide when it is due.
 
 Trigger compaction at a safe boundary when useful, including approximately:
 
-- 5–10 completed sessions since the last compaction;
-- 10–20 unapplied checkpoints;
+- 10 or more uncompacted real campaign checkpoints;
+- 5–10 completed sessions when that produces substantial accumulated deltas;
 - checkpoint-chain size becomes materially inefficient;
 - major adventure/arc/region transition;
 - periodic integrity audit;
 - a domain shard becomes unwieldy and should be reorganized.
 
-Thresholds are operational guidance, not campaign rules. Prefer bounded startup cost over rigid counts.
+Thresholds are operational guidance except for the default reminder threshold above. Prefer bounded startup cost over rigid maintenance for its own sake.
 
-### Compaction transaction
+### Work/Codex maintenance role
 
-Compaction is a larger maintenance operation and should normally occur at session end or another safe non-gameplay boundary.
+Work/Codex is the maintenance console, not the normal game table.
 
-1. Fetch the root ledger, affected state files, and all checkpoints after the current baseline.
-2. Reconstruct current truth and validate the chain.
-3. Materialize deltas into the appropriate domain state files; create/split indexes and entity files where warranted.
-4. Verify each intended working representation before writes.
-5. Use fresh SHA-guarded updates for existing files; create new files only at verified-unused paths.
-6. Read back changed state files and verify critical facts and knowledge boundaries.
-7. Update the root ledger last, advancing `snapshot_generation` and `checkpoint_baseline` to the highest successfully materialized checkpoint and refreshing the Current Resume Packet/working-set manifest.
-8. Read the root ledger back and verify the new baseline/generation/resume state.
-9. Do not delete historical checkpoints. Git history plus immutable checkpoints remain the audit/recovery trail.
+When Hiram says `Run Wren maintenance` in the appropriate maintenance environment, the maintenance task is to:
 
-If compaction fails before the root baseline advances, the old snapshot + checkpoint chain remains authoritative. Do not advance the baseline until all materialized writes have been verified.
+1. Fetch the root manifest, affected materialized state files, and every real campaign checkpoint after the current baseline.
+2. Reconstruct and validate current canonical truth.
+3. Fold checkpoint deltas into the appropriate `state/` files.
+4. Create/split NPC, faction, location, chronology, index, DM, and other shards where warranted by growth.
+5. Refresh player-knowledge boundaries, DM-only truth, active threads/clocks, Current Resume Packet, and current working-set manifest.
+6. Use fresh guarded writes for existing files and verified-unused paths for new files.
+7. Read back changed state files and verify critical facts and knowledge boundaries.
+8. Update the root ledger last, advancing `snapshot_generation` and `checkpoint_baseline` only through the highest successfully materialized checkpoint.
+9. Read the root ledger back and verify the new generation, baseline, resume state, and working set.
+10. Leave historical checkpoints intact.
+
+If compaction fails before the root baseline advances, the old materialized snapshot + checkpoint chain remains authoritative. Do not advance the baseline until all intended materialized writes have been verified.
+
+Normal gameplay should resume afterward in a fresh ordinary Project chat; conversational history is not required for continuity.
 
 ## Sharding and growth rules
 
@@ -277,7 +350,9 @@ A checkpoint or compaction must not accidentally promote uncertainty into truth 
 
 Natural session-ending language triggers a checkpoint. Live Voice may accumulate pending state in the same conversation; after Voice ends and GitHub tools are available, checkpoint that pending state from the same conversation before giving saved sign-off.
 
-After a successful checkpoint, decide automatically whether compaction thresholds warrant maintenance. Hiram should not need to ask.
+After a successful checkpoint, automatically derive maintenance status from the canonical baseline/checkpoint chain and remind Hiram if maintenance is due. Hiram should not need to ask.
+
+If automatic persistence is blocked, invoke the manual checkpoint fallback immediately and remind Hiram until the transported checkpoint has been canonically read back and verified.
 
 ## Recovery
 
