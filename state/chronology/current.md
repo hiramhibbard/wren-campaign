@@ -1,5 +1,10 @@
 # Current Chronology
 
+## Timekeeping status
+- Exact campaign calendar/date and exact clock time are not yet established. Do not invent them merely to complete bookkeeping.
+- Maintain relative elapsed time and meaningful day/hour/turn advancement until an exact calendar is established in play or sourced setting state.
+- When time advancement crosses a scheduled NPC, faction, project, weather, travel, or adventure trigger, process the due canonical/DM-only state before narrating dependent consequences.
+
 ## Current resume position
 Wren is seated at the desk in his rented room at Mrs. Tansy's boarding house in the harbor settlement.
 
