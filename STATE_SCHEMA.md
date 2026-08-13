@@ -31,7 +31,7 @@ The root `Wren_Campaign_Ledger.md` is a compact manifest/resume document, not th
 
 ```text
 Wren_Campaign_Ledger.md       # compact root manifest, resume packet, schema/baseline metadata
-PROJECT_BOOTSTRAP.md          # backup of Project bootstrap instructions
+CAMPAIGN_BOOTSTRAP.md         # versioned full operating protocol loaded by the short Project bootloader
 STATE_SCHEMA.md               # this architecture/protocol
 
 state/
