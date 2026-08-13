@@ -45,10 +45,15 @@ This index routes canonical campaign state. Absence from the current working set
 
 These templates are operational schemas rather than live facts. Instantiate records only when play makes them relevant.
 
+## Engineering
+- Architecture decisions, operational status, known limitations, validation plan, and future-work roadmap: `CAMPAIGN_ENGINEERING.md`
+- Load that file when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, DM behavior, maintenance, or related system design.
+
 ## Protocol
 - Full operating protocol: `CAMPAIGN_BOOTSTRAP.md`
 - State architecture: `STATE_SCHEMA.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
+- Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
 - Root manifest/resume/baseline: `Wren_Campaign_Ledger.md`
 
 Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient.
