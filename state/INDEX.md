@@ -18,7 +18,7 @@ This index routes canonical campaign state. Absence from the current working set
 
 ## NPCs
 - Aldrin Hale: `state/npcs/aldrin-hale.md`
-- Edric Hale: `state/npcs/edric-hale.txt`
+- Edric Hale: `state/npcs/edric-hale.md`
 - Mara, Elia, Wren's deceased father, and player-facing witch/mentor facts: `state/character/wren.md`
 - DM-only witch/mentor truth: `state/dm/campaign.md`
 
