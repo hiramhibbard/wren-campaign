@@ -88,7 +88,7 @@ Always load for resumed play:
 - `state/chronology/current.md`
 - `state/threads/active.md`
 - `state/locations/harbor/current.md`
-- `state/npcs/edric-hale.txt`
+- `state/npcs/edric-hale.md`
 - `state/dm/campaign.md`
 
 Load when immediately relevant or referenced:
