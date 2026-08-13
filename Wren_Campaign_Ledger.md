@@ -87,6 +87,7 @@ Always load for resumed play:
 - `state/character/magic.md`
 - `state/chronology/current.md`
 - `state/threads/active.md`
+- `state/clues/active.md`
 - `state/locations/harbor/current.md`
 - `state/npcs/edric-hale.md`
 - `state/dm/campaign.md`
