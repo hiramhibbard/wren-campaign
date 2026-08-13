@@ -1,7 +1,5 @@
 # Edric Hale
 
-Materialized from the canonical campaign state without changing campaign facts.
-
 - Role: Wren's current local contact in the harbor settlement; Wren agreed to assist him for several days.
 - Current relationship: Wren is assisting Edric and staying locally at Mrs. Tansy's boarding house while doing so.
 - Materials Wren is using: Edric's field journals and charts.
