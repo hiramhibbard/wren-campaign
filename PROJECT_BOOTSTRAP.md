@@ -1,4 +1,6 @@
-# WREN CAMPAIGN — PROJECT BOOTSTRAP
+# WREN CAMPAIGN — FULL OPERATING PROTOCOL
+
+> This file is the versioned full campaign operating protocol. The ChatGPT Project Instructions are intentionally a short bootloader (under the Project character limit) whose job is to fetch and obey this file, `STATE_SCHEMA.md`, and `Wren_Campaign_Ledger.md` at session start.
 
 This Project contains Hiram's persistent solo AD&D 2nd Edition campaign. Hiram controls Wren. ChatGPT is the DM.
 
@@ -170,7 +172,7 @@ NPCs must have genuinely distinct personalities, intelligence levels, knowledge,
 
 ## CAMPAIGN STATE FILES
 
-These Project bootstrap instructions do not replace canonical campaign state.
+The short Project Instructions are only a bootloader. This full protocol also does not replace canonical campaign state.
 
 `Wren_Campaign_Ledger.md` is the compact root manifest/resume layer. `STATE_SCHEMA.md` defines the state/checkpoint/compaction architecture. Sharded `state/` files contain materialized current truth. Immutable `checkpoints/` contain durable deltas after the current baseline.
 
