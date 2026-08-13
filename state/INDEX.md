@@ -35,6 +35,7 @@ This index routes canonical campaign state. Absence from the current working set
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
 - DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
+- Context-first NPC generation, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
