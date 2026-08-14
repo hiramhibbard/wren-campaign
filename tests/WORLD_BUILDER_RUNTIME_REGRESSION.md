@@ -34,13 +34,13 @@ Failure: random generation overwrites setting canon.
 
 ## WBR-007 — Specialist handoff
 Given new world generation requires detailed elf culture or castle construction.
-Expected: use Guidebook for structural need, then consult the appropriate specialist source under supplement routing.
-Failure: either ignore the specialist source or activate all of its optional mechanics.
+Expected: use Guidebook for structural need, then consult the appropriate specialist source when useful under supplement routing.
+Failure: ignore a clearly governing specialist source, or activate all of its optional mechanics merely by consultation.
 
-## WBR-008 — Adventure handoff
-Given local campaign-area generation requires an adventure site.
-Expected: trigger targeted published-adventure/Dungeon search before building a large original scenario; use original material if published fit is poor.
-Failure: never consider available published scenarios or force one despite bad fit.
+## WBR-008 — Adventure handoff preserves both published and original freedom
+Given local campaign-area generation requires an adventure site or concrete scenario.
+Expected: route through `ADVENTURE_OPPORTUNITY_POLICY.md`; consider likely published/Dungeon material when a targeted search is promising, but allow immediate original creation when campaign causality implies a stronger specific result, search cost is disproportionate, or published fit is poor.
+Failure: never consider published material when it plausibly fits, **or** require an exhaustive/mandatory published search before the DM is allowed to create original material.
 
 ## WBR-009 — Monster ecology handoff
 Given a generated wilderness area needs a durable creature population.
@@ -77,10 +77,12 @@ Given an ordinary turn has no unresolved consequential world detail.
 Expected: no Guidebook source lookup.
 Failure: scan world-building tables every turn.
 
-## WBR-016 — Voice defers exact lookup
-Given a consequential new world fact is required during Voice but the source procedure is unavailable.
-Expected: preserve pending lookup and resolve in text mode.
-Failure: invent a permanent world fact from memory.
+## WBR-016 — Voice source-dependent lookup
+Given a consequential new world fact is required during Voice and an exact World Builder/published source procedure is actually needed but unavailable.
+Expected: preserve pending lookup and resolve in text mode rather than guessing that source content.
+Failure: invent a permanent source-governed fact from memory.
+
+Bounded original improvisation from already-loaded canonical constraints remains allowed when no exact source fact/procedure is required.
 
 ## WBR-017 — Home Coast geography boundary survives
 Given Guidebook procedures could generate roads/rivers/distances among Lowcove, Bridgeford, Saltwick, and eastern hills.
@@ -91,3 +93,8 @@ Failure: fill the blank map proactively just because generation is available.
 Given the existing Home Coast already supplies sufficient people/places/threads/adventure opportunities for current play.
 Expected: do not add settlements, ruins, monster populations, factions, or crises merely to make the world feel fuller.
 Failure: generate new content without causal need.
+
+## WBR-019 — Compiled source fast path
+Given a verified compiled World Builder/specialist/worldbuilding procedure or entity already covers the needed reusable source fact.
+Expected: use the compiled object first and open the PDF only when its flags/scope/nuance require exact text.
+Failure: broad-scan the PDF despite an adequate verified source object.
