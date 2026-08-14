@@ -2,16 +2,17 @@
 
 Status: canonical regional operating substrate for currently known/nearby Home Coast play.
 
-This profile establishes only enough geography/environment/procedure routing to run weather, travel, encounters, and regional expansion consistently. It does not establish undiscovered sites, complete local history, monster populations, political geography, or the final published campaign setting.
+This profile establishes only enough geography/environment/procedure routing to run weather, travel, encounters, and regional expansion consistently. It does not establish undiscovered sites, complete local history, monster populations, political geography, exact inter-settlement distances, or the final published campaign setting.
 
-## Known regional anchors
+## Established regional anchors
 
 - **Lowcove** — Wren's small home coastal village/community.
-- **Bridgeford** — inland market town known to Wren; approximately one day's travel on foot from Lowcove under the previously established travel guide.
-- **Saltwick** — harbor settlement known to Wren by reputation and now part of the active campaign geography; approximately two days by road from Lowcove or about one long day by boat in good conditions under the established travel guide.
-- **Sheltered shingle coves/coastal hollows** — representative local shore features; one such site is where Wren met Aldrin Hale.
-- **Eastern hills / old observatory direction** — hills eastward; the reportedly half-ruined observatory lies roughly 10–12 days away on foot from Bridgeford according to Aldrin. Wren has not established the intervening terrain by personal travel.
-- Other map labels such as Seabreeze Hamlet, Pine Hollow Farms, Looking Glass Cove, and Old Observatory remain valid map anchors, but detailed local state should be generated only as play makes them relevant.
+- **Bridgeford** — established name of a local inland market town. Exact distance, route geometry, Wren's personal travel history there, and detailed relationship to other regional features remain unestablished unless another canonical record establishes them.
+- **Saltwick** — established name of the harbor settlement containing Mrs. Tansy's boarding house and Edric Hale's current activity.
+- **Coastal inlet with three worked stones** — established site along the broader coastal route between Saltwick and Lowcove; exact named geography remains unestablished. Its detailed state is preserved in checkpoint 000004 and should receive a dedicated location record at compaction/promotion.
+- **Sheltered shingle cove / coastal hollow** — site where Wren met Aldrin Hale.
+- **Eastern hills / reportedly half-ruined observatory** — Aldrin reported an observatory in the eastern hills roughly 10–12 days away on foot from the context in which he described it; do not infer an exact Bridgeford relationship or map route from the illustrated play aid.
+- The current map asset depicts additional labels including Seabreeze Hamlet, Pine Hollow Farms, Looking Glass Cove, and Old Observatory. Treat them as player-facing map labels/assets, not as authority for detailed geography, distance, population, lore, or route relationships unless separately established in state/play.
 
 ## Climate baseline
 
@@ -50,18 +51,19 @@ Encounter ingredients when needed:
 - rumors/reports and world-actor consequences;
 - rare danger only when justified by established or newly resolved world state.
 
-### Lowcove–Bridgeford corridor / settled inland route
+### Lowcove–inland/Bridgefordward travel
 
-Character: known connection between the coast and Bridgeford; route/farmland detail remains deliberately incomplete.
+Character: a local inland market-town connection exists in the region, but the exact route, distance, road quality, terrain segmentation, river crossings, and travel time remain unestablished until play/source state fixes them.
 
 Procedure routing:
-- meaningful day travel activates travel/readiness/time procedures;
-- use the closest applicable governing DMG wilderness terrain entry only after actual terrain for the segment is known or can be reasonably classified; do not force the whole route into one terrain type;
+- meaningful travel activates travel/readiness/time procedures;
+- classify each actual terrain/route segment only when established or consequential;
+- use the closest applicable governing DMG wilderness terrain entry after classification rather than forcing the whole journey into one terrain type;
 - settled/patrolled population modifiers require encounter tables reflecting settled traffic before use;
 - weather can affect visibility, pace, comfort, route conditions, and encounter context;
-- getting-lost is normally less relevant on a known maintained route, but poor visibility, detours, damaged routes, or leaving the route can activate it.
+- getting-lost is normally less relevant on a known maintained route, but whether Wren knows a specific route must come from canonical character/location history rather than this profile.
 
-Encounter ingredients:
+Potential encounter ingredients once the route is established:
 - farmers/laborers/local travelers;
 - merchants, carts, livestock, messengers, or officials as locally plausible;
 - ordinary animals/wildlife;
@@ -70,16 +72,16 @@ Encounter ingredients:
 
 ### Bridgeford and environs
 
-Character: inland market-town environment; details should expand when Wren next interacts there.
+Character: inland market-town environment; detailed local state should expand when Wren's play actually makes Bridgeford relevant.
 
 Procedure routing:
 - ordinary town scenes use social/keyed/world-state encounters rather than wilderness monster checks;
-- roads/outskirts may use the settled-route encounter procedure when meaningful travel occurs;
+- roads/outskirts may use settled-route encounter procedure when meaningful travel occurs;
 - market, authority, economic, rumor, faction, and visitor activity should be created as the town enters the active horizon rather than prewritten exhaustively.
 
 ### Saltwick harbor and near approaches
 
-Character: harbor settlement and coastal traffic node.
+Character: established harbor settlement and coastal traffic node containing Mrs. Tansy's boarding house and Edric Hale's current base of activity.
 
 Procedure routing:
 - ordinary settlement scenes use social/keyed/world-state encounters;
@@ -89,7 +91,7 @@ Procedure routing:
 
 ### Remote coast / coves / exposed shore
 
-Character: less-settled shoreline beyond routine village activity.
+Character: less-settled shoreline beyond routine village activity, including the established coastal-inlet site where applicable.
 
 Procedure routing:
 - weather active during meaningful exposure/travel;
@@ -110,14 +112,14 @@ Procedure routing:
 
 ### Eastern hills / observatory approaches
 
-Character: currently only broadly known/reported to Wren; not personally traversed.
+Character: currently only broadly known/reported to Wren; not personally traversed in established play.
 
 Procedure routing once Wren approaches/enters:
-- activate hills/wilderness travel profile;
-- use DMG Hills encounter check projection unless a later specific governing source/profile supersedes it;
-- navigation/getting-lost, terrain movement, supplies/readiness, weather, camps/watches, and encounter checks become active as applicable;
+- activate hills/wilderness travel profile when the actual terrain supports that classification;
+- use DMG Hills encounter-check projection where applicable unless a later specific governing source/profile supersedes it;
+- navigation/getting lost, terrain movement, supplies/readiness, weather, camps/watches, and encounter checks become active as applicable;
 - create local encounter ingredients and active populations/factions before the first check that could require them;
-- do not establish the full intervening geography merely because the observatory is known to exist.
+- do not establish the full intervening geography merely because the observatory is known by report.
 
 ## Encounter profile generation
 
@@ -132,7 +134,9 @@ Before the first random encounter check in a zone that lacks a prepared table:
 
 ## Lore substrate
 
-Wren's upbringing makes ordinary local coastal life, fishing/seamanship, basic routes to familiar nearby settlements, and common local practical knowledge plausible without repeated lore checks.
+Wren's upbringing makes ordinary Lowcove coastal life, fishing/seamanship, familiar near-home landmarks, and common local practical knowledge plausible without repeated lore checks.
+
+Do not infer knowledge of Bridgeford/Saltwick routes, detailed settlement history, or map geography beyond what Wren has actually learned canonically.
 
 Deeper histories, religions, authorities, feuds, old events, monster populations, ruins, supernatural explanations, and wider political context remain unestablished until source/play/hidden causality requires them.
 
