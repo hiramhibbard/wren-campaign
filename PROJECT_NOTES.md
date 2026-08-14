@@ -1,1 +1,0 @@
-Harmless diagnostic write. This file contains no campaign state.
