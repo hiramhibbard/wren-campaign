@@ -37,6 +37,11 @@ Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone is a m
 
 After checkpoint replay establishes the true current location, if Wren is in or likely to interact with the Home Coast activation horizon, loading `state/locations/home-coast/runtime-profile.md` is **mandatory**, not optional background context. Load the corresponding relevant DM-only active-world runtime and derive the due-event frontier before advancing consequential time.
 
+## Active sites / dungeons
+- Mandatory bounded-site/dungeon persistence, exploration-time, inhabitant, alert, noise, treasure, and source-overlay policy: `SITE_RUNTIME_POLICY.md`
+
+When Wren enters, commits to explore, materially changes, or is likely to revisit a bounded site whose internal state matters, activate/load the minimum applicable site runtime under `SITE_RUNTIME_POLICY.md`. Published keys remain source authority for unchanged/unvisited material; instantiated campaign consequences overlay source state and do not reset.
+
 ## Campaign assets / media
 - Top-level campaign asset registry: `assets/INDEX.md`
 - Map asset registry: `assets/maps/INDEX.md`
@@ -51,11 +56,14 @@ When Hiram refers to an established map, portrait, handout, diagram, scene image
 - Dice protocol: `state/rulings/dice-protocol.md`
 - DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
 - Mandatory regional-runtime trigger extension for activation horizon, world motion, encounter refresh, weather, lore, and active-world creation: `state/rulings/regional-runtime-triggers.md`
+- Mandatory site/DM-craft trigger extension for site activation, perception/investigation, creature embodiment, intent-before-initiative, evidence, noise/alarms, persistence, treasure provenance, and playability filtering: `state/rulings/site-and-craft-triggers.md`
 - Rules dependency routing for class/level/alignment/ability/equipment/spell/item/source changes and automatic projection activation/creation/invalidation: `state/rulings/rules-dependency-registry.md`
 - Context-first NPC generation, explicit race/species determination, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
 - Knowledge reliability, rumor/error/deception, deferred truth assignment, and social-belief procedure: `state/rulings/knowledge-reliability-and-rumors.md`
+- Observation-before-interpretation, investigation method, hidden-check uncertainty, causal evidence, and signal-to-noise discipline: `state/rulings/perception-and-evidence.md`
+- AD&D 2e monster source embodiment using activity, organization, Intelligence, morale, Habitat/Society, Ecology, evidence, population, and treasure provenance: `state/rulings/creature-ecology-and-behavior.md`
 
-Whenever `state/rulings/dm-procedure-triggers.md` is loaded for normal play, treat `state/rulings/regional-runtime-triggers.md` as its mandatory companion for any current/likely regional, travel, encounter, weather, lore, faction/population, or elapsed-time interaction.
+Whenever `state/rulings/dm-procedure-triggers.md` is loaded for normal play, treat both `state/rulings/regional-runtime-triggers.md` and `state/rulings/site-and-craft-triggers.md` as mandatory companions whenever their domains are implicated.
 
 ## Structured published-rules projections
 - Normative structured-rules authority, creation, invalidation, fallback, and provenance policy: `RULES_PROJECTION_POLICY.md`
@@ -77,17 +85,22 @@ Do not expose DM-only runtime records merely because they are loaded. Their obse
 
 These templates are operational schemas rather than live facts. Instantiate records only when play/source causality makes them relevant.
 
-## Context and retrieval architecture
+## Context, DM craft, and retrieval architecture
+- Mandatory always-on DM craft policy: `DM_CRAFT_POLICY.md`
+- Mandatory active-site/dungeon runtime policy when bounded-site play is active: `SITE_RUNTIME_POLICY.md`
 - Mandatory context-assembly policy: `CONTEXT_ARCHITECTURE.md`
 - Mandatory regional-runtime/Voice/due-event context extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
 - Mandatory derived-retrieval authority/safety policy: `DERIVED_INDEX_POLICY.md`
 - Mandatory structured published-rules projection policy: `RULES_PROJECTION_POLICY.md`
 - Mandatory regional runtime/lore/encounter/weather/world-motion policy: `REGIONAL_RUNTIME_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play must obey all of these policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md` makes active-region loading, the due-event frontier, and Voice regional fast-path context explicit after checkpoint replay. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources. `REGIONAL_RUNTIME_POLICY.md` defines bounded regional activation, encounter derivation, weather relevance, progressive lore generation, and causally scheduled world motion.
+Because this index is part of the always-loaded resume working set, resumed play must obey `DM_CRAFT_POLICY.md` automatically. It establishes scenario-before-story, observation-before-interpretation, intent-before-initiative, creature embodiment, treasure provenance when consequential, persistent sites, playability filtering, no-fudging, and the rule that 1e DMG advice may improve craft but cannot override AD&D 2e or Wren-specific rulings.
+
+`CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md` makes active-region loading, the due-event frontier, and Voice regional fast-path context explicit after checkpoint replay. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources. `REGIONAL_RUNTIME_POLICY.md` defines bounded regional activation, encounter derivation, weather relevance, progressive lore generation, and causally scheduled world motion. `SITE_RUNTIME_POLICY.md` applies the same persistence/causal discipline inside bounded sites.
 
 ## Regression / audit scenarios
 - Regional runtime, encounter, weather, world-motion, rumor/reliability, NPC-individuality, supplement-precedence, activation-horizon, and map-authority regression scenarios: `tests/REGIONAL_RUNTIME_REGRESSION.md`
+- DM craft, perception/evidence, scenario-not-story, creature embodiment, active-site persistence, site-time, noise/alarm, source-overlay, treasure, playability, and no-fudging regression scenarios: `tests/DM_CRAFT_AND_SITE_RUNTIME_REGRESSION.md`
 
 These are engineering/audit tests only. Running or reviewing them must not alter live campaign state.
 
@@ -105,6 +118,8 @@ These are engineering/audit tests only. Running or reviewing them must not alter
 - State architecture: `STATE_SCHEMA.md`
 - Persistence transaction hardening: `PERSISTENCE_PROTOCOL.md`
 - Automatic growth/sharding policy: `GROWTH_POLICY.md`
+- Always-on DM craft policy: `DM_CRAFT_POLICY.md`
+- Active site/dungeon runtime policy: `SITE_RUNTIME_POLICY.md`
 - Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
 - Regional runtime Context Compiler/Voice extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
 - Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
@@ -113,6 +128,9 @@ These are engineering/audit tests only. Running or reviewing them must not alter
 - Regional runtime reusable templates: `REGIONAL_RUNTIME_TEMPLATES.md`
 - Rules dependency registry: `state/rulings/rules-dependency-registry.md`
 - Regional runtime trigger extension: `state/rulings/regional-runtime-triggers.md`
+- Site/DM-craft trigger extension: `state/rulings/site-and-craft-triggers.md`
+- Perception/evidence procedure: `state/rulings/perception-and-evidence.md`
+- Creature ecology/behavior procedure: `state/rulings/creature-ecology-and-behavior.md`
 - Knowledge reliability/rumor procedure: `state/rulings/knowledge-reliability-and-rumors.md`
 - Campaign asset library policy: `ASSET_LIBRARY.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
