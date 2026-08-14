@@ -19,13 +19,15 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 - `adnd2e.document.dmg-deluxe` -> `rules/source-knowledge/documents/adnd2e-dmg-deluxe.md`
 - `adnd2e.document.monstrous-manual-deluxe` -> `rules/source-knowledge/documents/adnd2e-monstrous-manual-deluxe.md`
 
-### Magic-item anthology
+### Magic-item / artifact / provenance corpus
 - `adnd2e.document.encyclopedia-magica.v1` -> `rules/source-knowledge/documents/encyclopedia-magica-vol1.md`
 - `adnd2e.document.encyclopedia-magica.v2` -> `rules/source-knowledge/documents/encyclopedia-magica-vol2.md`
 - `adnd2e.document.encyclopedia-magica.v3` -> `rules/source-knowledge/documents/encyclopedia-magica-vol3.md`
 - `adnd2e.document.encyclopedia-magica.v4` -> `rules/source-knowledge/documents/encyclopedia-magica-vol4.md`
+- `adnd2e.document.magic-encyclopedia.v1` -> `rules/source-knowledge/documents/magic-encyclopedia-vol1-provenance-index.md`
+- `adnd2e.document.book-of-artifacts` -> `rules/source-knowledge/documents/book-of-artifacts.md`
 
-The Encyclopedia Magica family is a high-priority entity/provenance corpus. Compile stable item entities/assertions while preserving original source, setting/scope, XP/GP values, aliases, exact locator, and source-text-required flags. Compilation never instantiates an item in Wren's world.
+The Encyclopedia Magica family is a high-priority entity/provenance corpus. The older Magic Encyclopedia is treated chiefly as a product/page locator crosswalk rather than complete mechanical authority. Book of Artifacts is a high-value artifact-definition/design source. Compilation never instantiates an item/artifact in Wren's world.
 
 ### Monster sources / anthologies
 - `adnd2e.document.monstrous-compendium-annual.v2` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v2.md`
@@ -39,8 +41,13 @@ Annual/anthology/setting creature entries remain scope-sensitive assertions; set
 - `adnd2e.document.phbr02.complete-thiefs-handbook` -> `rules/source-knowledge/documents/phbr02-complete-thiefs-handbook.md`
 - `adnd2e.document.phbr03.complete-priests-handbook` -> `rules/source-knowledge/documents/phbr03-complete-priests-handbook.md`
 - `adnd2e.document.phbr04.complete-wizards-handbook` -> `rules/source-knowledge/documents/phbr04-complete-wizards-handbook.md`
+- `adnd2e.document.phbr05.complete-psionics-handbook` -> `rules/source-knowledge/documents/phbr05-complete-psionics-handbook.md`
+- `adnd2e.document.phbr06.complete-book-of-dwarves` -> `rules/source-knowledge/documents/phbr06-complete-book-of-dwarves.md`
+- `adnd2e.document.phbr07.complete-bards-handbook` -> `rules/source-knowledge/documents/phbr07-complete-bards-handbook.md`
+- `adnd2e.document.phbr09.complete-gnomes-halflings` -> `rules/source-knowledge/documents/phbr09-complete-gnomes-halflings.md`
+- `adnd2e.document.phbr11.complete-rangers-handbook` -> `rules/source-knowledge/documents/phbr11-complete-rangers-handbook.md`
 
-Compilation makes these specialists cheap to consult; it does not activate kits, optional combat systems, specialty-priest mechanics, or other substitutions.
+Compilation makes these specialists cheap to consult; it does not activate kits, optional combat systems, psionics, specialty-priest mechanics, racial substitutions, or other optional treatments.
 
 ### DMGR domain-guide sources
 - `adnd2e.document.dmgr1.campaign-sourcebook-catacomb-guide` -> `rules/source-knowledge/documents/dmgr1-campaign-sourcebook-catacomb-guide.md`
