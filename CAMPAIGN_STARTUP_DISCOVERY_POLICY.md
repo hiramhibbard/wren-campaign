@@ -23,11 +23,11 @@ Unanswered items should be treated as **open design space**, not as missing data
 
 At startup, explicitly remind the player that these choices are **initial preferences, not irrevocable contracts**.
 
-The player may later revise tone, setting scope, campaign emphasis, character depth, or other startup preferences when doing so does not contradict already established campaign facts.
+The player may later revise tone, setting scope, campaign emphasis, character depth, published-module preference, or other startup preferences when doing so does not contradict already established campaign facts.
 
 When a requested change conflicts with established canon:
 - preserve facts already established in play unless the player explicitly requests a safe retcon/reconciliation;
-- prefer prospective changes to future emphasis, presentation, scope, or undeveloped areas;
+- prefer prospective changes to future emphasis, presentation, scope, module availability, or undeveloped areas;
 - make the smallest necessary canonical change;
 - persist durable changes through the normal campaign checkpoint/state system.
 
@@ -38,7 +38,7 @@ Do not present the startup review as a long form to complete.
 Preferred flow:
 1. ask whether the player wants a quick campaign-startup review;
 2. if yes, present prompts in small thematic groups;
-3. allow short natural answers such as `surprise me`, `generate that`, `keep it open`, `official setting`, `mostly wilderness`, or `I want to define my family but not my hometown`;
+3. allow short natural answers such as `surprise me`, `generate that`, `keep it open`, `official setting`, `mostly wilderness`, `use modules when they fit`, or `I want to define my family but not my hometown`;
 4. summarize only the resulting decisions that materially constrain campaign generation;
 5. begin play once enough exists for a coherent starting situation.
 
@@ -183,16 +183,25 @@ Ask how much setting information the player wants up front:
 
 Always preserve the difference between what the world contains and what the PC knows.
 
-### 10. Published material preference
+### 10. Prewritten modules and published adventures
 
-Ask whether the player wants published AD&D adventures/material to be:
-- actively and regularly available;
-- used when they fit naturally;
-- mostly background/inspiration;
-- minimized;
-- no preference.
+Ask explicitly whether the player wants prewritten AD&D modules, Dungeon adventures, and other published scenarios to be part of the campaign.
 
-Do not identify future published adventures or spoil hidden source material during startup.
+Useful choices include:
+- **actively include them** — regularly seed suitable published adventures into the world alongside original material;
+- **use when they fit naturally** — published modules are first-class possibilities but are introduced only when they fit established geography, level/risk, chronology, and campaign causality;
+- **mostly original** — prefer original adventures, using published material only occasionally;
+- **inspiration only** — borrow ideas, monsters, locations, or structures without intentionally presenting full published scenarios;
+- **no prewritten modules** — do not intentionally seed published adventures as playable scenarios;
+- **no preference / surprise me**.
+
+Optionally ask whether the player cares about a particular source family or era, such as classic TSR modules, Dungeon Magazine adventures, setting-specific modules, or any compatible AD&D 2e material. Do not require this level of detail.
+
+This preference governs **opportunity frequency and use**, not a promise that a particular module will occur. Published adventures must still enter the campaign through normal world causality and may be missed, bypassed, altered, entered early or late, or never discovered.
+
+Do not identify future modules, reveal titles merely because they are being considered, or spoil maps, keys, traps, NPC secrets, encounter locations, or other DM-only information.
+
+A player may change this preference later. Apply the new preference prospectively: do not erase already established published locations, NPCs, or consequences merely because future module use is reduced or disabled.
 
 ### 11. Campaign scale and trajectory
 
@@ -247,7 +256,7 @@ Do not delay play merely to complete the questionnaire.
 
 ## Relationship to optional-rule review
 
-Campaign startup discovery and optional-rule review are separate but adjacent processes.
+Campaign startup discovery and optional-rule review are separate but adjacent processes. **The startup-discovery prompts do not replace or suppress the optional-rule review.**
 
 Recommended order:
 1. establish broad campaign/character premise;
@@ -268,7 +277,7 @@ Examples worth canonicalizing:
 - enduring tone/content-boundary preferences;
 - character family/background facts;
 - player authorship preference if it meaningfully affects future startup/world-generation behavior;
-- published-material preference;
+- prewritten-module/published-adventure preference;
 - explicitly established starting motivation or obligation.
 
 Do not checkpoint every casual aesthetic comment as immutable canon.
@@ -279,7 +288,7 @@ This policy is primarily for new campaigns.
 
 Do not automatically force an existing campaign through the full startup questionnaire.
 
-If the player asks to review or revise campaign tone, setting scope, PC depth, authorship level, published-material preference, or related startup decisions later, use this policy as the question bank and apply changes prospectively where possible.
+If the player asks to review or revise campaign tone, setting scope, PC depth, authorship level, published-module preference, or related startup decisions later, use this policy as the question bank and apply changes prospectively where possible.
 
 ## Maintenance
 
