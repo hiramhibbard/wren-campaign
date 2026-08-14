@@ -127,5 +127,23 @@ Retrieve original maps, handouts, keys, encounters, treasure, NPCs, and mechanic
 ## XP procedure
 Follow the XP policy in `state/rulings/adnd2e-campaign-rulings.md`: evaluate automatically at meaningful encounter/objective resolution and session end, retrieve governing sources where necessary, and checkpoint the award/basis/result.
 
+After every XP change for an advancing character:
+1. compare the resulting cumulative XP against that character's verified cached `next-level XP threshold`;
+2. if current XP is below the threshold, no advancement-source lookup is required merely for this check;
+3. if current XP meets or exceeds the threshold, automatically trigger the Level Advancement procedure below without waiting for Hiram to notice or ask;
+4. if the threshold cache is missing, stale, invalidated, or uncertain, retrieve the governing advancement source and repair/verify the cache before deciding whether advancement triggers.
+
+## Level Advancement procedure
+When cumulative XP meets or exceeds the verified next-level threshold:
+
+1. **Trigger automatically.** Do not require Hiram to ask whether the character gained a level.
+2. **Retrieve governing sources.** Consult the exact uploaded class/setting/rules material required to determine the attained level and every advancement consequence. The cached threshold is a trigger accelerator, not sufficient authority for applying the level-up itself.
+3. **Resolve advancement prerequisites/options.** Apply any established training rule, class restriction, setting modifier, alignment/dual-class/multi-class interaction, or other governing requirement. If an optional rule that materially affects advancement is genuinely unresolved, surface the decision rather than silently choosing it.
+4. **Request only player-facing input.** Ask Hiram for physical dice rolls and genuine player choices required by the rules; resolve DM-only or deterministic consequences without making him prompt for each one.
+5. **Apply the full mechanical delta.** Update level, hit points/Hit Dice, spell progression, attack values, saving throws, proficiency slots, class abilities, and any other values that actually change at the new level. Do not assume every category changes at every level; verify against sources.
+6. **Refresh the cache.** Derive the next `next-level XP threshold` from the authoritative advancement source and persist its provenance/status.
+7. **Loop for multi-level jumps.** Compare cumulative XP against the newly refreshed threshold and repeat the procedure if the same XP total legitimately qualifies for another level. Stop when XP is below the next threshold or a governing rule blocks further advancement.
+8. **Persist advancement.** Treat the resulting character-mechanical changes and refreshed threshold as durable state for the next canonical checkpoint/readback cycle.
+
 ## Checkpoint routing
 Each real checkpoint should include dirty-domain hints from `STATE_TEMPLATES.md` whenever applicable. Routine maintenance should use them for incremental compaction rather than rereading/rebuilding every world shard.
