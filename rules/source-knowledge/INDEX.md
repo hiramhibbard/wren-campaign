@@ -78,12 +78,16 @@ Issue registration is navigation only; article role/scope/activation remains sep
   - group initiative; optional action initiative modifiers; multiple-attack/spellcasting sequencing; missile range/ROF/ability modifiers; firing into melee; cover/concealment.
 - `rules/source-knowledge/entities/core-vision-light-climbing-turning-morale.md`
   - visibility ranges; common light sources/fuel durations; climbing success/modifiers/rates; turning undead; core 2e morale routing.
+- `rules/source-knowledge/entities/core-healing-death-fast-path.md`
+  - natural healing; magical-healing cap; raising/resurrection survival; massive damage; optional death's-door routing.
 - `rules/source-knowledge/entities/tome-of-magic-first-level-starter.md`
   - verified Tome wizard/priest first-level spell starter assertions with activation/source-text-required metadata.
 - `rules/source-knowledge/entities/source-family-record-shapes.md`
   - Monstrous Compendium Annual and Encyclopedia Magica source-native record shapes.
 - `rules/source-knowledge/entities/monster-scope-alias-starter.md`
   - Monstrous Manual precedence plus Mystara-scoped aliases/mappings and dragon specialization routing.
+- `rules/source-knowledge/entities/monster-stirge-starter.md`
+  - verified generic-core stirge stats, combat behavior, colony ecology, senses, feeding/rest cycle, field signs, and jungle-variant relationship.
 - `rules/source-knowledge/entities/magic-items-cross-source-starter.md`
   - Winged Mask multi-source assertions; Dragon #33 magical-oil family; typed provenance edges.
 
