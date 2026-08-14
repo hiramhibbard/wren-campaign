@@ -35,7 +35,7 @@ Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone is a m
 - Home Coast operational terrain/climate/travel/encounter/weather/lore substrate: `state/locations/home-coast/runtime-profile.md`
 - Current harbor/boarding-house state: `state/locations/harbor/current.md`
 
-When current play/travel/world motion touches the Home Coast activation horizon, load the Home Coast runtime profile rather than improvising encounter/weather applicability from memory.
+After checkpoint replay establishes the true current location, if Wren is in or likely to interact with the Home Coast activation horizon, loading `state/locations/home-coast/runtime-profile.md` is **mandatory**, not optional background context. Load the corresponding relevant DM-only active-world runtime and derive the due-event frontier before advancing consequential time.
 
 ## Campaign assets / media
 - Top-level campaign asset registry: `assets/INDEX.md`
@@ -55,6 +55,8 @@ When Hiram refers to an established map, portrait, handout, diagram, scene image
 - Context-first NPC generation, explicit race/species determination, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
 - Knowledge reliability, rumor/error/deception, deferred truth assignment, and social-belief procedure: `state/rulings/knowledge-reliability-and-rumors.md`
 
+Whenever `state/rulings/dm-procedure-triggers.md` is loaded for normal play, treat `state/rulings/regional-runtime-triggers.md` as its mandatory companion for any current/likely regional, travel, encounter, weather, lore, faction/population, or elapsed-time interaction.
+
 ## Structured published-rules projections
 - Normative structured-rules authority, creation, invalidation, fallback, and provenance policy: `RULES_PROJECTION_POLICY.md`
 - Structured rules projection registry: `rules/INDEX.md`
@@ -71,16 +73,23 @@ Do not expose DM-only runtime records merely because they are loaded. Their obse
 
 ## Long-term state scaffolds
 - Reusable NPC, henchman, world-clock, encounter, faction, clue, travel, downtime, item, source-registry, entity-promotion, and incremental-maintenance templates: `STATE_TEMPLATES.md`
+- Reusable regional runtime, active-world element, population/ecology, environmental process, encounter-content, weather-state, claim/belief, activation-horizon, and due-event-frontier templates: `REGIONAL_RUNTIME_TEMPLATES.md`
 
-These templates are operational schemas rather than live facts. Instantiate records only when play makes them relevant.
+These templates are operational schemas rather than live facts. Instantiate records only when play/source causality makes them relevant.
 
 ## Context and retrieval architecture
 - Mandatory context-assembly policy: `CONTEXT_ARCHITECTURE.md`
+- Mandatory regional-runtime/Voice/due-event context extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
 - Mandatory derived-retrieval authority/safety policy: `DERIVED_INDEX_POLICY.md`
 - Mandatory structured published-rules projection policy: `RULES_PROJECTION_POLICY.md`
 - Mandatory regional runtime/lore/encounter/weather/world-motion policy: `REGIONAL_RUNTIME_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play must obey all four policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources. `REGIONAL_RUNTIME_POLICY.md` defines bounded regional activation, encounter derivation, weather relevance, progressive lore generation, and causally scheduled world motion.
+Because this index is part of the always-loaded resume working set, resumed play must obey all of these policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md` makes active-region loading, the due-event frontier, and Voice regional fast-path context explicit after checkpoint replay. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources. `REGIONAL_RUNTIME_POLICY.md` defines bounded regional activation, encounter derivation, weather relevance, progressive lore generation, and causally scheduled world motion.
+
+## Regression / audit scenarios
+- Regional runtime, encounter, weather, world-motion, rumor/reliability, NPC-individuality, supplement-precedence, activation-horizon, and map-authority regression scenarios: `tests/REGIONAL_RUNTIME_REGRESSION.md`
+
+These are engineering/audit tests only. Running or reviewing them must not alter live campaign state.
 
 ## Engineering
 - Architecture decisions, operational status, known limitations, validation plan, and prior future-work notes: `CAMPAIGN_ENGINEERING.md`
@@ -97,9 +106,11 @@ Because this index is part of the always-loaded resume working set, resumed play
 - Persistence transaction hardening: `PERSISTENCE_PROTOCOL.md`
 - Automatic growth/sharding policy: `GROWTH_POLICY.md`
 - Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
+- Regional runtime Context Compiler/Voice extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
 - Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
 - Structured rules projection policy: `RULES_PROJECTION_POLICY.md`
 - Regional runtime/world-motion policy: `REGIONAL_RUNTIME_POLICY.md`
+- Regional runtime reusable templates: `REGIONAL_RUNTIME_TEMPLATES.md`
 - Rules dependency registry: `state/rulings/rules-dependency-registry.md`
 - Regional runtime trigger extension: `state/rulings/regional-runtime-triggers.md`
 - Knowledge reliability/rumor procedure: `state/rulings/knowledge-reliability-and-rumors.md`
