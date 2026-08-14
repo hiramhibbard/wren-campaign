@@ -165,6 +165,7 @@ Instantiate/promote records only when play/source causality warrants them.
 
 ## Regression / audit suites
 
+- Architecture routing/performance: `tests/ARCHITECTURE_ROUTING_REGRESSION.md`
 - Regional runtime: `tests/REGIONAL_RUNTIME_REGRESSION.md`
 - DM craft/site: `tests/DM_CRAFT_AND_SITE_RUNTIME_REGRESSION.md`
 - Monsters: `tests/MONSTER_PROJECTION_REGRESSION.md`
