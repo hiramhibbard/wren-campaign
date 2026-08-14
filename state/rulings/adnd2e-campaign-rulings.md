@@ -5,6 +5,9 @@
 - Equipment bookkeeping: keep PHB-listed fixed weights exact; do not invent false precision for unlisted or variable contents; adjudicate when thresholds matter.
 - Inventory locality: carried inventory and boat-stored gear are distinct.
 - Starting-budget treatment: background possessions, witch-provided spellbook, personal stone, inherited boat, and one day's home food are not charged against the 40 gp starting equipment budget.
+- Maximum-spells-per-level optional rule: **active** by explicit player choice in checkpoint `000003-enable-maximum-spells-per-level.md`. For Wren's INT 18, the PHB Table 4 maximum is **18 known spells at each spell level**. This limits spells known in the spellbook, not daily memorization slots.
+- Prime-requisite XP bonus: **verified and active**. Under the PHB rule, a character with 16+ in all prime requisites receives +10% XP; Wren is a mage with INT 18. First applied and verified in checkpoint `000004-session-end-homeward-inlet-discovery.md`.
+- Armor spell ordinary fast path: verified compiled source object at `rules/source-knowledge/entities/wren-core-phb-fast-path.md`. Ordinary casting uses the compiled definition; exact source remains required for unusual stacking/interaction disputes.
 
 ## Derived state, cache, and trigger policy
 - Frequently consulted values may be persisted as verified derived runtime state when doing so avoids repeated source lookups or repeated deterministic calculation during ordinary play.
@@ -44,9 +47,7 @@
 - Wren's current mage level-1 next-level threshold is 2,500 XP, verified from the uploaded AD&D 2e Player's Handbook, Table 20: Wizard Experience Levels.
 
 ## Unresolved / source-check required
-- Optional maximum-spells-per-level rule remains unresolved.
-- Prime-requisite XP bonus was recorded as +10% but must be verified against the PHB when first applied.
-- Exact Armor spell components/effects/duration must be retrieved from the uploaded AD&D 2e PHB when consequential.
-- Exact Armor component cost/quantity/weight is unassigned; do not invent it. Current purse remains provisional only in the narrow sense that a later source-supported component cost may require reconciliation.
+- Exact Armor component **cost/quantity/weight** remains unassigned because the verified core spell definition establishes the component as a piece of finely cured leather blessed by a priest but does not by itself establish a campaign price, standardized quantity, or carried weight. Do not invent those values. Current purse remains provisional only in the narrow sense that a later source- or campaign-supported acquisition cost may require reconciliation.
+- Any other exact published rule not represented by a verified in-scope compiled object remains source-governed and should be retrieved when consequential.
 
 Exact published rules and tables remain governed by Hiram's uploaded AD&D 2e sources rather than this summary.
