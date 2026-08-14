@@ -33,6 +33,7 @@ Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone never 
 ## Locations / regional runtime
 - Location routing: `state/locations/index.md`
 - Home Coast runtime profile: `state/locations/home-coast/runtime-profile.md`
+- Home Coast world-building readiness/audit: `state/dm/home-coast-worldbuilding-readiness.md`
 - Harbor/boarding-house state: `state/locations/harbor/current.md`
 
 After checkpoint replay establishes current location, if Wren is in or can plausibly affect the Home Coast activation horizon, load `state/locations/home-coast/runtime-profile.md`, relevant DM-only active-world runtime, and derive the due-event frontier before advancing consequential time.
@@ -57,22 +58,25 @@ When a bounded site's internal state matters, load only the minimum applicable r
 - Site/DM-craft triggers: `state/rulings/site-and-craft-triggers.md`
 - Monster projection/runtime triggers: `state/rulings/monster-runtime-triggers.md`
 - Specialist supplement source triggers: `state/rulings/supplement-source-triggers.md`
-- **Automatic published-adventure opportunity triggers: `state/rulings/adventure-opportunity-triggers.md`**
+- Automatic published-adventure opportunity triggers: `state/rulings/adventure-opportunity-triggers.md`
+- **World Builder unresolved-world/detail generation triggers: `state/rulings/world-builder-triggers.md`**
 - Rules dependency routing: `state/rulings/rules-dependency-registry.md`
 - NPC generation/portrayal: `state/rulings/npc-generation-and-portrayal.md`
 - Knowledge reliability/rumors/deception: `state/rulings/knowledge-reliability-and-rumors.md`
 - Perception/evidence: `state/rulings/perception-and-evidence.md`
 - Creature ecology/behavior: `state/rulings/creature-ecology-and-behavior.md`
 
-Whenever normal play loads `state/rulings/dm-procedure-triggers.md`, treat regional, site/craft, monster, supplement-source, and adventure-opportunity trigger extensions as mandatory companions **when their domains are implicated**. They are event-driven; do not scan all source families every turn.
+Whenever normal play loads `state/rulings/dm-procedure-triggers.md`, treat regional, site/craft, monster, supplement-source, adventure-opportunity, and World Builder trigger extensions as mandatory companions **when their domains are implicated**. They are event-driven; do not scan all source families or world-building tables every turn.
 
-Adventure opportunities must be recognized automatically. Hiram does not need to ask the DM to search for or introduce a published adventure. A plausible world need/opportunity may trigger targeted published-source discovery, but candidate material does not become campaign truth until actually seeded through `ADVENTURE_OPPORTUNITY_POLICY.md`.
+Adventure opportunities and unresolved-world generation must be recognized automatically. Hiram does not need to ask the DM to search for an adventure or to fill a consequential world gap. Candidate/prepared material does not become campaign truth until actually established through the relevant policy.
 
-## Published-source / supplement / adventure resolution
+## Published-source / supplement / adventure / world-generation resolution
 - Structured rules authority/projection policy: `RULES_PROJECTION_POLICY.md`
 - General specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
-- **Automatic published adventure opportunity/seeding policy: `ADVENTURE_OPPORTUNITY_POLICY.md`**
+- Automatic published adventure opportunity/seeding policy: `ADVENTURE_OPPORTUNITY_POLICY.md`
+- **AD&D 2e World Builder generation/runtime policy: `WORLD_BUILDER_RUNTIME_POLICY.md`**
 - Published adventure source-family registry: `rules/adventures/INDEX.md`
+- World-building source registry: `rules/worldbuilding/INDEX.md`
 - Monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
 - Monster projection/runtime policy: `MONSTER_PROJECTION_POLICY.md`
 - Monster ecology inspiration compatibility policy: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
@@ -83,14 +87,18 @@ Supplement routing:
 Adventure routing:
 `world need/opportunity -> current setting/region/site/thread facets -> targeted adventure-source families -> candidate fit review -> exact source inspection -> optional minimal seeding -> normal world causality`
 
-Dungeon Magazine adventures and side treks are first-class adventure-source families. Automatic consultation/search is not automatic activation or canonization. Candidate and Prepared Possibility states create no world facts. Seed only the minimum facts actually required by current causality.
+World Builder routing:
+`unresolved consequential world detail -> established constraints -> smallest fitting Guidebook approach/domain -> specialist/adventure/monster handoff if implicated -> bounded generation -> minimum truth -> persistence if consequential`
 
-Active setting/adventure treatments must not be flattened by generic specialist/adventure sources, and setting-specific assumptions must not leak into unrelated generic play.
+Dungeon Magazine adventures and side treks are first-class adventure-source families. Automatic consultation/search is not automatic activation or canonization. Guidebook random tables are bounded generation tools, not authority over existing canon.
+
+Active setting/adventure treatments must not be flattened by generic specialist/adventure/world-generation sources, and setting-specific assumptions must not leak into unrelated generic play.
 
 ## Structured published-rules / source projections
 - Rules registry: `rules/INDEX.md`
 - Specialist source-role registry: `rules/sources/INDEX.md`
 - Published adventure source registry: `rules/adventures/INDEX.md`
+- World-building source registry: `rules/worldbuilding/INDEX.md`
 - Monster registry: `rules/monsters/INDEX.md`
 - Monster ecology inspiration registry: `rules/monsters/ecology-inspiration/INDEX.md`
 - Wilderness encounter checks: `rules/encounters/dmg-wilderness-encounter-checks.md`
@@ -105,13 +113,17 @@ Monster runtime lookup:
 Adventure discovery fast path:
 `cheap opportunity check -> existing seeded/active scenario? -> if needed targeted family search -> shortlist -> inspect only surviving candidates`
 
+World-building fast path:
+`cheap unresolved-detail check -> existing canon sufficient? -> exact narrow Guidebook/source procedure only if needed -> bounded resolution`
+
 Projection/index absence never permits guessing. Projection/index presence never overrides governing source or establishes campaign truth.
 
 ## DM-only
 - Hidden truths/prepared possibilities/outside forces: `state/dm/campaign.md`
 - Home Coast active-world runtime: `state/dm/home-coast-world-runtime.md`
+- Home Coast world-building readiness/audit: `state/dm/home-coast-worldbuilding-readiness.md`
 
-Do not expose DM-only records merely because they are loaded. Prepared adventure candidates/possibilities are DM-only and must not be narrated as established facts before seeding.
+Do not expose DM-only records merely because they are loaded. Prepared adventure/world-building candidates are DM-only and must not be narrated as established facts before seeding/establishment.
 
 ## Long-term scaffolds
 - General templates: `STATE_TEMPLATES.md`
@@ -126,23 +138,25 @@ Instantiate records only when play/source causality makes them relevant.
 - Monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
 - Monster ecology inspiration filter: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
 - Specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
-- **Published adventure opportunity/seeding: `ADVENTURE_OPPORTUNITY_POLICY.md`**
+- Published adventure opportunity/seeding: `ADVENTURE_OPPORTUNITY_POLICY.md`
+- **World Builder runtime: `WORLD_BUILDER_RUNTIME_POLICY.md`**
 - Context compiler: `CONTEXT_ARCHITECTURE.md`
 - Regional Voice/due-event extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
 - Derived retrieval/index safety: `DERIVED_INDEX_POLICY.md`
 - Structured rules projections: `RULES_PROJECTION_POLICY.md`
 - Regional runtime/world motion: `REGIONAL_RUNTIME_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play automatically discovers both specialist-source and adventure-opportunity routing. Normal performance remains bounded: cheap domain/opportunity checks, reuse cached routes/projections/locators, and retrieve source text only when a trigger actually fires.
+Because this index is part of the always-loaded resume working set, resumed play automatically discovers specialist-source, adventure-opportunity, and World Builder routing. Normal performance remains bounded: cheap domain/opportunity/unresolved-detail checks, reuse cached routes/projections/locators, and retrieve source text only when a trigger actually fires.
 
-`ADVENTURE_OPPORTUNITY_POLICY.md` inherits `DM_CRAFT_POLICY.md` scenario-before-story. Published scenarios provide situations, places, actors, hazards, clues, and pressures; they never dictate Wren's choices, survival, required scenes, or ending.
+`ADVENTURE_OPPORTUNITY_POLICY.md` inherits `DM_CRAFT_POLICY.md` scenario-before-story. `WORLD_BUILDER_RUNTIME_POLICY.md` inherits the campaign's progressive-detail/no-fudging discipline: generate only what current causality needs, constrain before random generation, and never overwrite established/source-governed facts.
 
 ## Regression / audit
 - Regional runtime: `tests/REGIONAL_RUNTIME_REGRESSION.md`
 - DM craft/site runtime: `tests/DM_CRAFT_AND_SITE_RUNTIME_REGRESSION.md`
 - Monster projection/source resolution: `tests/MONSTER_PROJECTION_REGRESSION.md`
 - Specialist supplement source resolution/performance: `tests/SUPPLEMENT_SOURCE_RESOLUTION_REGRESSION.md`
-- **Automatic adventure discovery/seeding/Dungeon Magazine behavior: `tests/ADVENTURE_OPPORTUNITY_REGRESSION.md`**
+- Automatic adventure discovery/seeding/Dungeon Magazine behavior: `tests/ADVENTURE_OPPORTUNITY_REGRESSION.md`
+- **World Builder progressive generation/runtime behavior: `tests/WORLD_BUILDER_RUNTIME_REGRESSION.md`**
 
 These tests never alter live campaign state.
 
