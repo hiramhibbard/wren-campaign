@@ -15,7 +15,7 @@ engine:
   repository: hiramhibbard/adnd2e-campaign-engine
   schema: 1
   version: portable-v1
-  commit: ca6c74370975834a8d1f7aaf065b2b6afe608230
+  commit: ca8b34ee9d3bf213a84ac382e502e82ea58074dd
 
 state:
   schema_version: 1
