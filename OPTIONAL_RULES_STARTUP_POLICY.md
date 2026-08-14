@@ -20,6 +20,25 @@ Do not require a decision merely because an option exists.
 
 A deferred option is **inactive/unresolved**, not implicitly enabled.
 
+## Existing-campaign one-time catch-up
+
+If this policy is introduced after a campaign has already begun and that campaign has not yet received the common/useful optional-rule review, perform a **one-time catch-up prompt at the beginning of the next gameplay session** after canonical session-start loading succeeds and before ordinary play resumes.
+
+For the current Wren campaign, this catch-up prompt is **required at the next gameplay session** because the campaign predates this policy.
+
+The prompt should be concise, for example:
+
+`We added the optional-rules review after Wren had already started. Do you want to go through the unresolved common options before we play?`
+
+The player may review all, some, or none of them. If the player says `not now`, that satisfies the one-time catch-up prompt; unresolved items remain deferred/unreviewed and normal play continues.
+
+Record the result of the catch-up review in durable campaign state at the next normal checkpoint:
+- which options were activated or explicitly rejected, if any;
+- which remain deferred/unreviewed;
+- that the one-time catch-up prompt has been completed.
+
+Once canonical state records that the catch-up prompt was completed, **do not automatically issue it again**. Future review is player-initiated except for a brief non-repeating reminder when genuinely useful under the later-session behavior below.
+
 ## Later-session behavior
 
 At the beginning of a later session, deferred common options may be reviewed **if the player chooses**. Do not repeatedly interrogate the player or block play because deferred options remain.
@@ -205,6 +224,8 @@ If an option changes another option's meaning, resolve the dependency explicitly
 This policy does not retroactively alter Wren's existing rules profile.
 
 Existing verified campaign decisions remain authoritative, including the already-active Maximum Number of Spells per Level rule. Other options remain governed by current canonical rulings/checkpoints until Hiram chooses to review or change them.
+
+The **next Wren gameplay session must issue the one-time catch-up prompt** described above after canonical loading and before play resumes. The result should be persisted at that session's next normal checkpoint so subsequent sessions know whether the catch-up has already been completed.
 
 ## Maintenance of the shortlist
 
