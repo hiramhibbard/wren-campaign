@@ -15,6 +15,16 @@
 - For each award, record enough canonical information to preserve the basis of the award, the raw XP awarded, any verified applicable adjustment or bonus, and Wren's resulting cumulative XP.
 - XP changes are durable campaign state and must be included in the next checkpoint. Never retroactively invent an XP award without canonical evidence of the qualifying event.
 
+## Advancement threshold cache policy
+- Each advancing character may persist a `next-level XP threshold` as a verified derived runtime value so routine XP awards do not require rereading the class advancement table every time.
+- The governing published/source advancement rule remains authoritative. The cached threshold is valid only while the character's class/advancement track, current level, and all rules that modify advancement requirements remain unchanged.
+- After every XP change, compare the resulting cumulative XP against the cached threshold. This comparison is the normal fast-path level-up trigger.
+- Recompute and verify the threshold from the governing uploaded source when the character gains a level, changes class/advancement track, becomes subject to a rule that changes XP requirements, or an integrity/maintenance audit detects uncertainty or mismatch.
+- If the cached value conflicts with the governing source, the source wins. Correct the cache before resolving advancement consequences.
+- `XP to next level` is normally computed on demand from `next-level XP threshold - current XP`; it need not be persisted unless a future implementation has a concrete reason to cache it.
+- Persist enough provenance with the threshold to identify the source/table or rule from which it was derived. Avoid untraceable "mystery numbers."
+- Wren's current mage level-1 next-level threshold is 2,500 XP, verified from the uploaded AD&D 2e Player's Handbook, Table 20: Wizard Experience Levels.
+
 ## Unresolved / source-check required
 - Optional maximum-spells-per-level rule remains unresolved.
 - Prime-requisite XP bonus was recorded as +10% but must be verified against the PHB when first applied.
