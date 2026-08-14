@@ -80,6 +80,8 @@ Issue registration is navigation only; article role/scope/activation remains sep
   - visibility ranges; common light sources/fuel durations; climbing success/modifiers/rates; turning undead; core 2e morale routing.
 - `rules/source-knowledge/entities/core-healing-death-fast-path.md`
   - natural healing; magical-healing cap; raising/resurrection survival; massive damage; optional death's-door routing.
+- `rules/source-knowledge/entities/core-missile-equipment-fast-path.md`
+  - complete PHB Table 45 missile ranges/ROF; generic weapon-field semantics; Wren-common Table 44 price/weight lookup without altering campaign inventory.
 - `rules/source-knowledge/entities/tome-of-magic-first-level-starter.md`
   - verified Tome wizard/priest first-level spell starter assertions with activation/source-text-required metadata.
 - `rules/source-knowledge/entities/source-family-record-shapes.md`
@@ -88,6 +90,8 @@ Issue registration is navigation only; article role/scope/activation remains sep
   - Monstrous Manual precedence plus Mystara-scoped aliases/mappings and dragon specialization routing.
 - `rules/source-knowledge/entities/monster-stirge-starter.md`
   - verified generic-core stirge stats, combat behavior, colony ecology, senses, feeding/rest cycle, field signs, and jungle-variant relationship.
+- `rules/source-knowledge/entities/monster-giant-crab.md`
+  - verified generic-core giant-crab stats, ambush/feeding behavior, shoreline habitat, air/water respiration, reproduction, and scavenger ecology.
 - `rules/source-knowledge/entities/magic-items-cross-source-starter.md`
   - Winged Mask multi-source assertions; Dragon #33 magical-oil family; typed provenance edges.
 
