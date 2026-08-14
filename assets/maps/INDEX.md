@@ -6,7 +6,7 @@
 
 - Current version: `v2`
 - Visibility: `player-known`
-- Status: `pending-ingest`
+- Status: `active`
 - Metadata: `assets/maps/asset-map-home-coast-001.md`
 - Natural aliases:
   - Wren’s map
@@ -16,4 +16,4 @@
   - Lowcove map
   - Lowcove coast map
 
-The metadata and version identities are canonical. Binary payloads are not yet durably present in GitHub; see `assets/PENDING_INGEST.md`.
+Both v1 and v2 image payloads are durably present on canonical `main` and readback-verified. Natural references resolve to `v2` unless an older version is requested explicitly.
