@@ -27,19 +27,32 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 
 The Encyclopedia Magica family is a high-priority entity/provenance corpus. Compile stable item entities/assertions while preserving original source, setting/scope, XP/GP values, aliases, exact locator, and source-text-required flags. Compilation never instantiates an item in Wren's world.
 
-### Monster anthology
+### Monster sources / anthologies
 - `adnd2e.document.monstrous-compendium-annual.v2` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v2.md`
 - `adnd2e.document.monstrous-compendium-annual.v3` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v3.md`
+- `adnd2e.document.monstrous-compendium.mystara-appendix` -> `rules/source-knowledge/documents/mc-mystara-appendix.md`
 
-Annual/anthology creature entries remain scope-sensitive assertions; setting/adventure variants must not be flattened into generic monster definitions.
+Annual/anthology/setting creature entries remain scope-sensitive assertions; setting/adventure variants must not be flattened into generic monster definitions. Registering the Mystara appendix does not make Mystara Wren's active setting.
 
-### Worldbuilding / periodicals / adventures / specialists
+### PHBR class/race specialist sources
+- `adnd2e.document.phbr01.complete-fighters-handbook` -> `rules/source-knowledge/documents/phbr01-complete-fighters-handbook.md`
+- `adnd2e.document.phbr02.complete-thiefs-handbook` -> `rules/source-knowledge/documents/phbr02-complete-thiefs-handbook.md`
+- `adnd2e.document.phbr03.complete-priests-handbook` -> `rules/source-knowledge/documents/phbr03-complete-priests-handbook.md`
+- `adnd2e.document.phbr04.complete-wizards-handbook` -> `rules/source-knowledge/documents/phbr04-complete-wizards-handbook.md`
+
+Compilation makes these specialists cheap to consult; it does not activate kits, optional combat systems, specialty-priest mechanics, or other substitutions.
+
+### DMGR domain-guide sources
+- `adnd2e.document.dmgr1.campaign-sourcebook-catacomb-guide` -> `rules/source-knowledge/documents/dmgr1-campaign-sourcebook-catacomb-guide.md`
+- `adnd2e.document.dmgr2.castle-guide` -> `rules/source-knowledge/documents/dmgr2-castle-guide.md`
+
+### Worldbuilding / periodicals / adventures
 - World Builder source family: `rules/worldbuilding/INDEX.md`
 - Dragon article family: `rules/dragon/INDEX.md`
 - Published adventure/Dungeon family: `rules/adventures/INDEX.md`
-- Specialist PHBR/DMGR/source roles: `rules/sources/INDEX.md`
+- Specialist source roles: `rules/sources/INDEX.md`
 
-Individual source documents/articles/modules are registered as bulk inventory proceeds.
+Individual source documents/articles/modules continue to be registered as bulk inventory proceeds.
 
 ## Current compiled entity/assertion shards
 
@@ -63,21 +76,7 @@ Existing structured projections remain valid source-knowledge assertions in thei
 
 ## Current entity families
 
-High-value families include:
-- monsters and variants;
-- spells;
-- magic items/artifacts;
-- mundane equipment;
-- classes/kits/races/proficiencies;
-- deities/priesthoods;
-- setting places/regions/cultures/factions/NPCs;
-- adventures/sites/encounters;
-- hazards/traps/treasure tables;
-- deterministic rules/procedures;
-- worldbuilding procedures;
-- Dragon articles and article-derived entities;
-- Dungeon adventures/scenario components;
-- maps/handouts/source assets.
+High-value families include monsters/variants; spells; magic items/artifacts; equipment; classes/kits/races/proficiencies; deities/priesthoods; setting places/regions/cultures/factions/NPCs; adventures/sites/encounters; hazards/traps/treasure tables; deterministic rules/procedures; worldbuilding procedures; Dragon articles; Dungeon scenarios; maps/handouts/source assets.
 
 ## Lookup order
 
@@ -87,7 +86,7 @@ Exact source lookup remains mandatory when a verified object is absent, stale, e
 
 ## Population strategy
 
-The campaign now intentionally front-loads source compilation when doing so can reduce future game-table latency.
+The campaign intentionally front-loads source compilation when doing so can reduce future game-table latency.
 
 ### Ordinary play
 When a correct source lookup exposes reusable material not yet compiled, adjudicate first and compile/queue it when worthwhile.
@@ -107,17 +106,7 @@ Optimize for later gameplay lookup cost rather than minimizing maintenance durat
 
 ## Indexes
 
-Derived indexes may be generated from this registry/object corpus:
-- aliases/names;
-- entity/domain tags;
-- setting/scope;
-- source provenance;
-- relationships;
-- full text over compact summaries;
-- semantic embeddings;
-- adventure/environment/risk facets;
-- monster habitat/ecology facets;
-- rules-domain/procedure triggers.
+Derived indexes may be generated from this registry/object corpus: aliases/names, entity/domain tags, setting/scope, source provenance, relationships, compact-summary full text, semantic embeddings, adventure/environment/risk facets, monster habitat/ecology facets, and rules-domain/procedure triggers.
 
 These indexes remain subordinate to verified assertions and uploaded sources.
 
