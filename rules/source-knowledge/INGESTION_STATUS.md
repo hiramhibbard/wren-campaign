@@ -23,21 +23,33 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Encyclopedia Magica Volume 3
 - [x] Encyclopedia Magica Volume 4
 
-### Monster anthology corpus
+### Monster corpus
 - [x] Monstrous Compendium Annual Volume 2
 - [x] Monstrous Compendium Annual Volume 3
-- [ ] discover/register other available Monstrous Compendium Annuals and setting appendices
+- [x] Mystara Monstrous Compendium Appendix
+- [ ] discover/register other available Annuals and setting appendices
+
+### PHBR specialist family
+- [x] PHBR01 Complete Fighter's Handbook
+- [x] PHBR02 Complete Thief's Handbook
+- [x] PHBR03 Complete Priest's Handbook
+- [x] PHBR04 Complete Wizard's Handbook
+- [ ] inventory/register remaining available PHBR books
+
+### DMGR specialist family
+- [x] DMGR1 Campaign Sourcebook and Catacomb Guide
+- [x] DMGR2 Castle Guide
+- [ ] inventory/register remaining available DMGR books
 
 ### Worldbuilding
-- [x] World Builder's Guidebook source family already registered under `rules/worldbuilding/INDEX.md`
+- [x] World Builder's Guidebook source family registered under `rules/worldbuilding/INDEX.md`
 
-### Periodicals / adventures / specialist books
-- [ ] inventory Dragon issues
-- [ ] inventory Dungeon issues/modules
-- [ ] inventory PHBR family
-- [ ] inventory DMGR family
-- [ ] inventory setting source families
-- [ ] inventory spell compendia / Tome of Magic / other spell sources
+### Still to inventory/register
+- [ ] Dragon issues
+- [ ] Dungeon issues/modules
+- [ ] spell compendia / Tome of Magic / other spell sources
+- [ ] remaining setting source families
+- [ ] remaining monster appendices/annuals
 
 ## Extracted verified entity/procedure coverage
 
@@ -63,7 +75,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 6. adventure/module/Dungeon metadata;
 7. Dragon article metadata + entity relationships;
 8. PHBR/DMGR specialist assertions/procedures;
-9. active or likely setting entities/relationships;
+9. setting entities/relationships;
 10. World Builder reusable tables/procedure objects.
 
 ## Quality gates
@@ -84,11 +96,11 @@ For each extracted assertion, preserve as applicable:
 
 ## Progress reporting
 
-Updates to Hiram should distinguish:
+Updates to Hiram must distinguish:
 - source documents inventoried/registered;
 - entities/assertions actually extracted;
 - assertions verified;
 - indexes/relationships built;
 - remaining corpus work.
 
-Do not imply that registering a document equals extracting all entities from it.
+Registering a document is not equivalent to extracting all entities from it.
