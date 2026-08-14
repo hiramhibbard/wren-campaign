@@ -24,19 +24,31 @@ Existing character/runtime caches may continue to cite uploaded source tables di
   - Daily ship-weather generation by season and sailing/rowing movement effects.
   - Does not replace regional climate or non-sea weather generation.
 
+## Specialist source routing
+
+- General scope/domain supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
+- Source-role registry: `rules/sources/INDEX.md`
+- Event-driven triggers: `state/rulings/supplement-source-triggers.md`
+
+PHBR/race/class specialist books and DMGR/domain guides are consulted only when their domain becomes consequential. Consultation does not activate optional mechanics. Active setting/adventure scope is resolved before generic specialist guidance is applied.
+
+Performance contract: cheap domain routing on normal turns; targeted retrieval only on trigger; cache useful locators/projections for recurring domains; never preload whole supplement families.
+
 ## Monster projection family
 
 - Monster projection registry: `rules/monsters/INDEX.md`
 - Normative monster projection/encounter-layer policy: `MONSTER_PROJECTION_POLICY.md`
 - Normative scope-first monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
+- Monster ecology inspiration policy: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
+- Monster ecology inspiration registry: `rules/monsters/ecology-inspiration/INDEX.md`
 
-Monster projections are created lazily from the **scope-resolved active governing AD&D 2e monster source** when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
+Monster projections are created lazily from the scope-resolved active governing AD&D 2e monster source when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
 
-Monster lookup is source-family aware: core Monstrous Manual, generic Monstrous Compendium material, setting-specific Compendium appendices, Monstrous Compendium Annuals/anthologies, active adventure treatments, and other explicitly active setting/monster sources may all be candidates. `MONSTER_SOURCE_RESOLUTION_POLICY.md` determines which source governs the current setting/adventure/region/case. Specialized scope must not be flattened to generic core, and specialized variants must not contaminate generic play when inactive.
+Monster lookup is source-family aware: core Monstrous Manual, generic Monstrous Compendium material, setting-specific Compendium appendices, Annuals/anthologies, active adventure treatments, and other explicitly active monster sources may be candidates. Resolve current scope before choosing.
 
 ## Projection lifecycle
 
-Each projection should be registered here with:
+Each projection should be registered with:
 - stable projection ID;
 - path;
 - source title/table/section locator;
@@ -46,7 +58,7 @@ Each projection should be registered here with:
 - source precedence/override notes when relevant;
 - downstream dependency domains.
 
-Use `state/rulings/rules-dependency-registry.md` to decide when a projection is needed, activated, invalidated, or bypassed for exact source text. Use `state/rulings/monster-runtime-triggers.md` for monster-specific source-scope resolution, first-use, projection-creation, encounter-instantiation, population-promotion, and Voice routing.
+Use `state/rulings/rules-dependency-registry.md` for invalidation/dependency routing, `state/rulings/supplement-source-triggers.md` for specialist supplement routing, and `state/rulings/monster-runtime-triggers.md` for monster-specific routing.
 
 ## Planned high-value projection families
 
@@ -63,6 +75,7 @@ Create when first justified/verified:
 - movement / exploration;
 - light and common resource durations;
 - encounter surprise/distance/reaction fields when repeated use justifies projection;
-- frequently reused spell/item/monster structured fields where safe and useful.
+- frequently reused spell/item/monster structured fields where safe and useful;
+- frequently reused deterministic PHBR/DMGR specialist tables only after their source scope is actually active or their reference projection is clearly worthwhile.
 
-Do not create empty family files merely to satisfy this list.
+Do not create empty family files merely to satisfy this list, and do not treat projection creation as supplement activation.
