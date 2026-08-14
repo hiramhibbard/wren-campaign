@@ -17,6 +17,11 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Dungeon Master Guide Deluxe
 - [x] Monstrous Manual Deluxe
 
+### Magic / spell corpus
+- [x] Tome of Magic
+- [ ] Wizard's Spell Compendium volumes — bibliographic references found, but exact uploaded volume files not yet resolved/registered
+- [ ] other spell compendia / spell collections
+
 ### Magic item / artifact / provenance corpus
 - [x] Encyclopedia Magica Volume 1
 - [x] Encyclopedia Magica Volume 2
@@ -57,6 +62,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Dragon #232
 - [x] Dragon #235
 - [x] Dragon #236
+- [x] Dragon #240
 - [ ] continue issue inventory and article-level extraction
 
 ### Worldbuilding
@@ -65,7 +71,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 ### Still to inventory/register
 - [ ] remaining Dragon issues
 - [ ] Dungeon issues/modules
-- [ ] spell compendia / Tome of Magic / other spell sources
+- [ ] Wizard's Spell Compendium actual uploaded volumes if present
 - [ ] remaining setting source families
 - [ ] remaining monster appendices/annuals
 
@@ -89,6 +95,12 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] PHB Table 60 complete class-group saving throw progression
 - [x] DMG Table 59 encounter reaction matrix and interpretation categories
 
+### Core proficiencies / combat / encounter opening
+- [x] PHB Table 34 proficiency slot progression + nonproficient penalties
+- [x] PHB Table 51 standard combat attack modifiers
+- [x] DMG Table 57 surprise modifiers
+- [x] DMG Table 58 encounter distances
+
 ### Existing compatible DMG projections
 - [x] wilderness encounter checks
 - [x] ship weather
@@ -96,6 +108,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 ### Source-family structural extraction
 - [x] Monstrous Compendium Annual entry-field schema and scope warning
 - [x] Encyclopedia Magica item/provenance entry-field schema
+- [x] Tome of Magic source structure / optional-system activation boundary
 
 ### Cross-source magic-item graph starter
 - [x] Winged Mask logical entity
@@ -111,13 +124,14 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] typed provenance pattern demonstrated for one entity with multiple source treatments
 - [x] anthology -> original-publication relationship pattern demonstrated
 - [x] source-native monster and magic-item schemas established for future batch extraction
+- [x] Dragon issue registration can retain bibliographic discovery without mistaking reviews/references for source authority
 
 ## Active extraction queue
 
-1. core combat / initiative / attack / weapon / save-modifier / proficiency / exploration procedures;
+1. core initiative / combat sequencing / cover / missile / attack / proficiency / exploration procedures;
 2. full high-value monster metadata/stat extraction from generic core + anthology/setting variants;
 3. Encyclopedia Magica alphabetical item metadata/provenance shards;
-4. spell corpus discovery and spell-definition shards;
+4. Tome of Magic spell-definition shards and optional-system dependency metadata;
 5. equipment/weapon/armor tables;
 6. adventure/module/Dungeon metadata;
 7. broader Dragon issue/article metadata + entity relationships;
