@@ -14,9 +14,13 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 
 - `adnd2e.document.phb-deluxe` -> `rules/source-knowledge/documents/adnd2e-phb-deluxe.md`
   - uploaded source: `DD2_PHB_Deluxe.pdf`
-  - core AD&D 2e Player's Handbook source document metadata and high-value locators.
-
-Existing DMG projections remain grandfathered source-knowledge objects through their current projection files until physical registration/migration is worthwhile.
+  - core Player's Handbook metadata/high-value locators.
+- `adnd2e.document.dmg-deluxe` -> `rules/source-knowledge/documents/adnd2e-dmg-deluxe.md`
+  - uploaded source: `DD2_DMG_Deluxe.pdf`
+  - core Dungeon Master Guide metadata, encounter/travel/weather/treasure locator families.
+- `adnd2e.document.monstrous-manual-deluxe` -> `rules/source-knowledge/documents/adnd2e-monstrous-manual-deluxe.md`
+  - uploaded source: `DD2_MonstrousManual_Deluxe.pdf`
+  - default generic core-monster source family subject to scope-first monster resolution.
 
 ## Current compiled entity/assertion shards
 
@@ -28,7 +32,15 @@ Existing DMG projections remain grandfathered source-knowledge objects through t
   - `adnd2e.rule.encumbrance.basic` / Table 47 breakpoints
   - `adnd2e.rule.thac0.calculated` / wizard THAC0 progression
 
-These objects were source-verified against the uploaded PHB and are intended to eliminate repeated broad PDF lookup for current Wren fast-path mechanics.
+These objects were source-verified against the uploaded PHB and eliminate repeated broad PDF lookup for current Wren fast-path mechanics.
+
+## Existing verified projections registered conceptually
+
+Existing structured projections remain valid source-knowledge assertions in their legacy paths; do not duplicate them merely for storage uniformity.
+
+- `adnd2e.dmg.encounters.wilderness-checks.v1` -> `rules/encounters/dmg-wilderness-encounter-checks.md`
+- `adnd2e.dmg.travel.ship-weather.v1` -> `rules/travel/dmg-ship-weather.md`
+- verified monster projections under `rules/monsters/` as they are created.
 
 ## Current entity families
 
@@ -70,7 +82,7 @@ Maintenance may ingest source families in bulk, prioritizing:
 7. Dragon/Dungeon article-level metadata;
 8. specialist and worldbuilding procedures.
 
-The current implementation has started with the Wren-relevant PHB fast path. Continue outward by reuse value, cross-book discovery value, and observed lookup friction rather than by sourcebook cover order.
+Current implementation started with Wren-relevant PHB fast path and registered PHB/DMG/MM source documents. Continue outward by reuse value, cross-book discovery value, and observed lookup friction rather than book cover order.
 
 ## Indexes
 
@@ -87,18 +99,6 @@ Future derived indexes may be generated from this registry/object corpus:
 - rules-domain/procedure triggers.
 
 These indexes remain subordinate to verified assertions and uploaded sources.
-
-## Current compiled projections already compatible with this layer
-
-Existing structured rules/monster projections are grandfathered source-knowledge objects conceptually even if stored in their current directories. They need not be physically migrated immediately.
-
-Examples include:
-- `rules/encounters/dmg-wilderness-encounter-checks.md`;
-- `rules/travel/dmg-ship-weather.md`;
-- verified monster projections under `rules/monsters/`;
-- other deterministic projections created under `RULES_PROJECTION_POLICY.md`.
-
-Future maintenance may register stable entity/assertion IDs pointing at these existing projections rather than duplicating them.
 
 ## Physical storage
 
