@@ -19,6 +19,11 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 - `adnd2e.document.dmg-deluxe` -> `rules/source-knowledge/documents/adnd2e-dmg-deluxe.md`
 - `adnd2e.document.monstrous-manual-deluxe` -> `rules/source-knowledge/documents/adnd2e-monstrous-manual-deluxe.md`
 
+### Magic / spell source
+- `adnd2e.document.tome-of-magic` -> `rules/source-knowledge/documents/tome-of-magic.md`
+  - spell source, magic-item source, and optional magic-system source;
+  - availability does not activate wild magic, elementalists, expanded priest spheres, quest spells, or other campaign-impacting options.
+
 ### Magic-item / artifact / provenance corpus
 - `adnd2e.document.encyclopedia-magica.v1` -> `rules/source-knowledge/documents/encyclopedia-magica-vol1.md`
 - `adnd2e.document.encyclopedia-magica.v2` -> `rules/source-knowledge/documents/encyclopedia-magica-vol2.md`
@@ -57,8 +62,9 @@ Compilation makes these specialists cheap to consult; it does not activate kits,
 - `adnd2e.document.dragon.232` -> `rules/source-knowledge/documents/dragon-232.md`
 - `adnd2e.document.dragon.235` -> `rules/source-knowledge/documents/dragon-235.md`
 - `adnd2e.document.dragon.236` -> `rules/source-knowledge/documents/dragon-236.md`
+- `adnd2e.periodical.dragon.240` -> `rules/source-knowledge/documents/dragon-240.md`
 
-Issue registration is navigation only. Article-level role/scope/activation remains separate under `DRAGON_MAGAZINE_SOURCE_POLICY.md`.
+Issue registration is navigation only. Article-level role/scope/activation remains separate under `DRAGON_MAGAZINE_SOURCE_POLICY.md`. Bibliographic notices/reviews may aid source discovery but never substitute for the referenced publication.
 
 ### Worldbuilding / periodicals / adventures
 - World Builder source family: `rules/worldbuilding/INDEX.md`
@@ -89,6 +95,13 @@ Individual source documents/articles/modules continue to be registered as bulk i
 - `rules/source-knowledge/entities/core-saves-encounter-reaction.md`
   - `adnd2e.rule.saving-throws.character` / PHB Table 60 complete class-group save progression
   - `adnd2e.rule.encounter.reaction` / DMG Table 59 encounter-reaction procedure
+
+### Core proficiencies / combat / encounter opening
+- `rules/source-knowledge/entities/core-proficiencies-combat-surprise.md`
+  - `adnd2e.rule.proficiencies.slots` / PHB Table 34
+  - `adnd2e.rule.combat.attack-modifiers.standard` / PHB Table 51
+  - `adnd2e.rule.encounter.surprise-modifiers` / DMG Table 57
+  - `adnd2e.rule.encounter.distance` / DMG Table 58
 
 ### Source-family structural schemas
 - `rules/source-knowledge/entities/source-family-record-shapes.md`
