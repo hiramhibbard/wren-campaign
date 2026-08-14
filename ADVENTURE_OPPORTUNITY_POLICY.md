@@ -69,6 +69,30 @@ A lower-level scenario does not disappear merely because Wren becomes stronger.
 
 Do not weaken or strengthen a published scenario simply to make it a fair fight unless the governing source/world causality independently supports the change.
 
+## Legible danger without level gates
+
+When a seeded/active scenario is materially beyond Wren's present capabilities, preserve the danger **and** make the world legible where causality permits.
+
+The DM should provide warning evidence that a competent person in Wren's position could plausibly perceive or learn before irreversible commitment, such as:
+- survivors, refugees, missing expeditions, corpses, abandoned gear, destroyed camps, ruined structures, devastated terrain, unusual tracks, spoor, magical residue, or other aftermath;
+- credible local fear, professional warnings, military quarantine, taboo, sealed roads, posted notices, experienced NPC refusal, or rumors whose reliability is adjudicated normally;
+- monster signs, environmental effects, construction scale, defenses, architecture, equipment, magic, or opposition behavior that imply extraordinary danger;
+- visible mismatch between Wren's resources and the demands of the site, when that mismatch would be apparent to him through ordinary competence or the Declared-action readiness procedure;
+- source-provided foreshadowing or warning signs, when compatible with campaign state.
+
+Warnings must be **diegetic and causal**, not a metagame level label. Do not say "this is a level 20 dungeon" unless a legitimate player-known game artifact somehow warrants such language. Instead, present observable evidence and credible in-world information.
+
+Do not invent guaranteed warnings where the world would not plausibly provide them. Some dangers are hidden, deceptive, newly arrived, poorly understood, or deliberately concealed. A lack of warning does not imply safety.
+
+Most importantly, warnings never become barriers. Do not:
+- lock the entrance because Wren is too low level;
+- make NPCs physically prevent entry solely for level protection;
+- invalidate a declared action because the scenario is too dangerous;
+- move the site away, reduce its threat, or manufacture a rescue solely to keep Wren alive;
+- repeatedly restate the warning after Hiram clearly chooses to proceed unless new information or circumstances materially change.
+
+Once Hiram understands the player-known risk and directs Wren onward, proceed under normal AD&D 2e rules and world causality. Retreat, avoidance, negotiation, reconnaissance, partial exploration, catastrophic defeat, and death are all legitimate outcomes.
+
 ## Commitment states
 
 Distinguish these states carefully:
@@ -99,8 +123,9 @@ When a candidate is selected:
 4. preserve the scenario's internally useful situation, inhabitants, motives, hazards, clues, and causal structure where compatible;
 5. remove or adapt mandatory hooks that require Wren to accept a mission, trust an NPC, follow a particular route, or choose a predetermined solution;
 6. instantiate only the minimum world facts needed for current causality;
-7. register the scenario's source/provenance and current commitment state in DM-only campaign state when seeded/active;
-8. once campaign facts diverge from source baseline, campaign state overlays source and the scenario never resets to publication state.
+7. if the resulting world danger is grossly above Wren's apparent capability, identify any **causally justified, player-discoverable warning channels** that would naturally exist; do not invent a barrier or guarantee that Wren discovers them;
+8. register the scenario's source/provenance and current commitment state in DM-only campaign state when seeded/active;
+9. once campaign facts diverge from source baseline, campaign state overlays source and the scenario never resets to publication state.
 
 ## Dungeon Magazine handling
 
