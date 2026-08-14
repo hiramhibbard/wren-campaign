@@ -4,7 +4,7 @@ This index routes durable campaign media. Absence from recent conversation conte
 
 ## Maps
 
-- Wren’s Home Coast — `asset-map-home-coast-001` — current version `v2` — metadata: `assets/maps/asset-map-home-coast-001.md`
+- Wren’s Home Coast — `asset-map-home-coast-001` — current version `v2` — status `active` — metadata: `assets/maps/asset-map-home-coast-001.md`
 - Map registry: `assets/maps/INDEX.md`
 
 ## Other asset classes
@@ -21,4 +21,4 @@ Normative policy: `ASSET_LIBRARY.md`.
 
 ## Integrity status
 
-The Home Coast map metadata is registered. The two JPEG payloads were supplied in the 2026-08-13 Project chat but require durable binary transport into GitHub before the asset is fully registered. See `assets/PENDING_INGEST.md`.
+The Home Coast map metadata and both versioned JPEG payloads are durably present on canonical `main` and readback-verified. No manual asset ingest is currently pending.
