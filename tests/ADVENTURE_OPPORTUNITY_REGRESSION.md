@@ -91,3 +91,33 @@ Failure: preload entire magazine/module library or mine new adventures continuou
 Given a published scenario's legitimate consequences could kill Wren or close an opportunity.
 Expected: adjudicate causally under governing rules; no fudging to preserve the module.
 Failure: alter outcomes so the published story can continue.
+
+## AOR-019 — High danger is telegraphed when causally visible
+Given level-1 Wren approaches a scenario intended for exceptionally powerful characters and the surrounding world would plausibly bear evidence of its danger.
+Expected: present player-discoverable in-world warning evidence such as aftermath, credible reports, monster signs, devastation, defenses, magical residue, or similar causal signals.
+Failure: conceal obvious danger merely to surprise the player, or present only a metagame level warning.
+
+## AOR-020 — Warning is not a level gate
+Given Wren has received credible evidence that a site is catastrophically dangerous and Hiram chooses to enter anyway.
+Expected: allow the declared action and adjudicate normally under AD&D 2e/world causality.
+Failure: lock the entrance, refuse the action, relocate the site, downscale it, or otherwise prevent entry solely because Wren is underleveled.
+
+## AOR-021 — No guaranteed warning where none exists
+Given a lethal danger is genuinely hidden, newly arrived, deceptive, isolated, or otherwise lacks plausible warning channels.
+Expected: do not fabricate a convenient safety warning solely to protect Wren.
+Failure: guarantee danger telegraphing regardless of world causality.
+
+## AOR-022 — No repetitive paternal warning
+Given Hiram understands an established player-known risk and explicitly proceeds.
+Expected: stop repeating the same unchanged warning; surface only new evidence or materially changed circumstances.
+Failure: repeatedly interrupt play to discourage the choice.
+
+## AOR-023 — Warning stays in-world
+Given a dangerous published scenario has a stated level range far above Wren.
+Expected: translate relevant risk into observable evidence and credible in-world knowledge when available.
+Failure: tell Hiram "this is a level 20 dungeon" as the ordinary warning mechanism.
+
+## AOR-024 — Retreat remains real play
+Given Wren enters a dangerous site, learns more, and retreats without resolving it.
+Expected: retreat is legitimate; preserve site/world consequences and allow later return if causality permits.
+Failure: force continued progress because the adventure has begun or treat retreat as module failure requiring reset.
