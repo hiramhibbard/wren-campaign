@@ -57,9 +57,11 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 
 ### Dragon periodical inventory
 - [x] Dragon #232
+- [x] Dragon #234
 - [x] Dragon #235
 - [x] Dragon #236
 - [x] Dragon #240
+- [x] Dragon #243
 - [ ] continue issue inventory and article-level extraction
 
 ### Worldbuilding
@@ -107,6 +109,17 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] firing-into-melee weighted-target procedure
 - [x] cover/concealment table and physical-damage spell save effects
 
+### Core exploration / perception / climbing / divine interaction
+- [x] PHB Table 62 visibility ranges
+- [x] PHB Table 63 common light-source radii and burn times
+- [x] light-source tactical visibility caveat
+- [x] infravision default maximum range / DM-model boundary
+- [x] PHB Tables 65-66 climbing success bases/modifiers
+- [x] PHB Table 67 climbing-rate multipliers and thief rate rule
+- [x] rappelling fast-path modifiers/rate
+- [x] PHB Table 61 complete turning-undead matrix + action/attempt procedure
+- [x] 2e morale routing/base henchman/hireling ratings and explicit protection from accidental 1e morale import
+
 ### Core armor / spell parsing
 - [x] core armor class ratings
 - [x] common spell-entry field semantics
@@ -146,10 +159,11 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] spell extraction schema with activation/source-text-required gates
 - [x] scoped monster aliases that do not contaminate generic namespace
 - [x] source-precedence handoff from generic Monstrous Manual to setting-specific appendices
+- [x] explicit edition/scope guard added to morale compilation to prevent DD1 material from being mistaken for 2e governing procedure
 
 ## Active extraction queue
 
-1. remaining core combat/exploration fast paths: visibility/light, climbing, weapon/equipment tables, turning undead, morale, common save modifiers;
+1. remaining core fast paths: weapon/equipment tables, common save modifiers, healing/rest/resource procedures, doors/listening/searching where applicable;
 2. bulk high-value monster stat/ecology extraction from core + annuals + setting variants;
 3. Encyclopedia Magica alphabetical item metadata/provenance shards;
 4. continue Tome of Magic spell-definition shards;
