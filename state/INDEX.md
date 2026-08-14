@@ -30,9 +30,12 @@ Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone is a m
 - Active player-facing threads: `state/threads/active.md`
 - Active player-facing clues, rumors, and inference boundaries: `state/clues/active.md`
 
-## Locations
+## Locations / regional runtime
 - Location routing index: `state/locations/index.md`
+- Home Coast operational terrain/climate/travel/encounter/weather/lore substrate: `state/locations/home-coast/runtime-profile.md`
 - Current harbor/boarding-house state: `state/locations/harbor/current.md`
+
+When current play/travel/world motion touches the Home Coast activation horizon, load the Home Coast runtime profile rather than improvising encounter/weather applicability from memory.
 
 ## Campaign assets / media
 - Top-level campaign asset registry: `assets/INDEX.md`
@@ -47,17 +50,24 @@ When Hiram refers to an established map, portrait, handout, diagram, scene image
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
 - DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
+- Mandatory regional-runtime trigger extension for activation horizon, world motion, encounter refresh, weather, lore, and active-world creation: `state/rulings/regional-runtime-triggers.md`
 - Rules dependency routing for class/level/alignment/ability/equipment/spell/item/source changes and automatic projection activation/creation/invalidation: `state/rulings/rules-dependency-registry.md`
 - Context-first NPC generation, explicit race/species determination, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
+- Knowledge reliability, rumor/error/deception, deferred truth assignment, and social-belief procedure: `state/rulings/knowledge-reliability-and-rumors.md`
 
 ## Structured published-rules projections
 - Normative structured-rules authority, creation, invalidation, fallback, and provenance policy: `RULES_PROJECTION_POLICY.md`
 - Structured rules projection registry: `rules/INDEX.md`
+- Core DMG wilderness encounter-check projection: `rules/encounters/dmg-wilderness-encounter-checks.md`
+- Core DMG ship-weather projection: `rules/travel/dmg-ship-weather.md`
 
 Runtime rules lookup order is: valid runtime cache -> applicable verified structured projection -> exact cited uploaded source section -> broader uploaded-source search. Uploaded published sources remain authoritative. Projection absence never permits guessing, and projection presence never overrides the governing source.
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
+- Home Coast active world elements, activation horizon, reevaluation cadences, dynamic dependencies, and hidden encounter/world-motion modifiers: `state/dm/home-coast-world-runtime.md`
+
+Do not expose DM-only runtime records merely because they are loaded. Their observable consequences reach Wren only through legitimate play.
 
 ## Long-term state scaffolds
 - Reusable NPC, henchman, world-clock, encounter, faction, clue, travel, downtime, item, source-registry, entity-promotion, and incremental-maintenance templates: `STATE_TEMPLATES.md`
@@ -68,8 +78,9 @@ These templates are operational schemas rather than live facts. Instantiate reco
 - Mandatory context-assembly policy: `CONTEXT_ARCHITECTURE.md`
 - Mandatory derived-retrieval authority/safety policy: `DERIVED_INDEX_POLICY.md`
 - Mandatory structured published-rules projection policy: `RULES_PROJECTION_POLICY.md`
+- Mandatory regional runtime/lore/encounter/weather/world-motion policy: `REGIONAL_RUNTIME_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play must obey all three policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources.
+Because this index is part of the always-loaded resume working set, resumed play must obey all four policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources. `REGIONAL_RUNTIME_POLICY.md` defines bounded regional activation, encounter derivation, weather relevance, progressive lore generation, and causally scheduled world motion.
 
 ## Engineering
 - Architecture decisions, operational status, known limitations, validation plan, and prior future-work notes: `CAMPAIGN_ENGINEERING.md`
@@ -88,7 +99,10 @@ Because this index is part of the always-loaded resume working set, resumed play
 - Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
 - Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
 - Structured rules projection policy: `RULES_PROJECTION_POLICY.md`
+- Regional runtime/world-motion policy: `REGIONAL_RUNTIME_POLICY.md`
 - Rules dependency registry: `state/rulings/rules-dependency-registry.md`
+- Regional runtime trigger extension: `state/rulings/regional-runtime-triggers.md`
+- Knowledge reliability/rumor procedure: `state/rulings/knowledge-reliability-and-rumors.md`
 - Campaign asset library policy: `ASSET_LIBRARY.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
 - Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
