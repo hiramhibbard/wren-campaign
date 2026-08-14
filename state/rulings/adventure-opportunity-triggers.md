@@ -45,8 +45,9 @@ When actual campaign causality needs one or more facts from a selected scenario:
 1. retrieve enough exact source to understand the relevant site/actors/assumptions;
 2. adapt minimally for active setting/world compatibility;
 3. instantiate only the minimum facts needed now;
-4. record provenance/current commitment state;
-5. route resulting site/NPC/monster/faction/world-motion state through normal policies.
+4. if danger is grossly above Wren's apparent current capability, identify plausible warning channels that could exist in-world without creating a level gate;
+5. record provenance/current commitment state;
+6. route resulting site/NPC/monster/faction/world-motion state through normal policies.
 
 Once seeded, the scenario may produce signs, rumors, consequences, clocks, or off-screen action independently of Wren where causally justified.
 
@@ -55,10 +56,20 @@ If the published hook assumes player compliance, convert it into a world opportu
 
 Never require a specific route, allegiance, solution, scene order, villain confrontation, or published ending.
 
-## Risk trigger
+## Risk / legible-danger trigger
 Do not automatically scale a published threat to Wren's level.
 
-If the scenario is dangerous, let danger be legible through ordinary world evidence where plausible. Avoidance, retreat, negotiation, delayed return, and missing the opportunity are legitimate outcomes.
+If a scenario is substantially beyond Wren's current capability, preserve the threat and provide **causally justified, player-discoverable warning evidence** where the world would naturally contain it.
+
+Possible warning channels include aftermath, survivors, missing expeditions, local fear, experienced NPC warnings, monster signs, ruined defenses, magical residue, unusual construction scale, visible resource mismatch, or other evidence consistent with `DM_CRAFT_POLICY.md` and `state/rulings/perception-and-evidence.md`.
+
+Warnings are diegetic evidence, not metagame labels. Do not announce a dungeon's level or guarantee that Wren receives every warning.
+
+Warnings never become barriers. Do not prevent entry, invalidate Hiram's declared action, move the site, downscale the opposition, or manufacture rescue solely because Wren is underpowered.
+
+After Hiram knowingly chooses to proceed, adjudicate normally. Do not keep repeating the same unchanged warning unless new evidence or circumstances materially change.
+
+Avoidance, reconnaissance, retreat, negotiation, delayed return, catastrophic defeat, and death are legitimate outcomes.
 
 ## Published-state lifecycle trigger
 When Wren materially changes a seeded/active scenario, campaign state overlays the original source. Do not reset keyed rooms, dead NPCs, moved treasure, alarms, faction knowledge, or other consequences to publication baseline.
