@@ -17,11 +17,13 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Dungeon Master Guide Deluxe
 - [x] Monstrous Manual Deluxe
 
-### Magic item corpus
+### Magic item / artifact / provenance corpus
 - [x] Encyclopedia Magica Volume 1
 - [x] Encyclopedia Magica Volume 2
 - [x] Encyclopedia Magica Volume 3
 - [x] Encyclopedia Magica Volume 4
+- [x] The Magic Encyclopedia Volume 1 — product/page provenance index
+- [x] Book of Artifacts
 
 ### Monster corpus
 - [x] Monstrous Compendium Annual Volume 2
@@ -34,11 +36,21 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] PHBR02 Complete Thief's Handbook
 - [x] PHBR03 Complete Priest's Handbook
 - [x] PHBR04 Complete Wizard's Handbook
+- [x] PHBR05 Complete Psionics Handbook
+- [x] PHBR06 Complete Book of Dwarves
+- [x] PHBR07 Complete Bard's Handbook
+- [ ] PHBR08 Complete Book of Elves — previously observed; exact source ref to resolve/register
+- [x] PHBR09 Complete Book of Gnomes & Halflings
+- [ ] PHBR10 inventory/register if available
+- [x] PHBR11 Complete Ranger's Handbook
 - [ ] inventory/register remaining available PHBR books
 
 ### DMGR specialist family
 - [x] DMGR1 Campaign Sourcebook and Catacomb Guide
 - [x] DMGR2 Castle Guide
+- [ ] inventory/register DMGR3 Arms and Equipment Guide
+- [ ] inventory/register DMGR4 Monster Mythology
+- [ ] inventory/register DMGR5 Creative Campaigning
 - [ ] inventory/register remaining available DMGR books
 
 ### Worldbuilding
