@@ -24,6 +24,13 @@ Existing character/runtime caches may continue to cite uploaded source tables di
   - Daily ship-weather generation by season and sailing/rowing movement effects.
   - Does not replace regional climate or non-sea weather generation.
 
+## Monster projection family
+
+- Monster projection registry: `rules/monsters/INDEX.md`
+- Normative monster projection/encounter-layer policy: `MONSTER_PROJECTION_POLICY.md`
+
+Monster projections are created lazily from the active governing AD&D 2e monster source when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
+
 ## Projection lifecycle
 
 Each projection should be registered here with:
@@ -35,7 +42,7 @@ Each projection should be registered here with:
 - source precedence/override notes when relevant;
 - downstream dependency domains.
 
-Use `state/rulings/rules-dependency-registry.md` to decide when a projection is needed, activated, invalidated, or bypassed for exact source text.
+Use `state/rulings/rules-dependency-registry.md` to decide when a projection is needed, activated, invalidated, or bypassed for exact source text. Use `state/rulings/monster-runtime-triggers.md` for monster-specific first-use, projection-creation, encounter-instantiation, population-promotion, and Voice routing.
 
 ## Planned high-value projection families
 
