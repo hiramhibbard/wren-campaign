@@ -188,9 +188,24 @@ For a `PREPARED` transaction:
 5. When useful, re-list/search checkpoints to verify discoverability and transaction-ID uniqueness.
 6. Only after successful verification transition to `VERIFIED`, clear pending state, and report the transaction saved.
 
+## Automatic GitHub write retry policy
+
+This retry policy applies to campaign checkpoints and to other intended writes to the canonical Wren GitHub repository, including state, protocol, asset-registry, and engineering/roadmap files.
+
+When a GitHub write attempt fails:
+
+1. Classify the failure before retrying. Distinguish a likely transient failure (timeout, connection failure, temporary service error, stale SHA/head/concurrency rejection that can be reconciled) from a structural or policy limitation (unsupported binary transport, missing permission, safety-layer block, invalid payload, integrity conflict, or a write method that cannot represent the requested content).
+2. For a likely transient failure, automatically retry up to **two additional times** before asking Hiram for manual action.
+3. Before every retry after an ambiguous result, perform the required idempotency/readback check first so a write that actually succeeded is verified rather than duplicated.
+4. For stale-SHA/head or other concurrency failures, refetch the current canonical object/head, reconcile safely, and retry using fresh metadata. Preserve the same logical transaction ID when the write belongs to one prepared campaign save.
+5. Do not repeat a write blindly when the failure is structural, deterministic, or integrity-related. If the tool/action cannot carry the requested data type or the failure cannot be made safe by retry, treat retries as exhausted and move directly to the appropriate fallback/manual-transport procedure.
+6. A retry reporting success still requires normal canonical readback verification before the write is considered complete.
+
+The purpose of retry is to absorb transient connector/service failures without burdening Hiram. Retry must never weaken idempotency, concurrency safety, integrity checks, or readback verification.
+
 ## Automatic write failure / manual fallback
 
-If automatic creation is blocked, rejected by the external-write safety layer, or cannot be safely completed:
+If automatic creation is blocked, rejected by the external-write safety layer, or cannot be safely completed after the automatic retry policy above:
 
 1. Do not regenerate the logical transaction from memory.
 2. Preserve the exact prepared payload and transaction ID.
