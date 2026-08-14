@@ -38,15 +38,18 @@ Before gameplay:
 3. Load the Current Resume Working Set below.
 4. List `checkpoints/` and apply every **real campaign** checkpoint with sequence greater than `checkpoint_baseline` in strict numerical order.
 5. Validate checkpoint sequence/parent identity according to `PERSISTENCE_PROTOCOL.md`, then verify the Current Resume Packet against Wren's character/resources, chronology/location, active threads, relevant NPC state, and DM-only state.
-6. If any conflict, missing canonical file, checkpoint gap, duplicate transaction, parent mismatch, or ambiguity is detected, stop and reconcile before advancing play.
-7. Derive maintenance status from the baseline and real checkpoints according to `STATE_SCHEMA.md`.
-8. Evaluate structural growth status according to `GROWTH_POLICY.md`; perform safe local promotions automatically and remind Hiram only when growth-driven maintenance is recommended, due, or required.
+6. **After checkpoint replay establishes the true current location/chronology, run regional-runtime reconstruction:** follow `REGIONAL_RUNTIME_POLICY.md`, `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`, and `state/rulings/regional-runtime-triggers.md`; load the applicable regional runtime plus relevant DM-only active-world records; derive the due-event frontier before advancing consequential time.
+7. If any conflict, missing canonical file, checkpoint gap, duplicate transaction, parent mismatch, unresolved due-event dependency, or ambiguity is detected, stop and reconcile before advancing play.
+8. Derive maintenance status from the baseline and real checkpoints according to `STATE_SCHEMA.md`.
+9. Evaluate structural growth status according to `GROWTH_POLICY.md`; perform safe local promotions automatically and remind Hiram only when growth-driven maintenance is recommended, due, or required.
 
 ## Current Resume Packet
 
 **Canonical snapshot:** generation 1, migrated administratively on 2026-08-13 without advancing gameplay.  
 **Latest played checkpoint:** session ended 2026-08-12.  
 **Play status:** Wren is staying at Mrs. Tansy's boarding house in the harbor settlement while assisting Edric Hale for several days.
+
+This packet is the snapshot-era resume baseline only. Ordered real checkpoints after the baseline are authoritative for the actual current resume and may supersede the text below.
 
 ### Wren — Immediate State
 - Level 1 mage; XP: **0 / no awards yet**.
@@ -88,6 +91,10 @@ Always load for resumed play:
 
 - `PERSISTENCE_PROTOCOL.md`
 - `GROWTH_POLICY.md`
+- `CONTEXT_ARCHITECTURE.md`
+- `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
+- `REGIONAL_RUNTIME_POLICY.md`
+- `REGIONAL_RUNTIME_TEMPLATES.md`
 - `state/INDEX.md`
 - `state/character/wren.md`
 - `state/character/inventory.md`
@@ -99,6 +106,15 @@ Always load for resumed play:
 - `state/npcs/edric-hale.md`
 - `state/dm/campaign.md`
 - `state/rulings/dm-procedure-triggers.md`
+- `state/rulings/regional-runtime-triggers.md`
+- `state/rulings/knowledge-reliability-and-rumors.md`
+
+After replaying post-baseline checkpoints, **conditionally but mandatorily** load the regional records implied by the true current resume and active horizon. For the current Home Coast/Lowcove resume established by later checkpoints, that includes:
+
+- `state/locations/home-coast/runtime-profile.md`
+- `state/dm/home-coast-world-runtime.md`
+
+If later checkpoints move play elsewhere, recompute this regional set rather than retaining stale Home Coast preload state.
 
 Load when immediately relevant or referenced:
 
@@ -108,6 +124,7 @@ Load when immediately relevant or referenced:
 - `state/rulings/adnd2e-campaign-rulings.md`
 - `state/rulings/dice-protocol.md`
 - `STATE_TEMPLATES.md`
+- applicable verified structured rules projections from `rules/INDEX.md`
 
 Exact published rules/source content remain governed by Hiram's uploaded AD&D 2e materials.
 
@@ -115,11 +132,13 @@ Exact published rules/source content remain governed by Hiram's uploaded AD&D 2e
 
 `state/INDEX.md` is the authoritative routing index for snapshot generation 1. Follow explicit routes first; use domain indexes where relevant; use repository search only as a fallback for fuzzy references. Current-context absence never establishes campaign absence.
 
-`STATE_TEMPLATES.md` is the long-term operational scaffold for NPC/henchman, world-clock, encounter, faction, clue, travel, downtime, significant-item, source-registry, entity-promotion, and incremental-maintenance state. It is consulted automatically when those records become relevant.
+`STATE_TEMPLATES.md` is the long-term operational scaffold for NPC/henchman, world-clock, encounter, faction, clue, travel, downtime, significant-item, source-registry, entity-promotion, and incremental-maintenance state. `REGIONAL_RUNTIME_TEMPLATES.md` extends it for activation horizons, active-world elements, populations/ecology, environmental processes, encounter content, weather state, consequential claims/beliefs, and due-event frontier metadata.
 
 `PERSISTENCE_PROTOCOL.md` is the normative transaction-hardening companion to `STATE_SCHEMA.md`. It governs stable transaction identity, structured pending deltas, Voice transaction continuity, exactly-once/idempotent saves, parent checkpoint identity, concurrency reconciliation, checkpoint envelopes, and readback state transitions.
 
 `GROWTH_POLICY.md` is the normative automatic-growth companion to `STATE_SCHEMA.md`. It governs entity promotion, sharding, archival, regional/index growth, Voice working-set packets, major-transition maintenance, and the thresholds for healthy, recommended, due, and required structural maintenance.
+
+`REGIONAL_RUNTIME_POLICY.md` and `state/rulings/regional-runtime-triggers.md` govern bounded regional activation, progressive lore, encounter derivation, weather routing, active-world creation, and causal off-screen world motion. `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md` makes the current regional profile, relevant DM-only active-world records, and due-event frontier explicit parts of Context Compiler/Live Voice preparation whenever applicable.
 
 ## Knowledge Boundaries
 
@@ -131,7 +150,7 @@ DM-only state is stored separately under `state/dm/` and must never be surfaced 
 
 Use the append-only checkpoint architecture in `STATE_SCHEMA.md` together with the stricter transaction rules in `PERSISTENCE_PROTOCOL.md`. Ordinary saves create one immutable checkpoint with a stable transaction ID, explicit parent checkpoint identity, structured semantic deltas, idempotency checks, and canonical readback verification.
 
-Real checkpoints should include applicable dirty-domain routing hints from `STATE_TEMPLATES.md` so routine maintenance can update only affected shards plus necessary indexes/cross-links.
+Real checkpoints should include applicable dirty-domain routing hints from `STATE_TEMPLATES.md`/`REGIONAL_RUNTIME_TEMPLATES.md` whenever relevant so routine maintenance can update only affected shards plus necessary indexes/cross-links.
 
 If an automatic connector write is blocked, preserve the exact prepared transaction and its transaction ID, invoke the explicit manual transport fallback, and keep all changes pending until the transported checkpoint is fetched and reaches `VERIFIED`. Do not create a second logical checkpoint merely because an acknowledgement was lost or a retry is needed.
 
