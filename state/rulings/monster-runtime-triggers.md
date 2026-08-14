@@ -4,6 +4,8 @@ This is a mandatory companion to `state/rulings/dm-procedure-triggers.md` whenev
 
 Source selection is governed by `MONSTER_SOURCE_RESOLUTION_POLICY.md`. Resolve active scope before deciding whether the Monstrous Manual, a Monstrous Compendium/Annual, setting source, adventure source, or other active treatment governs.
 
+Non-authoritative ecology enrichment is governed by `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`. Inspiration is consulted only after the governing AD&D 2e source/scope is resolved and only for unresolved ecology questions.
+
 ## Monster source-scope trigger
 Whenever a monster becomes consequential and one or more of the following are true, resolve source scope before using generic stats:
 - an active campaign setting is established;
@@ -46,6 +48,14 @@ When a non-governing Monstrous Compendium/source contains fuller ecology, societ
 
 Do not silently merge contradictory mechanics, setting assumptions, abilities, habitat, behavior, rarity, or other fields into the governing treatment.
 
+## Ecology-inspiration trigger
+When the governing AD&D 2e/setting/adventure material and established campaign state leave a consequential ecology question unresolved, the DM may consult registered inspiration material under `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`.
+
+The sequence is mandatory:
+`governing 2e source first -> identify gap -> inspiration candidates -> reject 5e/setting-incompatible material -> resolve campaign-specific old-school ecology -> derive consequences`
+
+Never use the inspiration source to change mechanics, balance encounters to Wren's level, import 5e action/condition/challenge assumptions, or establish hidden truth without campaign resolution.
+
 ## Encounter-instantiation trigger
 When actual creatures are encountered or otherwise become individually consequential, instantiate only necessary encounter state such as number present, HP, equipment, conditions, current intent/orders, morale context, limited-use abilities, carried treasure, leadership, affiliation, alert/pursuit state.
 
@@ -62,12 +72,13 @@ Promote to regional/site population state only when source/circumstances support
 When combat or close interaction is imminent, preload:
 - relevant compact **scope-resolved** monster projection fields;
 - actual encounter-instance state;
+- resolved campaign ecology that can affect behavior/evidence;
 - local site/regional context;
 - governing source family/scope/locator and exception flags.
 
-Do not preload unrelated monster entries, every Compendium variant, or full monster books.
+Do not preload unrelated monster entries, every Compendium variant, full monster books, or raw ecology-inspiration prose.
 
-If source scope becomes uncertain during Voice and retrieval is unavailable, preserve the pending lookup rather than defaulting to core or a remembered setting version.
+If source scope or a consequential unresolved ecology detail becomes uncertain during Voice and retrieval is unavailable, preserve the pending lookup rather than defaulting to core, a remembered setting version, or remembered 5e/fan lore.
 
 ## Invalidation trigger
 Campaign injuries, deaths, equipment, morale outcomes, population movement, and encounter consequences invalidate/update encounter/population state only—not the generic monster projection.
