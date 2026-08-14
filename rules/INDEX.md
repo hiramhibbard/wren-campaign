@@ -28,8 +28,11 @@ Existing character/runtime caches may continue to cite uploaded source tables di
 
 - Monster projection registry: `rules/monsters/INDEX.md`
 - Normative monster projection/encounter-layer policy: `MONSTER_PROJECTION_POLICY.md`
+- Normative scope-first monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
 
-Monster projections are created lazily from the active governing AD&D 2e monster source when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
+Monster projections are created lazily from the **scope-resolved active governing AD&D 2e monster source** when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
+
+Monster lookup is source-family aware: core Monstrous Manual, generic Monstrous Compendium material, setting-specific Compendium appendices, Monstrous Compendium Annuals/anthologies, active adventure treatments, and other explicitly active setting/monster sources may all be candidates. `MONSTER_SOURCE_RESOLUTION_POLICY.md` determines which source governs the current setting/adventure/region/case. Specialized scope must not be flattened to generic core, and specialized variants must not contaminate generic play when inactive.
 
 ## Projection lifecycle
 
@@ -37,12 +40,13 @@ Each projection should be registered here with:
 - stable projection ID;
 - path;
 - source title/table/section locator;
-- scope;
+- source family;
+- active scope;
 - verification status;
 - source precedence/override notes when relevant;
 - downstream dependency domains.
 
-Use `state/rulings/rules-dependency-registry.md` to decide when a projection is needed, activated, invalidated, or bypassed for exact source text. Use `state/rulings/monster-runtime-triggers.md` for monster-specific first-use, projection-creation, encounter-instantiation, population-promotion, and Voice routing.
+Use `state/rulings/rules-dependency-registry.md` to decide when a projection is needed, activated, invalidated, or bypassed for exact source text. Use `state/rulings/monster-runtime-triggers.md` for monster-specific source-scope resolution, first-use, projection-creation, encounter-instantiation, population-promotion, and Voice routing.
 
 ## Planned high-value projection families
 
