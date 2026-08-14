@@ -1,14 +1,16 @@
 # Wren Monster Ecology Inspiration Policy — v1
 
-This policy defines how non-authoritative monster-ecology material may enrich Wren while preserving an old-school AD&D 2nd Edition feel.
+This policy defines how non-governing monster-ecology material may enrich Wren while preserving an old-school AD&D 2nd Edition feel.
 
 ## Authority chain
 
 Use this order:
 
-`scope-resolved active AD&D 2e monster source -> verified monster projection -> compatible ecology inspiration -> campaign-specific resolved ecology -> population/site/encounter state`
+`scope-resolved active AD&D 2e monster source -> verified monster projection -> applicable Dragon Magazine ecology material -> other compatible ecology inspiration -> campaign-specific resolved ecology -> population/site/encounter state`
 
-The inspiration layer can propose possibilities. It cannot establish rules, mechanics, setting canon, monster abilities, XP, encounter balance, challenge scaling, cosmology, or hidden campaign truth by itself.
+Dragon ecology and other inspiration layers can propose or elaborate possibilities. They cannot establish conflicting rules, mechanics, setting canon, monster abilities, XP, encounter balance, challenge scaling, cosmology, or hidden campaign truth by themselves.
+
+A Dragon ecology article may carry stronger contextual weight than modern fan material because it belongs to the AD&D-era design tradition, but its exact authority still depends on article scope, setting, edition, supersession, and compatibility under `DRAGON_MAGAZINE_SOURCE_POLICY.md`.
 
 ## Old-school 2e feel is a hard compatibility filter
 
@@ -37,13 +39,15 @@ The inspiration layer is best used to generate candidate answers for gaps or und
 - plausible motives, fears, survival behaviors, migration, retreat, and response to losses;
 - sensory or physiological details that make encounters more concrete without changing mechanics.
 
+Dragon ecology articles are especially useful for AD&D-era behavior, habitat, society, lifecycle, lair, and world-impact ideas when they survive governing-source and setting checks.
+
 ## Inappropriate uses
 
 Do not use inspiration material to:
-- alter a monster stat block or special ability without governing AD&D 2e authority;
+- alter a monster stat block or special ability without governing AD&D 2e authority or explicit scoped adoption;
 - overwrite active Monstrous Manual, Monstrous Compendium, setting, or adventure lore;
 - make a setting-specific fact generic;
-- make a generic modern interpretation setting-canonical;
+- make a generic interpretation setting-canonical;
 - create a mandatory combat encounter, story beat, villain role, or clue merely because an ecology article suggests it;
 - introduce a population solely to make an area more interesting;
 - scale a creature to Wren's level for fairness;
@@ -56,17 +60,18 @@ When a consequential ecology question is not already answered by active 2e/setti
 1. resolve the governing monster source and active scope under `MONSTER_SOURCE_RESOLUTION_POLICY.md`;
 2. retrieve the relevant governing 2e Ecology / Habitat-Society / activity / organization / diet / behavior material first;
 3. identify the unresolved ecology question;
-4. consult registered inspiration sources only for candidate possibilities relevant to that question;
-5. remove candidates that conflict with 2e mechanics, active setting canon, established campaign truth, tone, geography, climate, population state, or causal constraints;
-6. translate any retained idea into edition-neutral / AD&D 2e-compatible terms;
-7. if several plausible outcomes remain and the distinction matters, use established DM choice or genuine secret randomness according to normal world-generation policy;
-8. establish only the minimum campaign-specific ecology needed;
-9. persist the result if it becomes consequential or durable;
-10. derive evidence, encounter behavior, population consequences, and site/regional effects from the resolved campaign ecology—not directly from the inspiration text.
+4. search relevant Dragon ecology articles when plausibly available and classify them under `DRAGON_MAGAZINE_SOURCE_POLICY.md`;
+5. if the gap remains, consult other registered inspiration sources only for candidate possibilities relevant to that question;
+6. remove candidates that conflict with 2e mechanics, active setting canon, established campaign truth, tone, geography, climate, population state, or causal constraints;
+7. translate any retained non-2e idea into edition-neutral / AD&D 2e-compatible terms;
+8. if several plausible outcomes remain and the distinction matters, use established DM choice or genuine secret randomness according to normal world-generation policy;
+9. establish only the minimum campaign-specific ecology needed;
+10. persist the result if it becomes consequential or durable;
+11. derive evidence, encounter behavior, population consequences, and site/regional effects from the resolved campaign ecology—not directly from raw inspiration text.
 
 ## Epistemic status
 
-Text from an inspiration source is never `Established DM Truth` merely because it was retrieved.
+Text from a Dragon ecology article or other inspiration source is never `Established DM Truth` merely because it was retrieved.
 
 Before campaign use it is one of:
 - `Inspiration Candidate`;
@@ -76,20 +81,19 @@ Before campaign use it is one of:
 
 ## Relationship to monster projections
 
-Generic monster projections should normally contain governing source facts, not fan-created ecology.
+Generic monster projections should normally contain governing source facts, not ecology material that has not been adopted as governing species-wide canon.
 
-If recurring campaign ecology derived partly from inspiration becomes durable, store it in the appropriate campaign population/site/DM state with provenance noting that the governing 2e source was primary and the inspiration source contributed a candidate idea.
+If recurring campaign ecology derived partly from Dragon or other inspiration becomes durable, store it in the appropriate campaign population/site/DM state with provenance noting that the governing 2e source was primary and the secondary source contributed an elaboration/candidate idea.
 
-Do not make a fan-derived behavior universal to the species by inserting it into a generic source projection unless Hiram explicitly adopts it as a campaign-wide monster variant or house canon.
+Do not make a Dragon/fan-derived behavior universal to the species by inserting it into a generic source projection unless its authority genuinely supports that scope or Hiram explicitly adopts it as campaign-wide monster canon.
 
 ## Voice / latency
 
-For imminent Voice encounters, preload resolved campaign ecology and governing 2e projection fields. Do not preload raw inspiration prose.
+For imminent Voice encounters, preload resolved campaign ecology and governing 2e projection fields. Do not preload raw Dragon/fan inspiration prose.
 
-If an unresolved ecology detail becomes consequential during Voice and source retrieval is unavailable, defer the canonical lookup rather than filling it from remembered 5e/fan lore.
+If an unresolved ecology detail becomes consequential during Voice and exact source retrieval is unavailable, defer source-dependent facts rather than filling them from remembered magazine/fan lore.
 
-## Registered inspiration source
+## Registered inspiration sources
 
-The current registered anthology is described in `rules/monsters/ecology-inspiration/INDEX.md`.
-
-Its role is `non-authoritative ecology inspiration`. Its 5e origin is an explicit compatibility warning, not a reason to discard edition-neutral ecological ideas that survive the filter above.
+- Dragon Magazine ecology material is routed through `DRAGON_MAGAZINE_SOURCE_POLICY.md` and `rules/dragon/INDEX.md`.
+- The modern ecology anthology is described in `rules/monsters/ecology-inspiration/INDEX.md` and remains `non-authoritative ecology inspiration` with an explicit 5e compatibility warning.
