@@ -2,7 +2,9 @@
 
 This is the routing root for `SOURCE_KNOWLEDGE_LAYER_POLICY.md` and `SOURCE_KNOWLEDGE_SCHEMA.md`.
 
-Status: architecture active; population is incremental/batch-driven and has begun.
+Status: architecture active; bulk population is underway with gameplay-latency reduction as the primary optimization target.
+
+Operational progress: `rules/source-knowledge/INGESTION_STATUS.md`.
 
 ## Core rule
 
@@ -12,15 +14,32 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 
 ## Current compiled source documents
 
+### Core
 - `adnd2e.document.phb-deluxe` -> `rules/source-knowledge/documents/adnd2e-phb-deluxe.md`
-  - uploaded source: `DD2_PHB_Deluxe.pdf`
-  - core Player's Handbook metadata/high-value locators.
 - `adnd2e.document.dmg-deluxe` -> `rules/source-knowledge/documents/adnd2e-dmg-deluxe.md`
-  - uploaded source: `DD2_DMG_Deluxe.pdf`
-  - core Dungeon Master Guide metadata, encounter/travel/weather/treasure locator families.
 - `adnd2e.document.monstrous-manual-deluxe` -> `rules/source-knowledge/documents/adnd2e-monstrous-manual-deluxe.md`
-  - uploaded source: `DD2_MonstrousManual_Deluxe.pdf`
-  - default generic core-monster source family subject to scope-first monster resolution.
+
+### Magic-item anthology
+- `adnd2e.document.encyclopedia-magica.v1` -> `rules/source-knowledge/documents/encyclopedia-magica-vol1.md`
+- `adnd2e.document.encyclopedia-magica.v2` -> `rules/source-knowledge/documents/encyclopedia-magica-vol2.md`
+- `adnd2e.document.encyclopedia-magica.v3` -> `rules/source-knowledge/documents/encyclopedia-magica-vol3.md`
+- `adnd2e.document.encyclopedia-magica.v4` -> `rules/source-knowledge/documents/encyclopedia-magica-vol4.md`
+
+The Encyclopedia Magica family is a high-priority entity/provenance corpus. Compile stable item entities/assertions while preserving original source, setting/scope, XP/GP values, aliases, exact locator, and source-text-required flags. Compilation never instantiates an item in Wren's world.
+
+### Monster anthology
+- `adnd2e.document.monstrous-compendium-annual.v2` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v2.md`
+- `adnd2e.document.monstrous-compendium-annual.v3` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v3.md`
+
+Annual/anthology creature entries remain scope-sensitive assertions; setting/adventure variants must not be flattened into generic monster definitions.
+
+### Worldbuilding / periodicals / adventures / specialists
+- World Builder source family: `rules/worldbuilding/INDEX.md`
+- Dragon article family: `rules/dragon/INDEX.md`
+- Published adventure/Dungeon family: `rules/adventures/INDEX.md`
+- Specialist PHBR/DMGR/source roles: `rules/sources/INDEX.md`
+
+Individual source documents/articles/modules are registered as bulk inventory proceeds.
 
 ## Current compiled entity/assertion shards
 
@@ -44,7 +63,7 @@ Existing structured projections remain valid source-knowledge assertions in thei
 
 ## Current entity families
 
-Expected high-value families include:
+High-value families include:
 - monsters and variants;
 - spells;
 - magic items/artifacts;
@@ -68,25 +87,27 @@ Exact source lookup remains mandatory when a verified object is absent, stale, e
 
 ## Population strategy
 
-### Immediate / lazy
-When ordinary play repeatedly retrieves a reusable source fact, compile and verify the object if doing so materially reduces future lookup cost.
+The campaign now intentionally front-loads source compilation when doing so can reduce future game-table latency.
 
-### Maintenance / batch
-Maintenance may ingest source families in bulk, prioritizing:
-1. core deterministic mechanics;
-2. monsters;
+### Ordinary play
+When a correct source lookup exposes reusable material not yet compiled, adjudicate first and compile/queue it when worthwhile.
+
+### Bulk ingestion / maintenance
+Bulk extraction is encouraged for high-value source families even when the maintenance job is expensive. Priority is roughly:
+1. core deterministic mechanics/procedures;
+2. monsters and scoped variants;
 3. spells/items/equipment;
 4. class/race/proficiency material;
-5. setting entities/relationships;
-6. adventure metadata/sites/actors;
-7. Dragon/Dungeon article-level metadata;
+5. adventure/module/Dungeon metadata;
+6. Dragon article metadata/relationships;
+7. setting entities/relationships;
 8. specialist and worldbuilding procedures.
 
-Current implementation started with Wren-relevant PHB fast path and registered PHB/DMG/MM source documents. Continue outward by reuse value, cross-book discovery value, and observed lookup friction rather than book cover order.
+Optimize for later gameplay lookup cost rather than minimizing maintenance duration.
 
 ## Indexes
 
-Future derived indexes may be generated from this registry/object corpus:
+Derived indexes may be generated from this registry/object corpus:
 - aliases/names;
 - entity/domain tags;
 - setting/scope;
@@ -102,6 +123,4 @@ These indexes remain subordinate to verified assertions and uploaded sources.
 
 ## Physical storage
 
-Do not explode the repository into millions of tiny Markdown files prematurely.
-
-Use domain shards or machine-readable batches when volume grows. The semantic schema in `SOURCE_KNOWLEDGE_SCHEMA.md` is authoritative over any particular storage format.
+Do not explode the repository into millions of tiny Markdown files. Use domain/alphabetical shards or machine-readable batches as volume grows. The semantic schema in `SOURCE_KNOWLEDGE_SCHEMA.md` is authoritative over storage format.
