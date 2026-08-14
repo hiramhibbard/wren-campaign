@@ -11,7 +11,10 @@ This index routes canonical campaign state. Absence from the current working set
 - Spellbook, known/memorized magic, unresolved magic-rule items: `state/character/magic.md`
 
 ## Campaign context
-- Campaign framing, low-level/earned-growth constraints, player discovery preference, and setting status: `state/campaign/context.md`
+- Campaign framing, low-level/earned-growth constraints, player discovery preference, setting status, and player-known wider-world peoples/race-species facts: `state/campaign/context.md`
+- Mutable campaign tone/presentation profile: `state/campaign/tone.md`
+
+Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone is a mutable presentation preference: it may be changed by Hiram at any time, but it does not override mechanics, source canon, established facts, fair consequences, NPC motives, hidden truth, or random outcomes.
 
 ## Chronology
 - Current resume position and played chronology: `state/chronology/current.md`
@@ -44,7 +47,7 @@ When Hiram refers to an established map, portrait, handout, diagram, scene image
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
 - DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
-- Context-first NPC generation, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
+- Context-first NPC generation, explicit race/species determination, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
