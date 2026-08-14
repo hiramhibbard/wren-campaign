@@ -61,6 +61,12 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] character encumbrance table
 - [x] wizard THAC0 progression
 
+### Core movement / travel fast path
+- [x] PHB base movement rates / Table 64
+- [x] normal cross-country march fields
+- [x] force-march fast fields with exact-source escalation for deeper consequences
+- [x] DMG Table 73 extreme terrain round-movement modifiers
+
 ### Existing compatible DMG projections
 - [x] wilderness encounter checks
 - [x] ship weather
