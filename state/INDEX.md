@@ -75,7 +75,15 @@ Domain companions — load **only when implicated**:
 
 **Performance invariant:** loading the base trigger router does not mean executing/loading every companion. Route from the event/domain first.
 
-## Source knowledge and published-source routing
+## Campaign startup / source knowledge
+
+### Campaign startup discovery
+- Startup discovery policy: `CAMPAIGN_STARTUP_DISCOVERY_POLICY.md`
+
+Startup-discovery routing:
+`new campaign -> offer compact tone/setting/PC/focus/start-region/authorship/boundary prompts -> player defines, delegates, defers, or leaves open -> persist only material constraints -> begin play once minimally viable`
+
+Player startup choices are initial preferences, not irrevocable contracts. Later revisions should apply prospectively where possible and preserve already-established campaign facts unless a safe explicit reconciliation is requested.
 
 ### Compiled source layer
 - Policy: `SOURCE_KNOWLEDGE_LAYER_POLICY.md`
