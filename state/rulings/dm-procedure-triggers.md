@@ -45,6 +45,22 @@ Whenever the resource is used or a consumption interval elapses:
 
 Do not create artificial warning thresholds unless the rules or campaign procedure actually need them. Zero/depletion and source-defined thresholds must not be missed merely because Hiram did not ask.
 
+## Declared-action readiness procedure
+Before committing Wren to a declared action whose foreseeable duration, distance, environment, or method materially depends on limited supplies, equipment, money, spell resources, tools, transport, or another player-known prerequisite, perform a compact readiness check before advancing time or irreversibly starting the action.
+
+Examples include multi-day travel, sea travel, entering prolonged darkness, sustained use of light/fuel, planned use of ammunition, costly or component-dependent magic, and long projects requiring materials or tools.
+
+1. infer only the requirements Wren could reasonably know or estimate from established player-known facts, ordinary competence, and governing rules;
+2. compare those known requirements against current canonical carried/accessible resources and relevant cached state;
+3. if there is a material shortfall, likely depletion, missing prerequisite, or obvious logistical risk that a competent character would notice, tell Hiram before commitment in concise actionable terms;
+4. where useful, state the scale of the mismatch using player-known estimates (for example, expected journey duration versus food/water on hand) without revealing hidden encounters, hazards, treasure, monster weaknesses, secret route facts, or other DM-only information;
+5. offer natural alternatives when they are already apparent from player-known context, such as buying provisions, carrying more water, planning to forage/resupply, changing transport, or knowingly accepting the risk;
+6. the readiness check is advisory, not a veto. Hiram retains control of Wren and may proceed despite the warning; if he does, resolve depletion and consequences normally;
+7. do not interrupt routine actions with inventory recitations or trivial warnings. Trigger only when the mismatch or dependency is consequential enough that overlooking it would plausibly feel like the DM allowed the player to forget something Wren himself would know;
+8. after Hiram revises the plan or explicitly confirms proceeding, continue normally without repeatedly issuing the same unchanged warning unless circumstances materially change.
+
+The readiness check complements, rather than replaces, the Resource / depletion procedure: readiness catches foreseeable problems before commitment; depletion tracking handles actual consumption once the action is underway.
+
 ## Active-effect lifecycle procedure
 When a spell, poison, disease, magical protection, environmental effect, temporary modifier, injury state, or other active effect begins and its lifecycle is consequential, record enough source-backed trigger information to know when it must be reevaluated or end.
 
@@ -142,6 +158,8 @@ Do not give every NPC the same vocabulary, sentence rhythm, confidence, sophisti
 ## Travel / exploration procedure
 When Wren undertakes meaningful overland, coastal, river, sea, dungeon, or other exploration travel, activate a travel record when useful and retrieve the governing movement/navigation/encounter rules.
 
+Before committing to consequential travel, run the Declared-action readiness procedure above against player-known route/duration estimates, accessible provisions, water capacity, light/fuel, shelter/gear, transport condition, money/resupply assumptions, and other clearly relevant known requirements.
+
 Track as relevant:
 - route/course and estimated distance;
 - movement rate and terrain/water conditions;
@@ -157,6 +175,8 @@ Track as relevant:
 For multi-hour/day/week tasks, create or update a durable project when completion cannot be resolved immediately.
 
 Examples include spell learning/research, training, healing, paid work, investigation, crafting, construction, teaching, and long social/faction projects.
+
+Before committing to a consequential project, run the Declared-action readiness procedure when known costs, materials, tools, spell resources, access, or time requirements could materially prevent or complicate completion.
 
 Retrieve the exact source procedure when duration, cost, prerequisites, checks, interruption effects, or completion consequences matter.
 
