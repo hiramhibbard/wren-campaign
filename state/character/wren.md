@@ -8,6 +8,10 @@ Materialized from `Wren_Campaign_Ledger.md` without changing campaign facts.
 - Sex: male
 - Class: mage, level 1
 - XP: **0 / no awards yet**
+- Next-level XP threshold: **2,500**
+  - Cache status: `derived-verified`
+  - Derived from: uploaded AD&D 2e Player's Handbook, Table 20: Wizard Experience Levels (mage/specialist level 2 = 2,500 XP).
+  - This cached threshold is a runtime accelerator, not a replacement for the governing advancement table. Recompute it from the governing source whenever Wren gains a level, changes advancement track/class, a rule modifies advancement requirements, or an integrity audit finds a mismatch.
 - Build: slight
 - Hair: dark, longish
 - Eyes: hawk-like
