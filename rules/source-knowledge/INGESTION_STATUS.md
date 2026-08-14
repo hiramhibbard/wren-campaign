@@ -120,6 +120,13 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] PHB Table 61 complete turning-undead matrix + action/attempt procedure
 - [x] 2e morale routing/base henchman/hireling ratings and explicit protection from accidental 1e morale import
 
+### Core healing / injury / death
+- [x] natural healing: ordinary rest, bed rest, weekly Constitution bonus, deprivation gate
+- [x] magical-healing maximum-hp cap
+- [x] resurrection-survival procedure and Constitution cost
+- [x] massive-damage threshold/check
+- [x] optional death's-door procedure with explicit non-activation boundary
+
 ### Core armor / spell parsing
 - [x] core armor class ratings
 - [x] common spell-entry field semantics
@@ -140,6 +147,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Monstrous Manual generic-core supersession/setting handoff assertion
 - [x] Mystara-scoped monster alias/mapping starter graph
 - [x] Mystara dragon specialization scope profile
+- [x] first complete generic-core monster object: Stirge, including stats/combat/habitat/ecology/variant routing
 - [ ] bulk stat/ecology entries by high-value/common/active-region priority
 
 ### Magic-item graph
@@ -159,12 +167,13 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] spell extraction schema with activation/source-text-required gates
 - [x] scoped monster aliases that do not contaminate generic namespace
 - [x] source-precedence handoff from generic Monstrous Manual to setting-specific appendices
-- [x] explicit edition/scope guard added to morale compilation to prevent DD1 material from being mistaken for 2e governing procedure
+- [x] explicit edition/scope guard in morale compilation
+- [x] first end-to-end full monster entity using stats + combat + habitat/society + ecology + variant relationship
 
 ## Active extraction queue
 
-1. remaining core fast paths: weapon/equipment tables, common save modifiers, healing/rest/resource procedures, doors/listening/searching where applicable;
-2. bulk high-value monster stat/ecology extraction from core + annuals + setting variants;
+1. remaining core fast paths: weapon/equipment tables, common save modifiers, doors/listening/searching where applicable;
+2. bulk common/high-value monster stat/ecology extraction from core, favoring exact-entry retrieval over partial snippets;
 3. Encyclopedia Magica alphabetical item metadata/provenance shards;
 4. continue Tome of Magic spell-definition shards;
 5. adventure/module/Dungeon metadata;
