@@ -62,20 +62,29 @@ Examples include multi-day travel, sea travel, entering prolonged darkness, sust
 The readiness check complements, rather than replaces, the Resource / depletion procedure: readiness catches foreseeable problems before commitment; depletion tracking handles actual consumption once the action is underway.
 
 ## Active-effect lifecycle procedure
-When a spell, poison, disease, magical protection, environmental effect, temporary modifier, injury state, or other active effect begins and its lifecycle is consequential, record enough source-backed trigger information to know when it must be reevaluated or end.
+When a consequential active effect begins, record enough source-backed trigger information to know when it must be reevaluated, change phase, or end.
+
+The lifecycle procedure is **origin-agnostic**. Active effects may originate from spells, potions, scrolls, charged items, worn/carried magic items, curses, artifacts, monster or class abilities, poisons, diseases, environmental magic, injuries, temporary modifiers, or any other source-defined effect. Do not treat item-generated or potion-generated magic as a separate bookkeeping system merely because its origin is an object rather than a spell.
+
+For each consequential active effect, preserve as applicable:
+- the effect/source identity and who or what it currently affects;
+- the mechanical or fictional state it modifies;
+- any tracked remaining duration, charges, absorption, uses, or other lifecycle resource;
+- every source-defined trigger that can alter, suspend, or terminate it;
+- which cached/derived values depend on the effect so they can be refreshed when it changes.
 
 Effect termination is not assumed to be time-based. Governing triggers may include any combination of:
 - elapsed rounds/turns/hours/days or a fixed ending time;
 - a particular event or action;
 - damage taken, damage absorbed, charges expended, or another resource threshold;
-- a condition becoming true or false;
+- a condition becoming true or false, including remaining worn/carried/equipped where the source makes that relevant;
 - a successful save/check;
 - dispelling, curing, resting, removal, death, leaving an area, or another explicit game procedure;
 - source-specific termination language that does not fit the categories above.
 
-When time or an event occurs, evaluate only active effects whose registered triggers could actually be affected by that change. Do not force event-, damage-, resource-, or condition-based effects into an `expires_at` timestamp.
+When time or an event occurs, evaluate only active effects whose registered triggers could actually be affected by that change. Do not force event-, damage-, resource-, item-state-, or condition-based effects into an `expires_at` timestamp.
 
-When an effect ends or changes phase, automatically remove/refresh its dependent derived values and persist any durable resulting state. Hiram should not need to remind the DM that an active effect's termination condition occurred.
+When an effect ends or changes phase, automatically remove/refresh its dependent derived values, update any associated item/resource state, and persist any durable resulting state. Hiram should not need to remind the DM that a potion duration elapsed, an item's charges ran out, a worn-item condition stopped applying, or another active effect's termination condition occurred.
 
 ## Encounter procedure
 Recognize encounter procedure when Wren enters a planned encounter, triggers a keyed encounter, or reaches a point where the governing travel/location rules call for a random encounter check.
