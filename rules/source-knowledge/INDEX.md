@@ -53,6 +53,13 @@ Compilation makes these specialists cheap to consult; it does not activate kits,
 - `adnd2e.document.dmgr1.campaign-sourcebook-catacomb-guide` -> `rules/source-knowledge/documents/dmgr1-campaign-sourcebook-catacomb-guide.md`
 - `adnd2e.document.dmgr2.castle-guide` -> `rules/source-knowledge/documents/dmgr2-castle-guide.md`
 
+### Dragon Magazine issue containers
+- `adnd2e.document.dragon.232` -> `rules/source-knowledge/documents/dragon-232.md`
+- `adnd2e.document.dragon.235` -> `rules/source-knowledge/documents/dragon-235.md`
+- `adnd2e.document.dragon.236` -> `rules/source-knowledge/documents/dragon-236.md`
+
+Issue registration is navigation only. Article-level role/scope/activation remains separate under `DRAGON_MAGAZINE_SOURCE_POLICY.md`.
+
 ### Worldbuilding / periodicals / adventures
 - World Builder source family: `rules/worldbuilding/INDEX.md`
 - Dragon article family: `rules/dragon/INDEX.md`
@@ -78,7 +85,25 @@ Individual source documents/articles/modules continue to be registered as bulk i
   - `adnd2e.rule.movement.cross-country` / normal march + force-march fast fields
   - `adnd2e.rule.movement.terrain-round` / DMG Table 73 extreme terrain movement
 
-These source objects eliminate repeated broad PHB/DMG lookup for common movement/travel routing while preserving exact-source escalation for optional/exception-sensitive details.
+### Core saves / encounter reaction
+- `rules/source-knowledge/entities/core-saves-encounter-reaction.md`
+  - `adnd2e.rule.saving-throws.character` / PHB Table 60 complete class-group save progression
+  - `adnd2e.rule.encounter.reaction` / DMG Table 59 encounter-reaction procedure
+
+### Source-family structural schemas
+- `rules/source-knowledge/entities/source-family-record-shapes.md`
+  - `adnd2e.source-schema.monster-entry.mca` / Monstrous Compendium Annual source-native monster fields
+  - `adnd2e.source-schema.magic-item.encyclopedia-magica` / Encyclopedia Magica item/provenance fields
+
+These schemas allow bulk ingestion to preserve source-native fields and relationships instead of flattening monster ecology or magic-item provenance.
+
+### Magic-item cross-source starter graph
+- `rules/source-knowledge/entities/magic-items-cross-source-starter.md`
+  - `adnd2e.magic-item.mask.winged` with separate *Ruins of Myth Drannor* and Dragon #117 assertions
+  - Dragon #33 magical-oil family with individually normalized oil assertions
+  - provenance relationships from anthology assertion back to original publication
+
+This starter shard proves the intended cross-source behavior: one logical entity can retain multiple source assertions and typed provenance relationships without silently merging them.
 
 ## Existing verified projections registered conceptually
 
