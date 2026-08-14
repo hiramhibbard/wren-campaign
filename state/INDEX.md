@@ -3,201 +3,184 @@
 Schema version: 1
 Snapshot generation: 1
 
-This index routes canonical campaign state. Absence from the current working set does not mean absence from the campaign.
+Compact deterministic router for canonical campaign state and event-driven procedure/source policies. **Absence from this index or current working set is never evidence that a fact/source does not exist.**
 
-## Character
-- Wren identity/mechanics/family/player-facing mentor state: `state/character/wren.md`
-- Inventory/funds/encumbrance/boat-stored gear: `state/character/inventory.md`
-- Spellbook/known and memorized magic: `state/character/magic.md`
+## Core campaign state
 
-## Campaign context
-- Campaign framing, low-level/earned-growth constraints, discovery preference, setting status, wider-world player-known facts: `state/campaign/context.md`
-- Mutable narration/tone profile: `state/campaign/tone.md`
+### Character
+- Wren identity/mechanics/family/player-facing mentor: `state/character/wren.md`
+- Inventory/funds/encumbrance/stored gear: `state/character/inventory.md`
+- Spellbook/known/memorized magic: `state/character/magic.md`
 
-Load `state/campaign/tone.md` for ordinary narration and Live Voice. Tone never overrides mechanics, source canon, established facts, fair consequences, NPC motives, hidden truth, or random outcomes.
+### Campaign / chronology
+- Campaign framing/setting status/world-knowledge constraints: `state/campaign/context.md`
+- Narration/tone profile: `state/campaign/tone.md`
+- Current chronology/resume: `state/chronology/current.md`
 
-## Chronology
-- Current resume position and played chronology: `state/chronology/current.md`
-
-## NPCs
-- NPC routing/promotion: `state/npcs/index.md`
+### NPCs
+- NPC router: `state/npcs/index.md`
 - Aldrin Hale: `state/npcs/aldrin-hale.md`
 - Edric Hale: `state/npcs/edric-hale.md`
-- Mara, Elia, Wren's deceased father, player-facing mentor facts: `state/character/wren.md`
+- Mara/Elia/father/player-facing mentor: `state/character/wren.md`
 - DM-only mentor truth: `state/dm/campaign.md`
 
-## Threads and clues
-- Active player-facing threads: `state/threads/active.md`
+### Threads / clues
+- Active threads: `state/threads/active.md`
 - Active clues/rumors/inference boundaries: `state/clues/active.md`
 
-## Locations / regional runtime
-- Location routing: `state/locations/index.md`
-- Home Coast runtime profile: `state/locations/home-coast/runtime-profile.md`
-- Home Coast world-building readiness/audit: `state/dm/home-coast-worldbuilding-readiness.md`
-- Harbor/boarding-house state: `state/locations/harbor/current.md`
+### Locations / Home Coast
+- Location router: `state/locations/index.md`
+- Home Coast runtime: `state/locations/home-coast/runtime-profile.md`
+- Harbor/boarding-house: `state/locations/harbor/current.md`
+- DM Home Coast world runtime: `state/dm/home-coast-world-runtime.md`
+- DM world-building readiness audit: `state/dm/home-coast-worldbuilding-readiness.md`
 
-After checkpoint replay establishes current location, if Wren is in or can plausibly affect the Home Coast activation horizon, load `state/locations/home-coast/runtime-profile.md`, relevant DM-only active-world runtime, and derive the due-event frontier before advancing consequential time.
+After checkpoint replay establishes the current position, load only location/region/DM runtime relevant to the active horizon and derive due events before consequential time advances.
 
-## Active sites / dungeons
-- Mandatory bounded-site runtime: `SITE_RUNTIME_POLICY.md`
+### DM-only
+- Hidden campaign truth/preparation/outside forces: `state/dm/campaign.md`
+- Home Coast world motion/clocks: `state/dm/home-coast-world-runtime.md`
 
-When a bounded site's internal state matters, load only the minimum applicable runtime. Published keys remain authority for unchanged/unvisited material; campaign consequences overlay source state and do not reset.
+Never expose DM-only material merely because it is loaded.
 
-## Campaign assets / media
+## Assets
+
 - Asset registry: `assets/INDEX.md`
 - Map registry: `assets/maps/INDEX.md`
 - Home Coast map metadata: `assets/maps/asset-map-home-coast-001.md`
 - Pending ingest: `assets/PENDING_INGEST.md`
-- Policy: `ASSET_LIBRARY.md`
+- Asset policy: `ASSET_LIBRARY.md`
 
-## Rulings / DM procedures
+## Event-driven rulings / trigger routers
+
+Base:
 - Campaign rulings: `state/rulings/adnd2e-campaign-rulings.md`
-- Dice protocol: `state/rulings/dice-protocol.md`
-- Base DM procedure triggers: `state/rulings/dm-procedure-triggers.md`
-- Regional-runtime triggers: `state/rulings/regional-runtime-triggers.md`
-- Site/DM-craft triggers: `state/rulings/site-and-craft-triggers.md`
-- Monster projection/runtime triggers: `state/rulings/monster-runtime-triggers.md`
-- Specialist supplement source triggers: `state/rulings/supplement-source-triggers.md`
-- Automatic adventure/scenario opportunity triggers: `state/rulings/adventure-opportunity-triggers.md`
-- World Builder unresolved-world/detail generation triggers: `state/rulings/world-builder-triggers.md`
-- Dragon Magazine article/domain triggers: `state/rulings/dragon-magazine-triggers.md`
-- Rules dependency routing: `state/rulings/rules-dependency-registry.md`
+- Dice: `state/rulings/dice-protocol.md`
+- Base DM triggers: `state/rulings/dm-procedure-triggers.md`
+- Rules/source dependency routing: `state/rulings/rules-dependency-registry.md`
+
+Domain companions — load **only when implicated**:
+- Regional runtime: `state/rulings/regional-runtime-triggers.md`
+- Site/DM craft: `state/rulings/site-and-craft-triggers.md`
+- Monsters: `state/rulings/monster-runtime-triggers.md`
+- Supplements/PHBR/DMGR: `state/rulings/supplement-source-triggers.md`
+- Adventure/scenario opportunity: `state/rulings/adventure-opportunity-triggers.md`
+- World Builder: `state/rulings/world-builder-triggers.md`
+- Dragon Magazine: `state/rulings/dragon-magazine-triggers.md`
 - NPC generation/portrayal: `state/rulings/npc-generation-and-portrayal.md`
-- Knowledge reliability/rumors/deception: `state/rulings/knowledge-reliability-and-rumors.md`
+- Knowledge/rumors/deception: `state/rulings/knowledge-reliability-and-rumors.md`
 - Perception/evidence: `state/rulings/perception-and-evidence.md`
 - Creature ecology/behavior: `state/rulings/creature-ecology-and-behavior.md`
 
-Whenever normal play loads `state/rulings/dm-procedure-triggers.md`, treat regional, site/craft, monster, supplement-source, adventure-opportunity, World Builder, and Dragon Magazine trigger extensions as mandatory companions **when their domains are implicated**. They are event-driven; do not scan all source families, world-building tables, or magazine issues every turn.
+**Performance invariant:** loading the base trigger router does not mean executing/loading every companion. Route from the event/domain first.
 
-Adventure opportunities, unresolved-world generation, and Dragon article opportunities must be recognized automatically. Hiram does not need to ask the DM to search for an adventure, fill a consequential world gap, or consult Dragon when a materially relevant domain suggests it. Candidate/prepared material does not become campaign truth until actually established through the relevant policy.
+## Source knowledge and published-source routing
 
-## Published-source / compiled-knowledge / supplement / adventure / world-generation / periodical resolution
-- **Compiled source knowledge architecture: `SOURCE_KNOWLEDGE_LAYER_POLICY.md`**
-- **Compiled source object schema: `SOURCE_KNOWLEDGE_SCHEMA.md`**
-- **Compiled source knowledge registry: `rules/source-knowledge/INDEX.md`**
-- Structured rules authority/projection policy: `RULES_PROJECTION_POLICY.md`
-- General specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
-- Adventure opportunity/published-or-original scenario policy: `ADVENTURE_OPPORTUNITY_POLICY.md`
-- AD&D 2e World Builder generation/runtime policy: `WORLD_BUILDER_RUNTIME_POLICY.md`
-- Dragon Magazine article-level source policy: `DRAGON_MAGAZINE_SOURCE_POLICY.md`
-- Published adventure source-family registry: `rules/adventures/INDEX.md`
-- World-building source registry: `rules/worldbuilding/INDEX.md`
-- Dragon article registry: `rules/dragon/INDEX.md`
-- Monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
-- Monster projection/runtime policy: `MONSTER_PROJECTION_POLICY.md`
-- Monster ecology inspiration compatibility policy: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
+### Compiled source layer
+- Policy: `SOURCE_KNOWLEDGE_LAYER_POLICY.md`
+- Schema: `SOURCE_KNOWLEDGE_SCHEMA.md`
+- Registry: `rules/source-knowledge/INDEX.md`
+- Rules/source registry: `rules/INDEX.md`
+- Retrieval-index policy: `DERIVED_INDEX_POLICY.md`
+- Context compiler: `CONTEXT_ARCHITECTURE.md`
 
-Compiled source knowledge routing:
-`source-dependent domain/entity -> verified compiled entity/assertion if available -> active scope/precedence resolution -> campaign-state overlay -> exact source locator when nuance/exception requires -> broad source search only when object/locator missing`
+General source lookup:
+`runtime cache -> verified in-scope compiled entity/assertion/projection -> exact source locator if required -> targeted source search -> broad search last`
 
-Compiled source objects are derived accelerators, not campaign truth and not replacements for Hiram's uploaded sources. Existing verified rules/monster projections may serve as compiled source objects without immediate physical migration.
+Compiled source objects are derived accelerators. Uploaded published sources remain authority. Object existence never activates optional/supplement/setting rules.
 
-Supplement routing:
-`current domain -> active setting/adventure/campaign scope -> relevant specialist source role -> guidance/mechanics classification -> governing-source decision -> compiled assertion/projection/cache or exact source`
+### Core/supplement rules
+- Structured rules policy: `RULES_PROJECTION_POLICY.md`
+- Specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
+- Source-role registry: `rules/sources/INDEX.md`
+
+### Monsters
+- Source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
+- Projection/runtime: `MONSTER_PROJECTION_POLICY.md`
+- Monster registry: `rules/monsters/INDEX.md`
+- Ecology inspiration filter: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
+- Other ecology inspiration registry: `rules/monsters/ecology-inspiration/INDEX.md`
+
+Monster lookup:
+`encounter instance -> scope-resolved compiled monster/projection -> exact governing monster source -> Dragon ecology if gap -> other compatible inspiration if needed`
+
+### Adventures
+- Opportunity / published-or-original resolver: `ADVENTURE_OPPORTUNITY_POLICY.md`
+- Published source registry: `rules/adventures/INDEX.md`
 
 Adventure routing:
-`world need/opportunity -> current setting/region/site/thread facets -> existing active material -> targeted published search when useful -> use/adapt strong fit OR create original -> normal world causality`
+`causal opportunity -> existing seeded/active material -> compiled published metadata / targeted source search when promising -> use/adapt strong fit OR create original -> normal world motion`
+
+Dungeon Magazine remains first-class published material. Original creation remains first-class when it is the stronger fit. No adventure quota.
+
+### World generation
+- Runtime policy: `WORLD_BUILDER_RUNTIME_POLICY.md`
+- Source registry: `rules/worldbuilding/INDEX.md`
 
 World Builder routing:
-`unresolved consequential world detail -> established constraints -> smallest fitting Guidebook approach/domain -> specialist/adventure/monster/Dragon/source-knowledge handoff if implicated -> bounded generation -> minimum truth -> persistence if consequential`
+`unresolved consequential detail -> existing constraints -> verified compiled procedure if available -> smallest useful Guidebook/source path or direct bounded creation -> establish minimum truth`
+
+### Dragon Magazine
+- Policy: `DRAGON_MAGAZINE_SOURCE_POLICY.md`
+- Article registry: `rules/dragon/INDEX.md`
 
 Dragon routing:
-`consequential domain gap -> active setting/scope -> likely Dragon article role -> targeted article/entity search -> article authority/activation classification -> compatible use or rejection -> persist adopted campaign result if consequential`
+`consequential domain gap -> compiled article/entity if available -> targeted article search -> role/scope/activation classification -> compatible use or rejection`
 
-Dungeon Magazine adventures and side treks are first-class adventure-source families. Dragon Magazine is a first-class secondary article source family. Automatic consultation/search is not automatic activation or canonization. Guidebook random tables are bounded generation tools, not authority over existing canon.
+Dragon is a secondary article source family, not a globally active rulebook.
 
-Active setting/adventure treatments must not be flattened by generic specialist/adventure/world-generation/Dragon/compiled-source assertions, and setting-specific assumptions must not leak into unrelated generic play.
+## Existing high-frequency projections
 
-## Structured published-rules / source projections
-- Rules registry: `rules/INDEX.md`
-- **Compiled source knowledge registry: `rules/source-knowledge/INDEX.md`**
-- Specialist source-role registry: `rules/sources/INDEX.md`
-- Published adventure source registry: `rules/adventures/INDEX.md`
-- World-building source registry: `rules/worldbuilding/INDEX.md`
-- Dragon article registry: `rules/dragon/INDEX.md`
-- Monster registry: `rules/monsters/INDEX.md`
-- Monster ecology inspiration registry: `rules/monsters/ecology-inspiration/INDEX.md`
 - Wilderness encounter checks: `rules/encounters/dmg-wilderness-encounter-checks.md`
 - Ship weather: `rules/travel/dmg-ship-weather.md`
+- Current compiled-source coverage/PHB fast path: `rules/source-knowledge/INDEX.md`
 
-General runtime lookup:
-`valid runtime cache -> verified compiled source assertion/projection -> exact scope-resolved governing source -> broader targeted source search`
+Exact source is required when compiled coverage is missing, stale, unverified, exception-sensitive, or marked `source_text_required`.
 
-For complex/exception-sensitive source facts, compiled objects should route directly to their exact source locator. Unverified or stale objects may assist discovery but cannot serve as authority.
+## Site / scenario persistence
 
-Monster runtime lookup:
-`encounter-instance state -> scope-resolved monster projection/compiled entity -> exact scope-resolved monster source -> relevant Dragon ecology if gap remains -> other compatible ecology inspiration if needed`
+- Site runtime: `SITE_RUNTIME_POLICY.md`
+- DM craft: `DM_CRAFT_POLICY.md`
 
-Adventure discovery fast path:
-`cheap opportunity check -> existing seeded/active scenario? -> compiled adventure/article metadata + targeted published family search if promising -> use strong candidate OR create original`
+Published keys are baseline authority for unchanged material; campaign consequences overlay source state and never reset because Wren leaves/bypasses a site.
 
-World-building fast path:
-`cheap unresolved-detail check -> existing canon sufficient? -> verified compiled procedure/entity if available -> direct bounded creation or exact narrow Guidebook/specialist/Dragon source route only if useful`
+## Context / Voice
 
-Dragon fast path:
-`cheap domain-gap check -> compiled Dragon article/entity locator available? -> targeted article search if not -> classify/use/cache`
-
-Projection/index/object absence never permits guessing exact source facts. Projection/index/object presence never overrides governing source or establishes campaign truth.
-
-## DM-only
-- Hidden truths/prepared possibilities/outside forces: `state/dm/campaign.md`
-- Home Coast active-world runtime: `state/dm/home-coast-world-runtime.md`
-- Home Coast world-building readiness/audit: `state/dm/home-coast-worldbuilding-readiness.md`
-
-Do not expose DM-only records merely because they are loaded. Prepared adventure/world-building/Dragon candidates are DM-only and must not be narrated as established facts before seeding/establishment.
-
-## Long-term scaffolds
-- General templates: `STATE_TEMPLATES.md`
-- Regional runtime templates: `REGIONAL_RUNTIME_TEMPLATES.md`
-
-Instantiate records only when play/source causality makes them relevant.
-
-## Context / DM craft / retrieval architecture
-- Always-on DM craft: `DM_CRAFT_POLICY.md`
-- Active-site runtime: `SITE_RUNTIME_POLICY.md`
-- Monster projection/runtime: `MONSTER_PROJECTION_POLICY.md`
-- Monster source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
-- Monster ecology inspiration filter: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
-- Specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
-- Adventure opportunity/seeding/original creation: `ADVENTURE_OPPORTUNITY_POLICY.md`
-- World Builder runtime: `WORLD_BUILDER_RUNTIME_POLICY.md`
-- Dragon Magazine source resolver: `DRAGON_MAGAZINE_SOURCE_POLICY.md`
-- **Compiled source knowledge layer: `SOURCE_KNOWLEDGE_LAYER_POLICY.md`**
-- **Compiled source schema: `SOURCE_KNOWLEDGE_SCHEMA.md`**
 - Context compiler: `CONTEXT_ARCHITECTURE.md`
 - Regional Voice/due-event extension: `CONTEXT_REGIONAL_RUNTIME_EXTENSION.md`
-- Derived retrieval/index safety: `DERIVED_INDEX_POLICY.md`
-- Structured rules projections: `RULES_PROJECTION_POLICY.md`
-- Regional runtime/world motion: `REGIONAL_RUNTIME_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play automatically discovers specialist-source, adventure-opportunity, World Builder, Dragon, and compiled-source routing. Normal performance remains bounded: cheap domain/opportunity/unresolved-detail checks, reuse verified compiled objects/projections/locators, and retrieve source text only when a trigger or source-text-required condition fires.
+Normal/Voice context should contain only immediate canonical state + relevant DM state + small verified source objects likely to be needed. Never preload entire policy/source/object libraries.
 
-`ADVENTURE_OPPORTUNITY_POLICY.md` inherits `DM_CRAFT_POLICY.md` scenario-before-story. `WORLD_BUILDER_RUNTIME_POLICY.md` inherits progressive-detail/no-fudging discipline. `DRAGON_MAGAZINE_SOURCE_POLICY.md` preserves article-level authority and consultation-vs-activation boundaries. `SOURCE_KNOWLEDGE_LAYER_POLICY.md` preserves source authority, scope, provenance, and campaign/source separation while allowing broad entity-centric extraction.
+## Growth / templates / protocol
 
-## Regression / audit
-- Regional runtime: `tests/REGIONAL_RUNTIME_REGRESSION.md`
-- DM craft/site runtime: `tests/DM_CRAFT_AND_SITE_RUNTIME_REGRESSION.md`
-- Monster projection/source resolution: `tests/MONSTER_PROJECTION_REGRESSION.md`
-- Specialist supplement source resolution/performance: `tests/SUPPLEMENT_SOURCE_RESOLUTION_REGRESSION.md`
-- Adventure discovery/seeding/Dungeon Magazine behavior: `tests/ADVENTURE_OPPORTUNITY_REGRESSION.md`
-- World Builder progressive generation/runtime behavior: `tests/WORLD_BUILDER_RUNTIME_REGRESSION.md`
-- Dragon Magazine article routing/authority/performance: `tests/DRAGON_MAGAZINE_SOURCE_REGRESSION.md`
-- **Compiled source knowledge/entity/assertion behavior: `tests/SOURCE_KNOWLEDGE_LAYER_REGRESSION.md`**
-
-These tests never alter live campaign state.
-
-## Engineering
-- Engineering/status: `CAMPAIGN_ENGINEERING.md`
-- Application roadmap: `docs/APPLICATION_ROADMAP.md`
-- DM runtime/unit economics: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
-- Competitive landscape: `docs/COMPETITIVE_LANDSCAPE.md`
-- Asset/media architecture: `docs/ASSET_LIBRARY_ARCHITECTURE.md`
-
-## Protocol
+- General templates: `STATE_TEMPLATES.md`
+- Regional runtime templates: `REGIONAL_RUNTIME_TEMPLATES.md`
+- Growth/sharding: `GROWTH_POLICY.md`
 - Full bootstrap: `CAMPAIGN_BOOTSTRAP.md`
 - State schema: `STATE_SCHEMA.md`
 - Persistence: `PERSISTENCE_PROTOCOL.md`
-- Growth/sharding: `GROWTH_POLICY.md`
 - Root manifest/resume: `Wren_Campaign_Ledger.md`
 
-Repository search is fallback for fuzzy references when explicit routing is insufficient. Derived retrieval may identify candidates, but canonical records and governing uploaded published sources remain authoritative.
+Instantiate/promote records only when play/source causality warrants them.
+
+## Regression / audit suites
+
+- Regional runtime: `tests/REGIONAL_RUNTIME_REGRESSION.md`
+- DM craft/site: `tests/DM_CRAFT_AND_SITE_RUNTIME_REGRESSION.md`
+- Monsters: `tests/MONSTER_PROJECTION_REGRESSION.md`
+- Supplements: `tests/SUPPLEMENT_SOURCE_RESOLUTION_REGRESSION.md`
+- Adventures: `tests/ADVENTURE_OPPORTUNITY_REGRESSION.md`
+- World Builder: `tests/WORLD_BUILDER_RUNTIME_REGRESSION.md`
+- Dragon: `tests/DRAGON_MAGAZINE_SOURCE_REGRESSION.md`
+- Compiled source knowledge: `tests/SOURCE_KNOWLEDGE_LAYER_REGRESSION.md`
+
+Tests alter no live campaign facts.
+
+## Engineering references
+
+- Status: `CAMPAIGN_ENGINEERING.md`
+- Application roadmap: `docs/APPLICATION_ROADMAP.md`
+- Runtime/unit economics: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
+- Asset architecture: `docs/ASSET_LIBRARY_ARCHITECTURE.md`
+
+Repository/file-library search is fallback for fuzzy references when explicit routing/compiled metadata is insufficient. Never guess because an index lacks an entry.
