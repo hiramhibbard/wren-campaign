@@ -1,14 +1,35 @@
-# Wren Structured Rules Projection Registry
+# Wren Structured Rules / Source Knowledge Registry
 
-This directory contains verified source-derived rules projections used as runtime accelerators under `RULES_PROJECTION_POLICY.md`.
+This directory contains verified source-derived rules projections and compiled source-knowledge objects used as runtime accelerators.
 
-The uploaded published sources remain authoritative. A projection is never authoritative merely because it exists here.
+The uploaded published sources remain authoritative. A projection/object is never authoritative merely because it exists here.
 
-## Registry status
+## Runtime source lookup order
 
-Projection generation is demand-first, with proactive generation for high-frequency core rules when campaign generation, play, or maintenance demonstrates clear value.
+Prefer:
 
-Existing character/runtime caches may continue to cite uploaded source tables directly until a corresponding verified projection is created.
+`valid runtime cache -> verified compiled source entity/assertion or structured projection -> exact governing source locator -> broader uploaded-source search`
+
+If an object is stale, unverified, exception-sensitive, or marked `source_text_required`, escalate to the exact source.
+
+## Compiled source knowledge
+
+- Architecture: `SOURCE_KNOWLEDGE_LAYER_POLICY.md`
+- Schema: `SOURCE_KNOWLEDGE_SCHEMA.md`
+- Registry: `rules/source-knowledge/INDEX.md`
+
+The compiled layer organizes reusable published information by entity/assertion/relationship rather than by book layout. It preserves source scope, provenance, conflicts, supersession, activation requirements, and exact locators.
+
+Current initial verified population includes:
+- AD&D 2e PHB source-document metadata;
+- Armor spell structured definition;
+- wizard XP/Hit Dice progression;
+- wizard spell-slot progression;
+- Intelligence 18 source row;
+- character encumbrance breakpoints;
+- wizard THAC0 progression.
+
+See `rules/source-knowledge/INDEX.md` for current coverage.
 
 ## Active verified projections
 
@@ -24,15 +45,30 @@ Existing character/runtime caches may continue to cite uploaded source tables di
   - Daily ship-weather generation by season and sailing/rowing movement effects.
   - Does not replace regional climate or non-sea weather generation.
 
+These existing projections are conceptually compiled source assertions and need not be duplicated merely to satisfy the newer source-knowledge schema.
+
 ## Specialist source routing
 
 - General scope/domain supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
 - Source-role registry: `rules/sources/INDEX.md`
 - Event-driven triggers: `state/rulings/supplement-source-triggers.md`
+- Dragon article-level secondary source resolver: `DRAGON_MAGAZINE_SOURCE_POLICY.md`
+- Dragon registry: `rules/dragon/INDEX.md`
 
 PHBR/race/class specialist books and DMGR/domain guides are consulted only when their domain becomes consequential. Consultation does not activate optional mechanics. Active setting/adventure scope is resolved before generic specialist guidance is applied.
 
-Performance contract: cheap domain routing on normal turns; targeted retrieval only on trigger; cache useful locators/projections for recurring domains; never preload whole supplement families.
+Dragon is an article-level secondary source family: useful for setting support, ecology, religion, magic, organizations, DM procedures, worldbuilding, and adventure components, but never globally active merely because an article is compiled.
+
+## Adventure / worldbuilding source routing
+
+- Adventure opportunity/source-or-create resolver: `ADVENTURE_OPPORTUNITY_POLICY.md`
+- Published adventure registry: `rules/adventures/INDEX.md`
+- World Builder runtime: `WORLD_BUILDER_RUNTIME_POLICY.md`
+- World-building registry: `rules/worldbuilding/INDEX.md`
+
+Published adventures and Dungeon material remain first-class opportunities, while original DM creation remains permitted when it fits campaign causality better.
+
+World Builder procedures are selectively consulted for unresolved world detail; they do not force exhaustive pre-generation.
 
 ## Monster projection family
 
@@ -44,38 +80,43 @@ Performance contract: cheap domain routing on normal turns; targeted retrieval o
 
 Monster projections are created lazily from the scope-resolved active governing AD&D 2e monster source when recurrence, regional/site use, combat frequency, Voice latency, or consistency makes reuse worthwhile. Generic monster projections remain separate from encounter-instance state and campaign population/site-group state.
 
-Monster lookup is source-family aware: core Monstrous Manual, generic Monstrous Compendium material, setting-specific Compendium appendices, Annuals/anthologies, active adventure treatments, and other explicitly active monster sources may be candidates. Resolve current scope before choosing.
+Monster lookup should increasingly resolve through compiled monster entities/assertions as they are populated, with exact source fallback for uncompiled/exception-sensitive material.
 
-## Projection lifecycle
+## Projection / compiled-object lifecycle
 
-Each projection should be registered with:
-- stable projection ID;
-- path;
-- source title/table/section locator;
-- source family;
-- active scope;
+Each reusable source projection/object should preserve:
+- stable entity/projection/assertion ID;
+- source title/document ID and exact locator;
+- system/edition;
+- source family/role;
+- active or required scope;
 - verification status;
-- source precedence/override notes when relevant;
-- downstream dependency domains.
+- source precedence/override notes;
+- exception/source-text-required conditions;
+- downstream dependency domains where applicable;
+- source fingerprint/version metadata when practical.
 
-Use `state/rulings/rules-dependency-registry.md` for invalidation/dependency routing, `state/rulings/supplement-source-triggers.md` for specialist supplement routing, and `state/rulings/monster-runtime-triggers.md` for monster-specific routing.
+Use `state/rulings/rules-dependency-registry.md` for invalidation/dependency routing, `state/rulings/supplement-source-triggers.md` for specialist supplement routing, `state/rulings/monster-runtime-triggers.md` for monster-specific routing, and the compiled-source schema for broader reusable source entities.
 
-## Planned high-value projection families
+## Population priority
 
-Create when first justified/verified:
-- class advancement / XP;
-- THAC0 / attack progression;
-- saving throws;
-- Hit Dice / class level progression;
-- spell-slot progression;
-- proficiency progression;
-- ability-score effects;
-- encumbrance;
-- weapon / armor / equipment statistics;
-- movement / exploration;
-- light and common resource durations;
-- encounter surprise/distance/reaction fields when repeated use justifies projection;
-- frequently reused spell/item/monster structured fields where safe and useful;
-- frequently reused deterministic PHBR/DMGR specialist tables only after their source scope is actually active or their reference projection is clearly worthwhile.
+Continue compiled-source population in roughly this order, adjusted by actual campaign/retrieval value:
+1. current-character/core fast-path mechanics;
+2. core deterministic tables and procedures;
+3. monsters likely to recur or enter active regions/sites;
+4. spells/items/equipment;
+5. class/race/proficiency material;
+6. setting entities and typed relationships;
+7. adventure metadata/sites/actors;
+8. Dragon/Dungeon article-level metadata and cross-links;
+9. specialist/worldbuilding procedures.
 
-Do not create empty family files merely to satisfy this list, and do not treat projection creation as supplement activation.
+Do not ingest by book cover order merely for completeness. Prefer entity/domain coverage that reduces repeated PDF search and improves cross-book discovery.
+
+## Performance contract
+
+Normal turns use cheap routing and already-verified objects first. Broad PDF/library search is a slow path, not the default.
+
+When a correct exact-source lookup reveals reusable structured material not yet compiled, adjudicate correctly first and then compile/queue it if that materially reduces future lookup cost.
+
+Do not preload whole source-object libraries into ordinary or Voice context. Voice should receive only compact relevant objects/fields.
