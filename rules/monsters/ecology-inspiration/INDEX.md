@@ -6,16 +6,24 @@ These sources are idea reservoirs, not AD&D 2e rules or setting authority.
 
 ## Registered source: DnDBehindTheScreen Monster Ecology Anthology
 
-- title: `Monster ecology anthology A4 size - printer friendly.pdf`
+- title: `Wren Reference - Monster Ecology Anthology.pdf`
 - role: `non-authoritative ecology inspiration`
 - project/origin: `/r/DnDBehindTheScreen Monster Ecology Anthology`
 - edition context: written as a 5e-era community project inspired in part by earlier Dragon Magazine ecology articles and the lore-rich AD&D 2e Monstrous Manual tradition
-- original Drive file id: `0BwUJ1I2gEmb5YWlmX1ZNNEhaelk`
-- original Drive URL: retained as provenance only; runtime should prefer the durable campaign-held copy / File Library copy when available
+- durable campaign-held Google Drive file id: `1l4eVcy5KazvMk56KDBHYlUumPiORZD9s`
+- durable Drive lookup URL: `https://drive.google.com/file/d/1l4eVcy5KazvMk56KDBHYlUumPiORZD9s/view?usp=drivesdk`
+- original external Drive file id: `0BwUJ1I2gEmb5YWlmX1ZNNEhaelk`
+- original external URL: provenance/recovery only; do not depend on it for normal runtime lookup
 - downloaded size: `3,314,733 bytes`
-- SHA-256 of downloaded PDF: `d323442f4f2be31cbe440a0afb84f627a2e7bc49e25696976197560db1f8fdb3`
+- SHA-256 of downloaded/uploaded PDF: `d323442f4f2be31cbe440a0afb84f627a2e7bc49e25696976197560db1f8fdb3`
 - authority status: **never governing**
 - compatibility policy: `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`
+
+### Retrieval preference
+
+For normal runtime use, retrieve the durable campaign-held Drive copy by file id/URL above. The original public/shared URL is only provenance and a recovery clue.
+
+If the same PDF is later uploaded into ChatGPT File Library, that copy may be used as an additional fast retrieval path, but File Library presence is not required while the durable connected-Drive copy remains available and hash-compatible.
 
 ### What the anthology is useful for
 
@@ -57,10 +65,10 @@ The source contains dedicated ecology essays for many common D&D creatures. High
 - Kuo-Toa — p.234
 - Lich — p.242
 - Lizardfolk — p.246
+- Minotaur — p.257
 - Lycanthrope — p.260
 - Manticore — p.262
 - Mimic — p.264
-- Minotaur — p.257
 - Ogre — p.281
 - Orc — p.285
 - Otyugh — p.287
