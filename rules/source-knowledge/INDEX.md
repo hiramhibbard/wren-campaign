@@ -37,28 +37,28 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 - `adnd2e.document.monstrous-compendium-annual.v3` -> `rules/source-knowledge/documents/monstrous-compendium-annual-v3.md`
 - `adnd2e.document.monstrous-compendium.mystara-appendix` -> `rules/source-knowledge/documents/mc-mystara-appendix.md`
 
-### PHBR class/race specialist sources
-- `adnd2e.document.phbr01.complete-fighters-handbook` -> `rules/source-knowledge/documents/phbr01-complete-fighters-handbook.md`
-- `adnd2e.document.phbr02.complete-thiefs-handbook` -> `rules/source-knowledge/documents/phbr02-complete-thiefs-handbook.md`
-- `adnd2e.document.phbr03.complete-priests-handbook` -> `rules/source-knowledge/documents/phbr03-complete-priests-handbook.md`
-- `adnd2e.document.phbr04.complete-wizards-handbook` -> `rules/source-knowledge/documents/phbr04-complete-wizards-handbook.md`
-- `adnd2e.document.phbr05.complete-psionics-handbook` -> `rules/source-knowledge/documents/phbr05-complete-psionics-handbook.md`
-- `adnd2e.document.phbr06.complete-book-of-dwarves` -> `rules/source-knowledge/documents/phbr06-complete-book-of-dwarves.md`
-- `adnd2e.document.phbr07.complete-bards-handbook` -> `rules/source-knowledge/documents/phbr07-complete-bards-handbook.md`
-- `adnd2e.document.phbr09.complete-gnomes-halflings` -> `rules/source-knowledge/documents/phbr09-complete-gnomes-halflings.md`
-- `adnd2e.document.phbr11.complete-rangers-handbook` -> `rules/source-knowledge/documents/phbr11-complete-rangers-handbook.md`
+### PHBR specialist sources
+- PHBR01 Fighter -> `rules/source-knowledge/documents/phbr01-complete-fighters-handbook.md`
+- PHBR02 Thief -> `rules/source-knowledge/documents/phbr02-complete-thiefs-handbook.md`
+- PHBR03 Priest -> `rules/source-knowledge/documents/phbr03-complete-priests-handbook.md`
+- PHBR04 Wizard -> `rules/source-knowledge/documents/phbr04-complete-wizards-handbook.md`
+- PHBR05 Psionics -> `rules/source-knowledge/documents/phbr05-complete-psionics-handbook.md`
+- PHBR06 Dwarves -> `rules/source-knowledge/documents/phbr06-complete-book-of-dwarves.md`
+- PHBR07 Bards -> `rules/source-knowledge/documents/phbr07-complete-bards-handbook.md`
+- PHBR09 Gnomes/Halflings -> `rules/source-knowledge/documents/phbr09-complete-gnomes-halflings.md`
+- PHBR11 Rangers -> `rules/source-knowledge/documents/phbr11-complete-rangers-handbook.md`
 
-### DMGR domain-guide sources
-- `adnd2e.document.dmgr1.campaign-sourcebook-catacomb-guide` -> `rules/source-knowledge/documents/dmgr1-campaign-sourcebook-catacomb-guide.md`
-- `adnd2e.document.dmgr2.castle-guide` -> `rules/source-knowledge/documents/dmgr2-castle-guide.md`
+### DMGR sources
+- DMGR1 -> `rules/source-knowledge/documents/dmgr1-campaign-sourcebook-catacomb-guide.md`
+- DMGR2 -> `rules/source-knowledge/documents/dmgr2-castle-guide.md`
 
-### Dragon Magazine issue containers
-- `adnd2e.document.dragon.232` -> `rules/source-knowledge/documents/dragon-232.md`
-- `adnd2e.document.dragon.235` -> `rules/source-knowledge/documents/dragon-235.md`
-- `adnd2e.document.dragon.236` -> `rules/source-knowledge/documents/dragon-236.md`
-- `adnd2e.periodical.dragon.240` -> `rules/source-knowledge/documents/dragon-240.md`
+### Dragon issue containers
+- Dragon #232 -> `rules/source-knowledge/documents/dragon-232.md`
+- Dragon #235 -> `rules/source-knowledge/documents/dragon-235.md`
+- Dragon #236 -> `rules/source-knowledge/documents/dragon-236.md`
+- Dragon #240 -> `rules/source-knowledge/documents/dragon-240.md`
 
-Issue registration is navigation only. Article-level role/scope/activation remains separate under `DRAGON_MAGAZINE_SOURCE_POLICY.md`.
+Issue registration is navigation only; article role/scope/activation remains separate.
 
 ## Current compiled entity/assertion shards
 
@@ -71,9 +71,15 @@ Issue registration is navigation only. Article-level role/scope/activation remai
 - `rules/source-knowledge/entities/core-proficiencies-combat-surprise.md`
   - proficiency slots; standard combat attack modifiers; surprise modifiers; encounter distance.
 - `rules/source-knowledge/entities/core-armor-and-spell-entry-schema.md`
-  - core armor class ratings; common spell-entry field semantics for consistent PHB/Tome/Spell-Compendium extraction.
+  - core armor ratings; spell-entry normalization semantics.
+- `rules/source-knowledge/entities/core-initiative-missile-cover.md`
+  - group initiative; optional action initiative modifiers; multiple-attack/spellcasting sequencing; missile range/ROF/ability modifiers; firing into melee; cover/concealment.
+- `rules/source-knowledge/entities/tome-of-magic-first-level-starter.md`
+  - verified Tome wizard/priest first-level spell starter assertions with activation/source-text-required metadata.
 - `rules/source-knowledge/entities/source-family-record-shapes.md`
   - Monstrous Compendium Annual and Encyclopedia Magica source-native record shapes.
+- `rules/source-knowledge/entities/monster-scope-alias-starter.md`
+  - Monstrous Manual precedence plus Mystara-scoped aliases/mappings and dragon specialization routing.
 - `rules/source-knowledge/entities/magic-items-cross-source-starter.md`
   - Winged Mask multi-source assertions; Dragon #33 magical-oil family; typed provenance edges.
 
