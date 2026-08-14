@@ -14,8 +14,8 @@ player:
 engine:
   repository: hiramhibbard/adnd2e-campaign-engine
   schema: 1
-  version: portable-v1.1
-  commit: 6e7991052429529da2206f7cbd59410c96437337
+  version: portable-v1.2
+  commit: 06108afed869f7d5189cab6df03e15bccfb72cc3
 
 state:
   schema_version: 1
@@ -31,12 +31,12 @@ isolation:
 
 This repository remains the sole canonical durable state store for the Wren campaign.
 
-The engine repository contains reusable procedures/templates and shared compiled source knowledge only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, chronology, optional-rule activations, and campaign-local source bindings must continue to persist in `hiramhibbard/wren-campaign`.
+The engine repository contains reusable procedures/templates, shared compiled source knowledge, source-availability routing, regional/world-motion procedure, specialist source routers, asset procedure, and growth/sharding procedure only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, chronology, optional-rule activations, campaign-local regional actors/clocks/populations, and campaign-local source bindings must continue to persist in `hiramhibbard/wren-campaign`.
 
-The existing local bootstrap/schema/policy/procedure/source-object files remain a **compatibility mirror** during staged engine extraction so Wren's established operating path is not broken. Their existence does not make them reusable campaign state for another campaign.
+The existing local bootstrap/schema/policy/procedure/source-object files remain a **compatibility mirror** while Wren migration is staged. Their existence does not make them reusable campaign state for another campaign.
 
-The portable-v1.1 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
+The portable-v1.2 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
 
-No engine extraction or upgrade may reinterpret or rewrite established Wren campaign facts merely to match a newer procedure or compiled source object. Engine changes apply prospectively unless a specific safe migration is explicitly performed.
+The portable-v1.2 extraction does not reinterpret or rewrite any established Wren fact. The extracted policies are prospective reusable procedure; Wren's existing canonical state and local compatibility records remain authoritative for Wren.
 
-An engine upgrade must update this binding only after compatibility/integrity verification.
+A future engine upgrade must update this binding only after compatibility/integrity verification.
