@@ -1,6 +1,6 @@
 # Wren Specialist Source Role Registry
 
-This registry is a lightweight routing accelerator for `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`. It does not activate supplements and does not replace exact uploaded-source retrieval.
+Lightweight scope/domain router for `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md` and the compiled source layer. It does not activate supplements and does not replace uploaded-source authority.
 
 ## Roles
 
@@ -8,58 +8,50 @@ This registry is a lightweight routing accelerator for `SUPPLEMENT_SOURCE_RESOLU
 - `race-specialist-source`
 - `class-specialist-source`
 - `dm-domain-guide`
-- `periodical-secondary-source`
 - `setting-specific-source`
 - `adventure-specific-source`
+- `periodical-secondary-source`
 - `optional-rules-source`
 - `inspiration-reference-source`
 
-## High-value routing families
+A document/article may have multiple roles by section/assertion.
 
-### PHBR / brown-book family
-Use as race/class specialist references when the corresponding race/class/domain becomes consequential. Typical triggers include elves, dwarves, gnomes/halflings, humanoids, fighters, thieves, wizards, priests, bards, rangers, paladins, druids, psionics, and other covered specialties.
+## High-value source families
 
-Consultation may inform compatible lore, institutions, culture, professional practice, NPC generation, and source discovery. Kits/options/alternate mechanics remain inactive unless explicitly adopted.
+### PHBR / brown books
+Use as race/class specialist references when the corresponding race/class/domain becomes consequential. Appropriate material includes culture, institutions, professional practice, NPC generation, equipment traditions, and candidate options.
 
-### DMGR / blue-book family
-Use as event-driven DM-domain references when the corresponding situation becomes consequential. High-value examples include castles/strongholds/sieges, catacombs/dungeons/tombs, arms/equipment, villains/antagonist design, seafaring/ships/naval operations, and other covered DM specialist domains.
+Kits/options/alternate mechanics remain inactive unless explicitly adopted for the relevant scope.
 
-DM guidance can be case-relevant without making every optional subsystem campaign-wide.
+### DMGR / blue books
+Use as event-driven DM-domain references for strongholds/sieges, catacombs/tombs/dungeons, arms/equipment, villains/organizations, seafaring/ships, and other covered DM specialist domains.
 
-### Dragon Magazine family
-Use as an article-level `periodical-secondary-source` under `DRAGON_MAGAZINE_SOURCE_POLICY.md`.
+Compatible DM guidance may be case-relevant without activating every optional subsystem.
 
-High-value roles include:
-- setting lore/support;
-- monster ecology and monster extensions;
-- race/class culture and professions;
-- religion/deities/specialty priesthoods;
-- spells, magic items, artifacts, magical phenomena;
-- NPCs, villains, guilds, organizations;
-- equipment/craft;
-- DM procedures and worldbuilding;
-- adventure seeds/components;
-- optional rules/inspiration.
-
-Dragon article authority is resolved per article/section. Retrieval does not automatically activate mechanics or make article content campaign canon.
+### Dragon Magazine
+Route article-level material through `DRAGON_MAGAZINE_SOURCE_POLICY.md` / `rules/dragon/INDEX.md`. Dragon is a periodical secondary family, with article-specific role/scope/activation.
 
 ## Lookup behavior
 
-Do not load or scan entire source families during ordinary turns. Resolve from the current domain:
+Prefer:
 
-`domain -> source role -> likely title/article/source family -> targeted uploaded-source search -> exact section/article`
+`domain -> active setting/adventure/rules scope -> verified compiled source entity/assertion if available -> likely specialist family/title -> targeted uploaded-source search -> exact section -> compile reusable assertion when useful`
 
-For Dragon specifically:
-`subject + active setting/scope + article role -> targeted Dragon search -> exact article -> authority/activation classification`
+Do not load/scan entire source families during ordinary turns.
 
-Once a title/article/section repeatedly proves useful, preserve a compact locator or verified projection under normal rules-projection/derived-index policy.
+Once a source title/section/article repeatedly proves useful, compile/register stable document/entity/assertion IDs and exact locators under `rules/source-knowledge/` rather than repeating broad PDF search.
 
 ## Scope protection
 
-Always resolve active setting/adventure scope first. Generic specialist books or Dragon articles must not overwrite explicit setting/adventure treatments; specialized setting assumptions must not leak into generic play.
+Always resolve active setting/adventure scope first.
 
-## Registration policy
+- generic specialist material must not overwrite explicit setting/adventure treatment;
+- setting-specific assumptions must not leak into generic play;
+- source-object existence and source availability never imply activation;
+- conflicts remain separate scoped assertions until precedence is resolved.
 
-Individual source-title/article records may be added lazily when repeated use, ambiguity, or performance justifies it. The absence of a title/article from this compact registry is not evidence that Hiram lacks the source; search uploaded source material when a domain trigger indicates it may be relevant.
+## Population strategy
 
-Dragon article locators live under `rules/dragon/INDEX.md` and may be expanded lazily.
+Individual source documents and assertions may be compiled lazily during play or in batches during maintenance/offline extraction.
+
+Absence of a title/object from this compact router is never evidence that Hiram lacks the source. Targeted uploaded-source search remains fallback.
