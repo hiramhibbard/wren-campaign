@@ -20,7 +20,42 @@ Treat context assembly as an explicit subsystem:
 
 `Canonical State + Retrieval + Source Material + Recent Conversation + Task Intent -> Context Compiler -> Disposable Turn/Voice Context`
 
-The compiler should optimize for correctness first, then relevance, locality, compactness, and retrieval cost.
+The compiler should optimize for correctness first, then relevance, locality, compactness, latency, and retrieval cost.
+
+## Event-driven procedure routing
+
+Normal play must use event-driven, opt-in procedure routing rather than scanning or executing every available DM procedure on every turn.
+
+For each player utterance, state transition, or elapsed-time step:
+
+1. classify the small set of event/procedure domains actually implicated by the action or change;
+2. evaluate only those procedures whose trigger conditions could plausibly be affected;
+3. do not load source material, canonical shards, or unrelated procedure detail merely as a precaution;
+4. use already-valid cached/derived state for fast-path checks when available;
+5. escalate to canonical/source retrieval only when the implicated procedure requires information that is missing, stale, invalidated, uncertain, or newly consequential;
+6. after resolving the implicated procedures, return to narration/adjudication without running unrelated background checks.
+
+Examples:
+- looking under a bed does not activate XP, encumbrance, travel, or depletion procedures;
+- picking up a heavy object may activate inventory/encumbrance handling;
+- casting a spell may activate spell-resource and active-effect lifecycle handling;
+- declaring a multi-day journey may activate travel plus declared-action readiness;
+- receiving XP activates XP-threshold/advancement handling;
+- advancing time activates only clocks, active effects, resources, projects, encounter schedules, or other due-event domains whose registered triggers could be crossed.
+
+The existence of a procedure in `state/rulings/dm-procedure-triggers.md` is not itself a reason to execute it. Procedures are dormant until routed by a relevant event or dependency change.
+
+### Fast-path versus slow-path
+
+Prefer a two-stage runtime pattern:
+
+`utterance/event -> cheap routing + valid cached checks -> adjudicate/respond`
+
+Use the slower path only when necessary:
+
+`utterance/event -> implicated domain -> missing/invalid/threshold-crossing state -> targeted canonical/source retrieval -> refresh cache/state -> adjudicate/respond`
+
+Routine turns should normally stay on the fast path. Increasing the number of available procedures must not linearly increase per-turn work.
 
 ### Default priority order
 
@@ -78,6 +113,12 @@ Prioritize explicit routes/indexes and authoritative entity files. Use episodic/
 ### Live Voice preload
 
 Before Voice, compile a practical working set broad enough for likely immediate play: Wren's core identity anchors, immediate state, current scene/region, active threads, likely NPC/location/faction interactions, relevant clocks, required DM-only preparation, and any source/rules material likely to be needed soon.
+
+For latency-sensitive Voice play, also preload a compact **fast-path runtime block** containing the small, frequently consulted state that can prevent routine external retrieval. As applicable, this includes current HP/AC/movement and other immediate combat values, memorized/available spell state, current carried/accessible consumables, current encumbrance category and next breakpoint, current XP and next-level threshold, active conditions/effects with their registered lifecycle triggers, and the next immediately relevant clocks/due events.
+
+This fast-path block is derived from canonical state and is disposable, not a second source of truth. It should contain values already needed or likely to be checked repeatedly, not broad speculative rules/lore. Refresh only the affected entries when their dependencies change.
+
+During Voice, a routine turn should first route against this loaded working set. Do not perform or defer a canonical lookup merely because a procedure exists if the needed valid state is already loaded and no dependency/threshold requires source escalation. If an established fact genuinely required for correctness is absent and tools are unavailable, follow the deferred-lookup rule rather than guessing.
 
 When `GROWTH_POLICY.md` calls for a Voice working-set packet, use it as routing metadata to compile this context; the packet remains non-authoritative.
 
