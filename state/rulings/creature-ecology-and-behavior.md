@@ -2,7 +2,7 @@
 
 This procedure turns active AD&D 2e monster source material into coherent world behavior rather than treating creatures as combat stat blocks.
 
-The governing AD&D 2e monster source remains authoritative. Uploaded supplements remain inactive unless explicitly active for the relevant scope.
+The governing AD&D 2e monster source remains authoritative. Uploaded supplements remain inactive unless explicitly active for the relevant scope. Non-authoritative ecology material is governed by `MONSTER_ECOLOGY_INSPIRATION_POLICY.md` and may propose ideas only after the active 2e source/scope has been resolved.
 
 ## Trigger
 Use when a creature or creature population becomes consequential through encounter, lair, region activation, evidence, migration, faction/ecology interaction, treasure, or repeated presence.
@@ -40,6 +40,19 @@ Resolve only consequential questions:
 - what causes it to fight, flee, stalk, bargain, surrender, ignore, defend, or pursue;
 - why it has treasure and whether it carries, uses, hoards, guards, trades, inherited, or merely occupies it.
 
+## Ecology inspiration gap-fill
+
+If one of the questions above is consequential and the active AD&D 2e/setting/adventure source plus established campaign state do not answer it sufficiently:
+
+1. identify the exact unresolved ecology question;
+2. consult `MONSTER_ECOLOGY_INSPIRATION_POLICY.md` and its registered inspiration sources for candidate possibilities;
+3. reject 5e-specific mechanics, level-scaling/encounter-balance assumptions, modern cosmology/lore, or anything incompatible with the governing 2e source, active setting, or campaign state;
+4. adapt only edition-neutral compatible ideas into an old-school AD&D 2e idiom;
+5. resolve the minimum campaign-specific fact needed before consequences depend on it;
+6. persist consequential resolved ecology in campaign population/site/DM state rather than silently changing the generic monster projection.
+
+The inspiration source itself never establishes monster canon or mechanics.
+
 ## Intent before initiative
 Before hostilities, apply established motive/orders/behavior first. If response remains uncertain, route to the AD&D 2e reaction procedure.
 
@@ -53,6 +66,8 @@ Established creatures/populations should generate plausible evidence from their 
 Use `state/rulings/perception-and-evidence.md` to determine what Wren can perceive and infer.
 
 Evidence should be causal, not a breadcrumb guarantee. Some creatures are stealthy, incorporeal, magical, clean, transient, or otherwise leave little/no ordinary trace.
+
+When campaign-specific ecology has been resolved through the inspiration gap-fill procedure, evidence derives from the resolved campaign ecology—not directly from the inspiration article.
 
 ## Population and regional effects
 If a creature becomes a durable population rather than a one-off encounter, promote it under `REGIONAL_RUNTIME_POLICY.md` / `REGIONAL_RUNTIME_TEMPLATES.md` when it can alter ecology, travel safety, settlement behavior, encounter content, rumors, trade, prey/predators, or faction state.
@@ -68,4 +83,4 @@ Do not force every source monster into a mundane ecological model. Undead, const
 Use treasure fields as source inputs, not automatic piles appearing beside monsters. Determine placement/provenance when consequential. A carried patrol, a lair hoard, tribute, stolen goods, grave goods, ritual objects, and an inherited magic item are different world facts.
 
 ## Persistence
-Once creature behavior, population state, lair relationship, evidence, motive, or treasure provenance materially affects play, preserve it at the appropriate player-facing/DM-only level rather than rerolling or reinventing it later.
+Once creature behavior, population state, lair relationship, evidence, motive, resolved ecology, or treasure provenance materially affects play, preserve it at the appropriate player-facing/DM-only level rather than rerolling or reinventing it later.
