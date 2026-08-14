@@ -1,6 +1,6 @@
 # Wren Supplement Source Resolution Policy — v1
 
-This policy defines when and how AD&D 2e specialist supplements are consulted without turning mere availability into automatic rules activation.
+This policy defines when and how AD&D 2e specialist supplements and periodical secondary sources are consulted without turning mere availability into automatic rules activation.
 
 ## Core principle
 
@@ -17,12 +17,13 @@ Classify useful sources by role when needed:
 - `race-specialist-source` — PHBR/race books such as elves, dwarves, gnomes/halflings, humanoids, etc.;
 - `class-specialist-source` — PHBR/class books for fighters, thieves, wizards, priests, bards, rangers, paladins, druids, psionics, and similar specialties;
 - `dm-domain-guide` — DMGR/blue-book and equivalent DM references for castles/strongholds, catacombs/dungeons, arms/equipment, villains, seafaring, and other situation domains;
+- `periodical-secondary-source` — Dragon Magazine and comparable article-based AD&D material whose authority is classified article-by-article;
 - `setting-specific-source` — an active campaign-setting treatment;
 - `adventure-specific-source` — module/site/scenario material governing a particular case;
 - `optional-rules-source` — material that introduces an optional or replacement subsystem;
 - `inspiration-reference-source` — useful non-governing material.
 
-A single book may occupy more than one role by section.
+A single book/article may occupy more than one role by section.
 
 ## Automatic consultation is not automatic activation
 
@@ -36,7 +37,8 @@ Examples:
 - catacombs/tombs/subterranean-site concerns -> consult the relevant DM-domain guide;
 - detailed arms/equipment availability, use, provenance, or specialist equipment questions -> consult the relevant equipment guide;
 - major villain design/motivation/organization -> consult the relevant villain guide;
-- seafaring, ships, crews, ports, naval movement/combat, maritime hazards -> consult the relevant seafaring guide.
+- seafaring, ships, crews, ports, naval movement/combat, maritime hazards -> consult the relevant seafaring guide;
+- a consequential domain with likely Dragon Magazine support -> route through `DRAGON_MAGAZINE_SOURCE_POLICY.md` at article level.
 
 Consultation may inform lore, framing, DM preparation, source discovery, and compatible detail. It does **not** activate every option, kit, subsystem, table, proficiency, item, spell, or variant rule in that source.
 
@@ -56,10 +58,10 @@ Use scope-first precedence:
 
 `active adventure-specific treatment -> active setting-specific treatment -> explicitly adopted specialist/optional treatment -> otherwise governing core rule`
 
-This is not a blind hierarchy. A specialist book may supply compatible detail to an active setting only where it does not contradict or flatten the setting's own treatment.
+This is not a blind hierarchy. A specialist book or Dragon article may supply compatible detail to an active setting only where it does not contradict or flatten the setting's own treatment.
 
 Bilateral protection:
-- do not flatten setting-specific elves, dwarves, ships, castles, villains, equipment, etc. into generic specialist-book assumptions when the setting/adventure explicitly differs;
+- do not flatten setting-specific elves, dwarves, ships, castles, villains, equipment, religions, monsters, etc. into generic specialist/article assumptions when the setting/adventure explicitly differs;
 - do not import setting- or supplement-specific assumptions into generic play merely because they are available.
 
 ## Race and culture routing
@@ -71,7 +73,9 @@ When a race/species becomes consequential beyond a trivial mention, the DM shoul
 - NPC portrayal and settlement generation;
 - setting-compatible subgroups or variants.
 
-Do not automatically enable race kits, ability changes, optional proficiencies, alternate class limits, new powers, or other mechanics merely because the race book was consulted.
+Dragon race/culture articles may be consulted as secondary material after active setting/PHBR scope is resolved.
+
+Do not automatically enable race kits, ability changes, optional proficiencies, alternate class limits, new powers, or other mechanics merely because the race book/article was consulted.
 
 ## Class routing
 
@@ -79,11 +83,13 @@ When a class or class institution is consequential, class-specialist books may b
 - training, organizations, social role, equipment traditions, mentors, guilds/orders, spellcasting culture, professional practices, and NPC portrayal;
 - candidate kits/options when Hiram explicitly wants to consider them.
 
+Dragon class/profession articles may enrich this domain under article-level authority classification.
+
 Do not silently activate kits or alternate class mechanics.
 
 ## DM-domain routing
 
-DMGR/blue-book or equivalent specialist DM material is event-driven. Consult only when the domain is active enough to affect play or preparation.
+DMGR/blue-book, Dragon DM-procedure, or equivalent specialist DM material is event-driven. Consult only when the domain is active enough to affect play or preparation.
 
 High-value domains include:
 - strongholds/castles/sieges;
@@ -91,9 +97,15 @@ High-value domains include:
 - arms/equipment and specialist gear;
 - villain creation/organizations/long-term antagonists;
 - seafaring/ships/crews/naval procedures;
-- other explicitly relevant DM-specialist domains present in Hiram's source library.
+- religions, magic, ecology, organizations, environments, and other relevant DM-specialist domains present in Hiram's source library.
 
-If a DM-domain guide contains a large optional subsystem, load only the section needed and distinguish source guidance from a mechanics activation decision.
+If a source contains a large optional subsystem, load only the section needed and distinguish source guidance from a mechanics activation decision.
+
+## Dragon relationship
+
+`DRAGON_MAGAZINE_SOURCE_POLICY.md` is the normative article-level resolver for Dragon Magazine.
+
+Dragon is neither globally active nor merely ignored inspiration. Its retrieved articles are classified by scope and role. Setting-specific articles can be strong scoped support; optional mechanics remain activation-sensitive; generic guidance/inspiration may fill compatible gaps.
 
 ## Performance contract
 
@@ -107,13 +119,13 @@ On first meaningful use of a new domain:
 - establish source scope/precedence;
 - create compact projections or source locators only when repeated use justifies them.
 
-Repeated use should prefer cached source routing/projections rather than re-searching whole books.
+Repeated use should prefer cached source routing/projections rather than re-searching whole books or magazines.
 
-Do not preload whole PHBR/DMGR lines into ordinary or Voice context.
+Do not preload whole PHBR/DMGR lines or Dragon issue runs into ordinary or Voice context.
 
 ## Voice
 
-Preload only specialist material likely to matter in the immediate scene. If an unpreloaded supplement rule becomes consequential and retrieval is unavailable, defer the lookup rather than guessing or silently defaulting to remembered splatbook material.
+Preload only specialist material likely to matter in the immediate scene. If an unpreloaded supplement/Dragon rule becomes consequential and retrieval is unavailable, defer the lookup rather than guessing or silently defaulting to remembered material.
 
 ## Relationship to existing policy
 
