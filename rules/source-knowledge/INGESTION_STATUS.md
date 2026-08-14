@@ -53,11 +53,17 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [ ] inventory/register DMGR5 Creative Campaigning
 - [ ] inventory/register remaining available DMGR books
 
+### Dragon periodical inventory
+- [x] Dragon #232
+- [x] Dragon #235
+- [x] Dragon #236
+- [ ] continue issue inventory and article-level extraction
+
 ### Worldbuilding
 - [x] World Builder's Guidebook source family registered under `rules/worldbuilding/INDEX.md`
 
 ### Still to inventory/register
-- [ ] Dragon issues
+- [ ] remaining Dragon issues
 - [ ] Dungeon issues/modules
 - [ ] spell compendia / Tome of Magic / other spell sources
 - [ ] remaining setting source families
@@ -79,19 +85,42 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] force-march fast fields with exact-source escalation for deeper consequences
 - [x] DMG Table 73 extreme terrain round-movement modifiers
 
+### Core saves / encounter interaction
+- [x] PHB Table 60 complete class-group saving throw progression
+- [x] DMG Table 59 encounter reaction matrix and interpretation categories
+
 ### Existing compatible DMG projections
 - [x] wilderness encounter checks
 - [x] ship weather
 
+### Source-family structural extraction
+- [x] Monstrous Compendium Annual entry-field schema and scope warning
+- [x] Encyclopedia Magica item/provenance entry-field schema
+
+### Cross-source magic-item graph starter
+- [x] Winged Mask logical entity
+- [x] separate Ruins of Myth Drannor assertion
+- [x] separate Dragon #117 assertion
+- [x] Dragon #33 oil-family provenance relationship
+- [x] 12 Dragon #33 magical-oil assertions normalized from Encyclopedia Magica Volume 2
+
+## Index / relationship work completed
+
+- [x] stable source-document IDs for registered sources
+- [x] source-object-first registry routing
+- [x] typed provenance pattern demonstrated for one entity with multiple source treatments
+- [x] anthology -> original-publication relationship pattern demonstrated
+- [x] source-native monster and magic-item schemas established for future batch extraction
+
 ## Active extraction queue
 
-1. core combat/save/ability/proficiency/movement/exploration fast-path procedures;
+1. core combat / initiative / attack / weapon / save-modifier / proficiency / exploration procedures;
 2. full high-value monster metadata/stat extraction from generic core + anthology/setting variants;
-3. Encyclopedia Magica item metadata/provenance shards;
+3. Encyclopedia Magica alphabetical item metadata/provenance shards;
 4. spell corpus discovery and spell-definition shards;
 5. equipment/weapon/armor tables;
 6. adventure/module/Dungeon metadata;
-7. Dragon article metadata + entity relationships;
+7. broader Dragon issue/article metadata + entity relationships;
 8. PHBR/DMGR specialist assertions/procedures;
 9. setting entities/relationships;
 10. World Builder reusable tables/procedure objects.
