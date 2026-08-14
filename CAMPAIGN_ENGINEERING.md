@@ -1,165 +1,228 @@
 # Wren Campaign Engineering
 
-This file is the durable design/roadmap layer for the campaign system. It exists so architecture work can continue across fresh chats without depending on conversational history.
+Durable engineering/status layer for Wren's campaign runtime. This file records architecture decisions, implementation status, known limits, audits, and future validation work. It must not duplicate live campaign truth, DM secrets, sourcebook prose, or session history.
 
-It contains infrastructure decisions, operational status, known limitations, future-work notes, and test plans. It must not duplicate live campaign state, DM secrets, published source text, or ordinary session history.
+## Authority
 
-## Authority and scope
+- Campaign truth: root/state/checkpoints under `STATE_SCHEMA.md` and `PERSISTENCE_PROTOCOL.md`.
+- Runtime bootstrap: `CAMPAIGN_BOOTSTRAP.md`.
+- Published authority: Hiram's uploaded source corpus.
+- Compiled published-source acceleration: `SOURCE_KNOWLEDGE_LAYER_POLICY.md` / `SOURCE_KNOWLEDGE_SCHEMA.md`.
+- Working-context assembly: `CONTEXT_ARCHITECTURE.md`.
+- Growth/maintenance: `GROWTH_POLICY.md`.
 
-- Canonical campaign facts remain in `Wren_Campaign_Ledger.md`, sharded `state/` files, and post-baseline checkpoints.
-- Runtime/persistence rules remain governed by `CAMPAIGN_BOOTSTRAP.md` and `STATE_SCHEMA.md`.
-- Reusable state structures remain governed by `STATE_TEMPLATES.md`.
-- Exact AD&D 2e rules and published content remain governed by Hiram's uploaded source material.
-- This engineering file records architecture intent, accepted design decisions, implementation status, and future work.
-- Architecture work must not advance gameplay unless Hiram explicitly switches back into play.
+Architecture work does not advance gameplay unless Hiram explicitly resumes play. Infrastructure/source compilation normally creates no real campaign checkpoint unless it also changes campaign truth or an active rules decision.
 
-## Fresh-chat engineering bootstrap
+## Engineering bootstrap
 
-When Hiram asks to continue improving the campaign system, architecture, persistence, DM behavior, memory, Voice workflow, or maintenance design:
+When Hiram asks to improve/audit the campaign system:
+1. load normal canonical bootstrap/root/index;
+2. load this file;
+3. inspect exact implementation files before editing;
+4. preserve campaign truth and player/DM visibility boundaries;
+5. treat current repository state as implementation authority;
+6. verify writes by canonical readback before reporting completion.
 
-1. Load the normal canonical bootstrap/root/index required by the Project.
-2. Load this file before proposing or implementing architecture changes.
-3. Inspect the specific referenced implementation files before editing them.
-4. Preserve existing campaign state and player/DM knowledge boundaries.
-5. Treat repository state as authoritative for what has already been implemented; do not reconstruct engineering status from conversational memory.
-6. Administrative architecture changes do not require a gameplay checkpoint unless they also change actual campaign state.
-7. Verify every repository write by canonical readback before reporting it complete.
+For gameplay, the single word `Wren` remains the shorthand for canonical load/reconstruction + practical Voice-ready working-set preparation without advancing play.
 
-## Short gameplay-session initializer
+## Current architecture
 
-In a fresh chat inside the Wren Project, the single word **`Wren`** (punctuation/capitalization immaterial) is the canonical shorthand for:
+### Canonical campaign backend / persistence
+- GitHub `hiramhibbard/wren-campaign`, `main`.
+- Root ledger is bounded resume/manifest, not encyclopedia.
+- Materialized state + ordered post-baseline checkpoints reconstruct current truth.
+- Real saves use stable transaction IDs, explicit parent identity, idempotency checks, retry/reconciliation discipline, and readback verification.
+- Write acknowledgement alone is not saved state.
+- Manual transport fallback preserves exact prepared transaction if connector write is blocked.
+- Real campaign checkpoints have been exercised successfully; the old "first real checkpoint test pending" note is retired.
 
-> Load and verify the canonical campaign state, reconstruct all required post-baseline checkpoints, load a practical working set for likely play including relevant DM-only state, determine maintenance status, and prepare this same chat to enter Live Voice. Do not advance gameplay during initialization.
+### Context / performance
+- `state/INDEX.md` is a compact always-loaded deterministic router.
+- Event-driven procedure routing prevents linear per-turn scans as capabilities grow.
+- Context Compiler loads only immediate canonical state, relevant DM state, exact relevant source objects, and recent conversation.
+- Voice uses a compact fast-path block and only relevant verified source objects/projections.
+- Broad PDF/source search is a slow path.
 
-Hiram may use a longer natural-language request if desired, but `Wren` alone is sufficient. The DM should confirm readiness only after the required canonical load succeeds. If canonical retrieval fails, report the failure rather than pretending initialization completed.
+### Compiled source knowledge
+Implemented:
+- `SOURCE_KNOWLEDGE_LAYER_POLICY.md`
+- `SOURCE_KNOWLEDGE_SCHEMA.md`
+- `rules/source-knowledge/INDEX.md`
+- `tests/SOURCE_KNOWLEDGE_LAYER_REGRESSION.md`
 
-## Settled architecture decisions
+Model:
+`uploaded source -> verified source entities/assertions/relationships -> retrieval indexes -> scope/precedence -> campaign/runtime use -> exact source fallback`
 
-### Canonical backend and retrieval
-- GitHub repository `hiramhibbard/wren-campaign`, branch `main`, is the canonical campaign backend.
-- `Wren_Campaign_Ledger.md` is the compact root manifest/resume layer.
-- `STATE_SCHEMA.md` defines sharding, checkpoints, compaction, concurrency, recovery, maintenance, and manual-write fallback.
-- `state/INDEX.md` is the primary canonical routing index.
-- Established facts are retrieved automatically whenever they could affect narration, adjudication, NPC behavior, resources, history, clues, or consequences.
-- Absence from the current conversation is never evidence that campaign state is absent.
+Principles:
+- organize by reusable entity/domain, not book layout;
+- preserve multiple scoped assertions rather than flattening conflicting books;
+- source-object existence never activates optional/supplement/setting rules;
+- verified structured facts may be used directly;
+- nuanced/exception-sensitive material carries exact locator / `source_text_required`;
+- no second prose copy of the books;
+- layer is rebuildable from uploaded sources.
 
-### Persistence
-- Ordinary saves use immutable append-only checkpoints after the materialized snapshot baseline.
-- Writes are not considered saved until read back and verified.
-- Connector safety blocks use a human-transport fallback with an exact prepared transaction; Hiram should not have to reconcile campaign facts manually.
-- Compaction folds post-baseline checkpoint deltas into sharded state, updates the root last, and preserves historical checkpoints.
-- Maintenance becomes due at 10 or more uncompacted real campaign checkpoints unless earlier intervention is warranted by size/integrity/arc transitions.
+Initial populated core coverage now includes:
+- PHB source document;
+- DMG source document;
+- Monstrous Manual source document;
+- Armor spell structured definition;
+- wizard XP/Hit Dice progression;
+- wizard spell-slot progression;
+- INT 18 source row;
+- core character encumbrance breakpoints;
+- wizard THAC0 progression;
+- existing DMG wilderness encounter and ship-weather projections registered conceptually as compiled source assertions.
 
-### Incremental maintenance
-- Real checkpoints should include dirty-domain hints from `STATE_TEMPLATES.md`.
-- Routine maintenance should update only affected shards plus required indexes/cross-links when safe.
-- Broad integrity audits remain available when needed, but normal compaction should not repeatedly rebuild the whole campaign encyclopedia.
+Population strategy is mixed:
+- lazy after useful play lookups;
+- batch/offline/maintenance extraction for high-value source families.
 
-### Live Voice
-- Ordinary Project chat/Live Voice is the game table; Work/Codex is the maintenance console.
-- A fresh gameplay chat may be initialized by sending only `Wren` before entering Voice.
-- Before Live Voice, load a practical working set broad enough for likely play.
-- If Voice cannot access GitHub and an obscure canonical fact is needed, do not guess. Preserve the pending lookup and automatically resolve it in text mode in the same conversation after Voice ends.
-- Voice-session durable changes remain pending until a post-Voice checkpoint is written and verified.
+### Rules and supplements
+- `RULES_PROJECTION_POLICY.md` remains the specialized deterministic-mechanics projection policy inside the broader source-knowledge architecture.
+- `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`: domain/scope consultation without automatic activation.
+- PHBR/DMGR specialists are event-driven.
+- Active setting/adventure treatment protects specialized scope from generic contamination.
+- Rules/source dependency routing now prefers verified compiled assertions/projections before source PDF lookup.
 
-### AD&D rules and dice
-- Run actual AD&D 2e rather than generic modernized checks.
-- Hiram rolls player-facing physical dice; the DM applies modifiers/adjudication.
-- Hidden DM rolls use genuine randomized secret results, with no fudging, rerolls for convenience, discarded outcomes, or fake randomness.
-- Exact consequential rules are retrieved from uploaded AD&D sources when needed.
-- XP is evaluated automatically at meaningful encounter/objective resolution and session end using published AD&D 2e/applicable source rules.
+### Monsters / ecology
+- Scope-first monster source resolver prevents generic/specialized cross-contamination.
+- Monster projections separate species/source definition from campaign population/site/encounter-instance state.
+- Ecology order: governing 2e source -> applicable Dragon ecology -> other compatible inspiration -> campaign-specific resolved ecology.
+- No hostile population is generated merely to produce combat.
 
-### NPC generation and portrayal
-- NPCs use significance tiers rather than automatic full character sheets.
-- Original NPC generation follows a context-first hierarchy: published/source facts -> established world context -> role requirements -> mechanical profile -> alignment/ethos -> personality/history -> cognition/speech -> constrained variation -> consistency pass -> canonicalization.
-- Randomness provides variation inside plausible constraints rather than overriding world logic.
-- Once consequential hidden NPC details have informed play, they become durable state and are not regenerated for convenience.
-- Jobs, training, social position, education, culture, class/race/source restrictions, ability scores, proficiencies, alignment, history, and resources should form a coherent whole.
-- Unusual combinations are allowed when coherent; poverty or low social status does not dictate low innate Intelligence, and high status does not guarantee competence.
-- Significant NPC speech and reasoning are grounded in Intelligence, Wisdom, Charisma, education, culture, occupation, languages/literacy, social position, emotional state, knowledge, and personality.
-- Alignment informs values, methods, loyalties, conflict, relationships, and mechanical interactions without replacing personality.
-- Hidden NPC alignment is not exposed merely because the DM knows it.
-- Henchmen remain independent NPCs with motives, alignment, personality, loyalty, obligations, compensation/share, risk tolerance, and off-screen lives.
+### Adventure generation
+- `ADVENTURE_OPPORTUNITY_POLICY.md` treats published modules/Dungeon material and original DM creation as complementary first-class paths.
+- Dungeon Magazine remains actively considered when a likely fit exists.
+- Published search is targeted and may terminate when no strong fit appears; it is not a bottleneck on original creation.
+- Scenario-before-story: no forced hooks/endings.
+- No automatic level scaling.
+- Gross danger is legible through causal in-world evidence when plausible, never a level gate.
+- Published/original scenarios persist and participate in normal world motion after becoming consequential.
 
-### Persistent-world scaffolds
-Reusable templates now exist for:
-- world clock and scheduled event queue;
-- regional/planned/random encounters;
-- reaction and morale/loyalty procedures;
-- factions, resources, goals, and clocks;
-- clues, rumors, inferences, false beliefs, and knowledge boundaries;
-- travel/exploration state;
-- downtime/long-running projects;
-- significant items, provenance, identification, charges, curses/intelligence/alignment restrictions;
-- published-adventure/source registry;
-- entity promotion/demotion;
-- checkpoint dirty-domain routing.
+### World Builder
+- *World Builder's Guidebook* is active DM-generation machinery for unresolved world space.
+- Microscopic/local approach is default for current Wren play.
+- Generate only smallest necessary causal truth.
+- Constraints precede random generation; valid consequential rolls are accepted.
+- World Builder procedures can themselves be compiled into reusable source objects without generating campaign facts.
 
-These are generally instantiated only when play makes them relevant rather than as empty folders/files.
+### Dragon Magazine
+- Dragon is an article-level secondary source family, not a globally active rulebook.
+- Automatic targeted consultation for setting support, ecology, religion, magic, NPCs/organizations, DM procedures, worldbuilding, and adventure components.
+- Article-level compiled metadata/relationships are supported; batch metadata extraction is appropriate during maintenance/offline work.
+- Optional mechanics remain activation-sensitive.
 
-## Implemented files of special engineering relevance
+### Regional runtime / DM craft
+- Home Coast bounded regional runtime + active world clocks implemented.
+- Site runtime preserves changed sites; publication baseline never resets campaign consequences.
+- DM craft is scenario-before-story, observation-before-interpretation, intent-before-initiative, no pixel hunting, no fudging.
+- NPC generation/portrayal, knowledge reliability, perception/evidence, creature ecology, encounter/weather routing are implemented as event-driven procedures.
 
-- `CAMPAIGN_BOOTSTRAP.md` — full runtime operating protocol.
-- `STATE_SCHEMA.md` — persistence/state architecture.
-- `STATE_TEMPLATES.md` — reusable long-term state scaffolds and entity templates.
-- `state/rulings/dm-procedure-triggers.md` — automatic recognition of active AD&D/DM procedures.
-- `state/rulings/npc-generation-and-portrayal.md` — context-first NPC generation, alignment, competence, cognition, personality, and portrayal.
-- `state/rulings/dice-protocol.md` — player-facing/secret dice rules.
-- `state/rulings/adnd2e-campaign-rulings.md` — campaign rules and XP policy.
-- `state/clues/active.md` — instantiated player-facing clue/knowledge ledger.
-- `state/npcs/index.md` — current NPC routing and promotion guidance.
+## 2026-08-14 rapid-change integrity/performance audit
 
-## Operational status / completed tests
+Audit scope included current root/policy routers, `state/INDEX.md`, `rules/INDEX.md`, source registries, trigger directory, regression suite, Context Compiler, dependency registry, compiled-source schema/registry, and initial source extraction paths.
 
-- Sharded snapshot generation 1 is active.
-- Cold-start test passed: a fresh Project chat correctly loaded the canonical repository and resumed the proper state without relying on the previous conversation.
-- Automatic canonical-retrieval test passed: a fuzzy historical question was checked against canonical state rather than answered from conversational memory.
-- NPC state files have a consistent Markdown precedent and current routes use `state/npcs/edric-hale.md`.
-- XP automation policy has been added and verified.
-- Long-term DM scaffolds and NPC generation/alignment protocol have been added and verified.
-- Short gameplay-session initializer accepted: `Wren` means canonical bootstrap + Voice preparation without gameplay advancement.
+### Problems found and corrected
 
-## Next major validation work
+1. **`rules/INDEX.md` lagged behind new architecture.**
+   - Fixed: now routes compiled knowledge, Dragon, World Builder, published-or-original adventure flow, and current populated objects.
 
-### Live Voice continuity test
-1. Start a fresh Project chat and send `Wren`.
-2. Wait for canonical load/readiness confirmation, then enter Live Voice without advancing gameplay unless explicitly intended.
-3. Verify the current state carries into Voice.
-4. Ask about an obscure canonical fact that was deliberately not preloaded.
-5. Expected behavior while Voice retrieval is unavailable: the DM says a canonical lookup is required and preserves the pending context instead of guessing.
-6. End Voice and remain in the same chat.
-7. Expected behavior in text mode: the DM automatically performs the pending GitHub lookup without requiring Hiram to repeat the question.
+2. **Derived-index policy could be read as forbidding rich compiled source objects.**
+   - Fixed: explicit separation between compiled source objects, retrieval indexes, and runtime caches.
 
-### First real append-only checkpoint test
-- After the Voice workflow is validated, test a genuine post-baseline campaign checkpoint at a safe boundary.
-- Verify sequence/concurrency, automatic create when possible, canonical readback, critical delta coverage, and maintenance counting.
-- If connector safety blocks the write, exercise the exact manual checkpoint fallback and then read back the transported file.
+3. **Context Compiler knew structured rule projections but not general compiled source entities.**
+   - Fixed: source-object-first path now covers rules, monsters, items, setting, adventures, Dragon, World Builder, etc.
+
+4. **Rules dependency registry was projection-centric.**
+   - Fixed: dependency routing now prefers verified compiled assertions/projections, exact source only when needed.
+
+5. **World Builder regression test still required published search before original creation.**
+   - Fixed: aligns with current source-or-create policy.
+
+6. **Adventure regression suite did not cover original creation freedom / search termination.**
+   - Fixed: expanded published-or-original coverage and compiled-adventure metadata fast path.
+
+7. **Adventure, Dragon, World Builder, and specialist source registries were still primarily PDF-search-first.**
+   - Fixed: registries now prefer compiled object/article/adventure metadata and use targeted source search as fallback.
+
+8. **Always-loaded `state/INDEX.md` had accumulated duplicated explanatory prose.**
+   - Fixed: compacted into a route-focused index while preserving all current paths and invariants. This reduces startup/context overhead as systems expand.
+
+9. **Engineering status itself was stale.**
+   - Fixed by this revision; obsolete "first real checkpoint pending" and pre-source-knowledge assumptions removed.
+
+### Integrity checks passed
+
+Confirmed current repository paths exist for:
+- regional/site/monster/supplement/adventure/World Builder/Dragon trigger companions;
+- all current regression suites;
+- `rules/adventures`, `rules/dragon`, `rules/worldbuilding`, `rules/source-knowledge`, `rules/sources`, monster/encounter/travel registries;
+- source-knowledge policy/schema/registry;
+- current Context/Derived Index/Rules policies;
+- PHB/DMG/Monstrous Manual source-document records.
+
+No broken canonical campaign-state path or gameplay checkpoint dependency was found in this audit.
+
+## Performance invariants going forward
+
+1. **No capability scan per turn.** Route event/domain first.
+2. **No book-first lookup when an entity route exists.** Stable entity/assertion -> scope -> source fallback.
+3. **No duplicate source storage.** Existing projections can satisfy source-knowledge schema conceptually.
+4. **No broad source scan for known locators.** Exact source locator first.
+5. **No exhaustive adventure search.** Small candidate shortlist, then original creation if appropriate.
+6. **No whole-magazine preload.** Article/entity metadata first.
+7. **No whole-world generation.** Activation horizon + minimum useful truth.
+8. **No compiled graph preload.** Context Compiler selects small relevant slices.
+9. **No indexing as authority.** Index -> verified object/canonical state.
+10. **No source compilation as campaign canon.** Source object and Wren instance remain separate.
+
+## Source-population roadmap
+
+Continue actual compiled-source extraction by expected runtime value rather than cover order:
+
+1. remaining current-character/core combat/save/ability/proficiency fast-path mechanics;
+2. common/core movement, exploration, light, resource, surprise/distance/reaction procedures;
+3. active-region / candidate-adventure monsters;
+4. frequently useful spells, mundane equipment, magic items;
+5. PHBR/DMGR specialist entities and procedures;
+6. adventure/module/Dungeon metadata for cheap candidate filtering;
+7. Dragon article metadata and entity relationships;
+8. setting entities/relationships once a setting becomes active;
+9. World Builder reusable procedures/tables.
+
+Batch extraction should use domain shards/machine-readable batches rather than millions of tiny Markdown files.
+
+## Remaining validation / optimization work
+
+- Continue source population; architecture is active but corpus coverage is still small relative to Hiram's library.
+- As extraction volume grows, measure whether GitHub path/file overhead warrants larger machine-readable shards.
+- Add external full-text/vector/graph projection only when deterministic routers + compiled object registry stop being sufficient; do not add infrastructure merely because the schema supports it.
+- Validate Voice with a session that uses compiled PHB fast-path values without PDF retrieval, then forces one source-text-required escalation.
+- During Work/Codex maintenance, audit source fingerprints/verification and batch-extract high-value source families alongside normal campaign compaction when useful.
 
 ## Known operational limitations
 
-- GitHub connector writes can occasionally be blocked by OpenAI's external-write safety layer even when the requested mutation is valid. The system should retry only when sensible and otherwise use the explicit prepared manual fallback.
-- GitHub/connected-app tools may be unavailable during Live Voice. The architecture therefore relies on preloading and deferred same-conversation lookup/checkpoint behavior.
-- Published source retrieval can be expensive when exact rules or obscure module details are needed. Campaign state should store durable adaptations/references while leaving copyrighted source text in the uploaded source library.
+- GitHub/connected tools may be unavailable during Live Voice; preload + deferred lookup remain necessary.
+- Connector writes can occasionally fail/stale; persistence retry/idempotency/fallback rules apply.
+- Current compiled-source population is GitHub-backed and manually/model-extracted; large-scale corpus ingestion will eventually benefit from an offline/application pipeline with automated extraction + verification tooling.
+- Exact source prose/maps remain outside compiled objects when structured normalization would lose important meaning.
 
-## Future idea / decision log protocol
+## Decision-log statuses
 
-Use this section for engineering ideas that should survive chat boundaries but are not yet fully implemented.
+Use: Proposed / Accepted / Implemented / Deferred / Rejected.
 
-Each entry should use one status:
-- **Proposed** — worth considering; not accepted yet.
-- **Accepted** — design agreed; implementation pending or partial.
-- **Implemented** — repository implementation exists and has been verified.
-- **Deferred** — intentionally postponed until play makes it relevant.
-- **Rejected** — intentionally not pursuing; retain the reason if it prevents repeated reconsideration.
+Current:
+- **Implemented:** compiled source entity/assertion architecture and initial real population.
+- **Implemented:** published-or-original adventure routing.
+- **Implemented:** World Builder and Dragon event-driven source resolvers.
+- **Implemented:** source-object-aware Context Compiler/dependency routing.
+- **Implemented:** current rapid-change integrity/performance audit and router compaction.
+- **Accepted / ongoing:** continued batch/lazy source extraction.
+- **Accepted / validation pending:** dedicated Voice latency test of compiled-source fast path.
+- **Deferred:** stronghold/domain/mass-combat/advanced naval/planar/sage/spy/disease/aging/etc. until causally relevant unless batch extraction cheaply captures reusable metadata.
+- **Deferred:** setting-specific deep indexing until a setting is active, while generic source metadata may still be compiled in advance.
 
-When an idea becomes implemented, update its status and point to the canonical implementation file. Do not leave completed work permanently described as pending.
+## Design principle
 
-### Current future-work notes
-- **Accepted / test pending:** Live Voice continuity/deferred-lookup workflow.
-- **Accepted / test pending:** first real post-baseline append-only campaign checkpoint.
-- **Deferred:** stronghold, domain, mass-combat, advanced naval, planar, sage/spy/assassin, disease/aging, and extensive magic-item-construction subsystems until play makes them relevant. Exact published procedures should be retrieved and scaffolded when activated.
-- **Deferred:** exact named setting/geography-dependent engineering until campaign canon establishes the setting sufficiently to make specialized support useful.
-
-## Design principle for future improvements
-
-Prefer infrastructure that reduces future interruptions at the game table: automatic procedure recognition, compact durable state, source-aware adjudication, meaningful hidden world motion, incremental maintenance, and explicit routing. Avoid speculative complexity that increases startup cost without improving likely play.
+Prefer infrastructure that makes the game table disappear into the background: direct canonical routing, entity-centric source lookup, bounded working context, causal world motion, exact source fallback only when needed, and durable persistence. Optimization should reduce interruption and correctness risk rather than add machinery for its own sake.
