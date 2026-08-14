@@ -27,7 +27,7 @@ The compiler should optimize for correctness first, then relevance, locality, co
 As applicable, compile in this order:
 
 1. mandatory campaign operating/persistence/growth/context invariants;
-2. Wren's immediate mechanical/resource state;
+2. Wren's core identity anchors plus immediate mechanical/resource state;
 3. exact current chronology and location/scene;
 4. currently present or immediately relevant NPCs, creatures, items, locations, factions, clues, projects, and clocks;
 5. active threads/objectives whose consequences can affect the current task;
@@ -39,13 +39,29 @@ As applicable, compile in this order:
 
 Do not load material merely because it exists.
 
+## Player-character identity anchors
+
+The compiled narration/roleplay and Live Voice contexts must always include a compact player-character identity block sourced from canonical character state, even when the full character record is not otherwise needed.
+
+For Wren, the current minimum identity anchors are:
+
+- name: Wren;
+- sex/gender: male;
+- pronouns: he/him;
+- age: 19;
+- class/level: mage 1.
+
+These anchors are small correctness-critical facts and should not be dropped merely to save context. If any identity anchor later changes canonically, the compiled block must be regenerated from canonical state rather than retaining a stale copy.
+
+This pattern should generalize to future player characters: include the smallest stable identity facts needed to prevent narration drift while keeping the full character record separately authoritative.
+
 ## Task-specific context
 
 Different operations should receive different context slices.
 
 ### Narration / roleplay
 
-Prioritize scene/location state, present entities, relevant personalities/knowledge/motives, current chronology, active dangers/clocks, applicable DM preparation, recent conversation, and only the mechanical state needed for plausible narration/adjudication.
+Always include the player-character identity anchors. Prioritize scene/location state, present entities, relevant personalities/knowledge/motives, current chronology, active dangers/clocks, applicable DM preparation, recent conversation, and only the mechanical state needed for plausible narration/adjudication.
 
 ### Mechanical adjudication
 
@@ -61,7 +77,7 @@ Prioritize explicit routes/indexes and authoritative entity files. Use episodic/
 
 ### Live Voice preload
 
-Before Voice, compile a practical working set broad enough for likely immediate play: Wren's immediate state, current scene/region, active threads, likely NPC/location/faction interactions, relevant clocks, required DM-only preparation, and any source/rules material likely to be needed soon.
+Before Voice, compile a practical working set broad enough for likely immediate play: Wren's core identity anchors, immediate state, current scene/region, active threads, likely NPC/location/faction interactions, relevant clocks, required DM-only preparation, and any source/rules material likely to be needed soon.
 
 When `GROWTH_POLICY.md` calls for a Voice working-set packet, use it as routing metadata to compile this context; the packet remains non-authoritative.
 
@@ -88,7 +104,7 @@ The campaign repository may grow without bound; the normal working context shoul
 
 When context pressure grows:
 
-1. keep invariants and immediate state;
+1. keep invariants, player-character identity anchors, and immediate state;
 2. prefer authoritative concise current-state records over long history;
 3. replace broad history with targeted episodic retrieval;
 4. load entity files by direct route instead of entire domain indexes when possible;
