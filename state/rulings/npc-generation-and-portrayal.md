@@ -7,15 +7,24 @@ This file defines how original NPCs are prepared and how established NPCs are po
 For an original NPC, determine durable details in this order unless a published source already establishes them:
 
 1. **Published/source facts first.** If the NPC comes from a published adventure, setting, monster entry, article, or other uploaded source, preserve the published race/species, class, level, alignment, statistics, abilities, personality, motives, equipment, relationships, and other substantive facts. Fill only genuine gaps and keep additions consistent with the source.
-2. **Established world context.** Determine why this person exists here: location, culture, social position, faction/religion, occupation, age/life stage, local economy, education opportunities, and current purpose.
-3. **Role requirements.** Identify capabilities the role actually requires. A professional cartographer, experienced ship captain, sage, spellcasting mentor, soldier, priest, thief, craftsperson, official, or adventurer should possess the knowledge, training, class/level, proficiencies, ability profile, and resources needed to function plausibly in that role.
-4. **Mechanical profile.** Determine only the statistics currently needed. Use exact ability scores/class/level/combat values when mechanics are likely to matter; otherwise a qualitative profile may remain sufficient until promoted.
-5. **Alignment / ethos.** Determine alignment from source canon, class/religious restrictions, established behavior, culture/faction, values, and personal history. Alignment informs beliefs, priorities, methods, relationships, and likely choices, but does not replace personality.
-6. **Personality and history synthesis.** Establish motives, values, fears, ambitions, habits, social style, prejudices/biases, loyalties, relationships, and enough background to explain the NPC's present role without inventing unnecessary biography.
-7. **Speech and cognition.** Let Intelligence, Wisdom, Charisma, education, occupation, culture, languages, literacy, age, emotional state, and personality shape comprehension and dialogue.
-8. **Constrained variation/randomness.** Use genuine random generation where useful to prevent repetitive NPCs, but random results operate inside the plausible space established above. Randomness may select among plausible traits, scores, quirks, secondary skills, appearance details, or history elements; it does not override required capabilities or established world logic.
-9. **Consistency pass.** Before the NPC's hidden profile becomes consequential, check whether role, ability scores, alignment, education, skills, personality, social status, resources, history, and current behavior can plausibly coexist. Resolve contradictions before presenting consequences.
-10. **Canonicalization.** Once a hidden statistic, alignment, motive, personality fact, skill, relationship, or other trait has materially informed play, persist it at the appropriate NPC significance tier. Do not silently regenerate it later for convenience.
+2. **Established world context.** Determine why this person exists here: location, culture, race/species, social position, faction/religion, occupation, age/life stage, local economy, education opportunities, and current purpose.
+3. **Race/species determination.** Do not silently treat an unspecified original NPC as human. If source material does not establish ancestry, determine a plausible race/species from location, culture, known setting demographics, travel/trade patterns, occupation, social context, and constrained variation. In Wren's current coastal home region, humans may be locally predominant without making every new NPC automatically human. Preserve unusual but plausible results.
+4. **Role requirements.** Identify capabilities the role actually requires. A professional cartographer, experienced ship captain, sage, spellcasting mentor, soldier, priest, thief, craftsperson, official, or adventurer should possess the knowledge, training, class/level, proficiencies, ability profile, and resources needed to function plausibly in that role.
+5. **Mechanical profile.** Determine only the statistics currently needed. Use exact ability scores/class/level/combat values when mechanics are likely to matter; otherwise a qualitative profile may remain sufficient until promoted.
+6. **Alignment / ethos.** Determine alignment from source canon, class/religious restrictions, established behavior, culture/faction, values, and personal history. Alignment informs beliefs, priorities, methods, relationships, and likely choices, but does not replace personality.
+7. **Personality and history synthesis.** Establish motives, values, fears, ambitions, habits, social style, prejudices/biases, loyalties, relationships, and enough background to explain the NPC's present role without inventing unnecessary biography.
+8. **Speech and cognition.** Let Intelligence, Wisdom, Charisma, education, occupation, culture, languages, literacy, age, emotional state, and personality shape comprehension and dialogue.
+9. **Constrained variation/randomness.** Use genuine random generation where useful to prevent repetitive NPCs, but random results operate inside the plausible space established above. Randomness may select among plausible traits, scores, quirks, secondary skills, appearance details, ancestry when genuinely unset, or history elements; it does not override required capabilities or established world logic.
+10. **Consistency pass.** Before the NPC's hidden profile becomes consequential, check whether role, race/species, ability scores, alignment, education, skills, personality, social status, resources, history, and current behavior can plausibly coexist. Resolve contradictions before presenting consequences.
+11. **Canonicalization.** Once a hidden statistic, race/species, alignment, motive, personality fact, skill, relationship, or other trait has materially informed play, persist it at the appropriate NPC significance tier. Do not silently regenerate it later for convenience.
+
+## Race/species portrayal
+
+- Race/species is a real world fact, not a cosmetic afterthought and not a universal human default.
+- When ancestry would be visually or socially apparent to Wren, describe it naturally when relevant rather than routinely omitting it until mechanics force the issue.
+- Do not turn every nonhuman NPC into a spectacle. Wren already knows other peoples exist in the wider world; ordinary encounters with elves, dwarves, halflings, gnomes, half-elves, or other setting-appropriate peoples need not be framed as astonishing merely because his home coast is mostly human.
+- Source and setting canon govern available races/species, demographics, cultural relations, languages, class limits, and other setting-specific consequences once established.
+- If ancestry for an already encountered NPC was never established, omission does not retroactively mean human. Leave it genuinely unset until relevant unless canonical evidence resolves it.
 
 ## Context constrains probability; it does not dictate destiny
 
@@ -130,6 +139,7 @@ The purpose of constrained randomness is variety and impartiality, not incoheren
 ## Portrayal during play
 
 Before speaking/acting as a significant NPC, ground the response in:
+- established race/species and cultural context when relevant;
 - established alignment/ethos;
 - personality and motives;
 - Intelligence/Wisdom/Charisma or qualitative cognitive profile;
