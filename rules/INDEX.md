@@ -22,12 +22,15 @@ The compiled layer organizes reusable published information by entity/assertion/
 
 Current initial verified population includes:
 - AD&D 2e PHB source-document metadata;
+- AD&D 2e DMG source-document metadata;
+- AD&D 2e Monstrous Manual source-document metadata;
 - Armor spell structured definition;
 - wizard XP/Hit Dice progression;
 - wizard spell-slot progression;
 - Intelligence 18 source row;
 - character encumbrance breakpoints;
-- wizard THAC0 progression.
+- wizard THAC0 progression;
+- existing DMG wilderness-encounter and ship-weather projections registered as compiled assertions in their current paths.
 
 See `rules/source-knowledge/INDEX.md` for current coverage.
 
