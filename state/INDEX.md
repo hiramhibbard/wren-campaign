@@ -47,7 +47,14 @@ When Hiram refers to an established map, portrait, handout, diagram, scene image
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
 - DM procedure triggers for time, encounters, reaction/morale, NPC/henchmen, travel, downtime, clues, factions, significant items, published adventures, and checkpoint routing: `state/rulings/dm-procedure-triggers.md`
+- Rules dependency routing for class/level/alignment/ability/equipment/spell/item/source changes and automatic projection activation/creation/invalidation: `state/rulings/rules-dependency-registry.md`
 - Context-first NPC generation, explicit race/species determination, alignment, mechanical coherence, personality, cognition, and portrayal protocol: `state/rulings/npc-generation-and-portrayal.md`
+
+## Structured published-rules projections
+- Normative structured-rules authority, creation, invalidation, fallback, and provenance policy: `RULES_PROJECTION_POLICY.md`
+- Structured rules projection registry: `rules/INDEX.md`
+
+Runtime rules lookup order is: valid runtime cache -> applicable verified structured projection -> exact cited uploaded source section -> broader uploaded-source search. Uploaded published sources remain authoritative. Projection absence never permits guessing, and projection presence never overrides the governing source.
 
 ## DM-only
 - Hidden established truths, prepared possibilities, outside forces, off-screen motion, and foreshadowing commitments: `state/dm/campaign.md`
@@ -60,8 +67,9 @@ These templates are operational schemas rather than live facts. Instantiate reco
 ## Context and retrieval architecture
 - Mandatory context-assembly policy: `CONTEXT_ARCHITECTURE.md`
 - Mandatory derived-retrieval authority/safety policy: `DERIVED_INDEX_POLICY.md`
+- Mandatory structured published-rules projection policy: `RULES_PROJECTION_POLICY.md`
 
-Because this index is part of the always-loaded resume working set, resumed play must obey both policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines future full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established facts are asserted.
+Because this index is part of the always-loaded resume working set, resumed play must obey all three policies. `CONTEXT_ARCHITECTURE.md` defines the disposable Context Compiler layer between canonical storage and the DM. `DERIVED_INDEX_POLICY.md` defines full-text/semantic/relationship indexes as rebuildable retrieval accelerators that must resolve matches back to canonical authority before established campaign facts are asserted. `RULES_PROJECTION_POLICY.md` defines verified normalized published-rule projections as derived rules accelerators subordinate to Hiram's uploaded sources.
 
 ## Engineering
 - Architecture decisions, operational status, known limitations, validation plan, and prior future-work notes: `CAMPAIGN_ENGINEERING.md`
@@ -79,6 +87,8 @@ Because this index is part of the always-loaded resume working set, resumed play
 - Automatic growth/sharding policy: `GROWTH_POLICY.md`
 - Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
 - Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
+- Structured rules projection policy: `RULES_PROJECTION_POLICY.md`
+- Rules dependency registry: `state/rulings/rules-dependency-registry.md`
 - Campaign asset library policy: `ASSET_LIBRARY.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
 - Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
