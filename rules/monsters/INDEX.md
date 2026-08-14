@@ -22,6 +22,17 @@ Monster lookup must recognize multiple source families rather than assuming the 
 
 Source availability is not source activation. Use `MONSTER_SOURCE_RESOLUTION_POLICY.md` to resolve which treatment governs the current setting/adventure/region/case.
 
+## Ecology inspiration layer
+
+Non-authoritative monster ecology is routed separately through `MONSTER_ECOLOGY_INSPIRATION_POLICY.md`.
+
+- inspiration registry: `rules/monsters/ecology-inspiration/INDEX.md`
+- current registered source: `/r/DnDBehindTheScreen Monster Ecology Anthology`
+- authority: inspiration-only; never governing
+- required order: governing AD&D 2e source first, then identify an ecology gap, then consult inspiration candidates, then apply the old-school/2e compatibility filter, then resolve campaign-specific ecology
+
+The ecology layer must not inject 5e mechanics, CR/party-level encounter balancing, modern cosmology, modern heroic-survivability assumptions, or unsupported setting lore into Wren.
+
 ## Entry requirements
 
 Each projection registered here should include:
@@ -40,11 +51,17 @@ Each projection registered here should include:
 
 If materially different generic and specialized treatments are both needed, register separate scope-aware projections rather than overwriting one with the other.
 
+Fan/inspiration-derived campaign ecology normally belongs in population/site/DM campaign state, not the generic monster projection.
+
 ## Runtime rule
 
 Use the lookup order defined in `MONSTER_PROJECTION_POLICY.md` and `MONSTER_SOURCE_RESOLUTION_POLICY.md`:
 
 `encounter-instance state -> scope-resolved verified monster projection -> exact scope-resolved active source entry -> broader active monster-source-family search`
+
+For unresolved ecology only, append:
+
+`-> registered ecology inspiration candidates -> 2e compatibility filter -> resolved campaign ecology`
 
 Do not promote encounter-specific HP, equipment, injuries, intentions, or population facts into a generic monster projection.
 
