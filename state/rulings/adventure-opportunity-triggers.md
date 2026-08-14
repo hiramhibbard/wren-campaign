@@ -1,9 +1,9 @@
-# Adventure Opportunity and Published Scenario Triggers
+# Adventure Opportunity and Scenario Triggers
 
-This is a mandatory event-driven companion to `ADVENTURE_OPPORTUNITY_POLICY.md` whenever a plausible published-scenario opportunity arises.
+This is a mandatory event-driven companion to `ADVENTURE_OPPORTUNITY_POLICY.md` whenever a plausible adventure/site/situation opportunity arises.
 
 ## Automatic opportunity trigger
-When current play/world state creates a plausible need or opening for a published scenario, the DM should search the relevant adventure-source families **without waiting for Hiram to ask**.
+When current play/world state creates a plausible need or opening for an adventure, site, or concrete situation, the DM should evaluate it **without waiting for Hiram to ask**.
 
 Trigger examples include:
 - entering/approaching a new region, wilderness type, settlement, coast, island, ruin zone, or subterranean area;
@@ -11,53 +11,58 @@ Trigger examples include:
 - expanding a settlement/region where a concrete local site/problem would improve world completeness;
 - travel/exploration creating a natural side-site or incident opportunity;
 - an active faction/NPC/world process needing a location, objective, victim, hideout, resource, threat, or complication;
-- an active campaign thread reaching a point where published material could supply a compatible scenario/site;
-- a major region/arc transition where proactively identifying compatible scenario candidates is useful.
+- an active campaign thread reaching a point where a concrete scenario/site is needed;
+- a major region/arc transition where proactively identifying or creating compatible scenario material is useful.
 
 Do not trigger because the campaign has gone "too long" without combat/dungeons. No adventure quota exists.
 
-## Search-family trigger
-Search likely sources by current facets rather than broad-scanning the whole library.
+## Source-or-create trigger
+First check whether existing seeded/active material already satisfies the need.
 
-Candidate families include:
-- standalone modules;
-- active-setting adventures;
-- Dungeon Magazine adventures;
-- Dungeon Magazine side treks/short scenarios;
-- boxed-set scenarios;
-- adventure sites/seeds embedded in sourcebooks;
-- published mini-adventures/encounters.
+If not, decide whether a targeted published-source search is likely to pay off. Candidate families include standalone modules, active-setting adventures, Dungeon Magazine adventures and side treks, boxed-set scenarios, sourcebook-embedded sites/seeds, and published mini-adventures/encounters.
 
 Dungeon Magazine is a first-class source family and should be considered automatically when fit is plausible.
 
-## Fit-review trigger
-Before seeding any candidate, check setting/scope, geography/environment, site type, risk/level as world danger, tone, required lore/factions/deities, adaptation burden, conflicts with established canon, duplication, and hook/player-agency assumptions.
+Published search is **not mandatory before every original adventure**. If no strong fit appears after a reasonable targeted search, if source search would be disproportionately expensive for the immediate need, or if existing campaign causality implies a more specific situation, create original material freely.
 
-Prefer low-surgery candidates that remain coherent if Wren ignores, delays, retreats from, bypasses, or disrupts them.
+Do not broad-scan the library merely to avoid improvisation.
+
+## Fit-review trigger
+Before seeding a published candidate, check setting/scope, geography/environment, site type, risk/level as world danger, tone, required lore/factions/deities, adaptation burden, conflicts with established canon, duplication, and hook/player-agency assumptions.
+
+Prefer low-surgery candidates. If a published candidate needs substantial distortion to fit, original creation is normally the better route.
+
+## Original-creation trigger
+When creating original adventure material:
+1. anchor it in established geography, actors, ecology, clues, factions, history, resources, and active processes;
+2. create only the minimum material needed for current or near-horizon play;
+3. use World Builder, specialist sources, monster sources, DMG procedures, or genuine secret randomness when helpful, but do not require a source citation for every creative decision;
+4. do not create a required story, predetermined solution, or protected villain;
+5. persist consequential facts and let them participate in normal world motion.
 
 ## Candidate-state trigger
-Keep `Candidate` and `Prepared Possibility` distinct from campaign truth.
+Keep published `Candidate` and `Prepared Possibility` distinct from campaign truth. Finding/reviewing a published scenario does not create its location, NPCs, rumors, history, treasure, or events in the campaign.
 
-Finding/reviewing a scenario does not create its location, NPCs, rumors, history, treasure, or events in the campaign.
+Original preparation may use similar internal states when useful, but trivial improvisation need not create unnecessary bookkeeping. Once a fact becomes consequential, preserve it canonically.
 
 ## Seeding trigger
-When actual campaign causality needs one or more facts from a selected scenario:
-1. retrieve enough exact source to understand the relevant site/actors/assumptions;
-2. adapt minimally for active setting/world compatibility;
+When actual campaign causality needs facts from a selected published or original scenario:
+1. establish enough site/actors/assumptions to run the current situation coherently;
+2. adapt or generate only what active setting/world compatibility requires;
 3. instantiate only the minimum facts needed now;
 4. if danger is grossly above Wren's apparent current capability, identify plausible warning channels that could exist in-world without creating a level gate;
-5. record provenance/current commitment state;
+5. record provenance/current commitment state where relevant;
 6. route resulting site/NPC/monster/faction/world-motion state through normal policies.
 
 Once seeded, the scenario may produce signs, rumors, consequences, clocks, or off-screen action independently of Wren where causally justified.
 
 ## No forced-hook trigger
-If the published hook assumes player compliance, convert it into a world opportunity/pressure rather than a command to Wren.
+If a published hook assumes player compliance, convert it into a world opportunity/pressure rather than a command to Wren.
 
-Never require a specific route, allegiance, solution, scene order, villain confrontation, or published ending.
+Original material follows the same rule: never create a specific route, allegiance, solution, scene order, villain confrontation, or ending that Wren must follow.
 
 ## Risk / legible-danger trigger
-Do not automatically scale a published threat to Wren's level.
+Do not automatically scale a published or original threat to Wren's level.
 
 If a scenario is substantially beyond Wren's current capability, preserve the threat and provide **causally justified, player-discoverable warning evidence** where the world would naturally contain it.
 
@@ -71,17 +76,17 @@ After Hiram knowingly chooses to proceed, adjudicate normally. Do not keep repea
 
 Avoidance, reconnaissance, retreat, negotiation, delayed return, catastrophic defeat, and death are legitimate outcomes.
 
-## Published-state lifecycle trigger
-When Wren materially changes a seeded/active scenario, campaign state overlays the original source. Do not reset keyed rooms, dead NPCs, moved treasure, alarms, faction knowledge, or other consequences to publication baseline.
+## Scenario-state lifecycle trigger
+When Wren materially changes a seeded/active published or original scenario, preserve those consequences. Do not reset keyed rooms, dead NPCs, moved treasure, alarms, faction knowledge, or other state to an earlier baseline.
 
 ## Performance trigger
 Normal turn:
-`cheap opportunity check -> no trigger = no adventure search`
+`cheap opportunity check -> no trigger = no adventure work`
 
 Triggered turn/preparation point:
-`current facets -> targeted source-family search -> shortlist -> inspect survivors -> cache lightweight locators`
+`existing material? -> current facets -> targeted published search if promising -> use strong candidate OR create original -> persist only consequential state`
 
 Do not preload full magazines/adventures or scan every Dungeon issue each turn.
 
 ## Voice trigger
-Preload seeded/active scenario state only. If a new opportunity arises in Voice but broad source search is unavailable, preserve the pending lookup rather than inventing a published scenario from memory.
+Preload seeded/active scenario state only. If a new opportunity arises in Voice and exact published material is not implicated, bounded original improvisation from loaded canonical constraints is allowed. If source-governed facts are implicated and retrieval is unavailable, preserve the pending lookup rather than guessing.
