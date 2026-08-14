@@ -5,7 +5,61 @@ This file defines when the DM should recognize that an AD&D 2e procedure has bec
 ## Time advancement
 - Track meaningful elapsed in-world time rather than treating scenes as timeless.
 - When time advances enough to cross a scheduled NPC/faction/project/weather/adventure trigger, process the due hidden state before narrating dependent consequences.
+- Character/creature active effects and resource-consumption processes that have time-based triggers participate in the same due-event processing; do not limit scheduled triggers to world/NPC events.
 - Use relative time until an exact campaign calendar is established; do not invent dates merely to fill the record.
+
+## Derived-state invalidation procedure
+When a canonical input changes, identify which cached/derived values depend on that input and invalidate or refresh only those values before they are next used consequentially.
+
+Common dependencies include:
+- level/class/advancement track -> THAC0/attack progression, saving throws, Hit Dice/HP progression, spell progression, proficiency-slot progression, next-level XP threshold, and class abilities as applicable;
+- armor/shield/equipment -> AC, movement/encumbrance, weapon attack/damage properties, available actions, and other equipment-derived values as applicable;
+- ability score -> all derived values that use that ability, including relevant reaction, carrying, combat, proficiency, spell, or system-shock/resurrection values;
+- carried load -> encumbrance category and any movement/combat consequences;
+- active effect/condition start or end -> only the stats and procedures modified by that effect/condition.
+
+Do not reread unrelated rules merely because one derived value became invalid. If a cached value is still valid under unchanged dependencies, use it directly.
+
+## Encumbrance procedure
+Whenever carried inventory, worn equipment, filled-container contents, treasure load, Strength, or an encumbrance-modifying effect changes:
+
+1. update the best-supported carried-weight total without inventing precision for unknown/variable contents;
+2. compare the load against the character's current verified encumbrance breakpoint/category cache;
+3. if the load remains within the cached category, no source lookup is required merely for this check;
+4. if a breakpoint is crossed, or the cache is missing/stale/uncertain, retrieve the governing encumbrance source, establish the new encumbrance category and mechanical consequences, and cache the next relevant boundary/provenance;
+5. refresh any dependent movement/combat values immediately enough that subsequent adjudication uses the correct state.
+
+Crossing an encumbrance threshold is an automatic DM trigger. Hiram does not need to ask whether Wren has become encumbered.
+
+## Resource / depletion procedure
+For any resource whose remaining quantity matters mechanically or fictionally, preserve canonical quantity/state and register the relevant consumption/depletion behavior when it becomes active.
+
+Examples include lamp fuel, torches, rations, water, ammunition, charges, quantified spell components, healing supplies, vehicle supplies, air, or other source-governed limited resources.
+
+Whenever the resource is used or a consumption interval elapses:
+1. decrement/update the canonical remaining quantity according to the governing rule or established usage;
+2. evaluate any registered warning, exhaustion, empty, breakage, or other threshold that the change can reach;
+3. automatically apply or trigger the source-supported consequence when a threshold is crossed;
+4. do not reread the source after every decrement if the consumption rate and next relevant trigger are already verified and unchanged;
+5. refresh/retrieve the governing rule when the resource behavior changes, the next trigger is unknown, or an integrity mismatch appears.
+
+Do not create artificial warning thresholds unless the rules or campaign procedure actually need them. Zero/depletion and source-defined thresholds must not be missed merely because Hiram did not ask.
+
+## Active-effect lifecycle procedure
+When a spell, poison, disease, magical protection, environmental effect, temporary modifier, injury state, or other active effect begins and its lifecycle is consequential, record enough source-backed trigger information to know when it must be reevaluated or end.
+
+Effect termination is not assumed to be time-based. Governing triggers may include any combination of:
+- elapsed rounds/turns/hours/days or a fixed ending time;
+- a particular event or action;
+- damage taken, damage absorbed, charges expended, or another resource threshold;
+- a condition becoming true or false;
+- a successful save/check;
+- dispelling, curing, resting, removal, death, leaving an area, or another explicit game procedure;
+- source-specific termination language that does not fit the categories above.
+
+When time or an event occurs, evaluate only active effects whose registered triggers could actually be affected by that change. Do not force event-, damage-, resource-, or condition-based effects into an `expires_at` timestamp.
+
+When an effect ends or changes phase, automatically remove/refresh its dependent derived values and persist any durable resulting state. Hiram should not need to remind the DM that an active effect's termination condition occurred.
 
 ## Encounter procedure
 Recognize encounter procedure when Wren enters a planned encounter, triggers a keyed encounter, or reaches a point where the governing travel/location rules call for a random encounter check.
