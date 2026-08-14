@@ -54,9 +54,11 @@ Uploaded source files remain authoritative. Compiled objects are verified derive
 
 ### Dragon issue containers
 - Dragon #232 -> `rules/source-knowledge/documents/dragon-232.md`
+- Dragon #234 -> `rules/source-knowledge/documents/dragon-234.md`
 - Dragon #235 -> `rules/source-knowledge/documents/dragon-235.md`
 - Dragon #236 -> `rules/source-knowledge/documents/dragon-236.md`
 - Dragon #240 -> `rules/source-knowledge/documents/dragon-240.md`
+- Dragon #243 -> `rules/source-knowledge/documents/dragon-243.md`
 
 Issue registration is navigation only; article role/scope/activation remains separate.
 
@@ -74,6 +76,8 @@ Issue registration is navigation only; article role/scope/activation remains sep
   - core armor ratings; spell-entry normalization semantics.
 - `rules/source-knowledge/entities/core-initiative-missile-cover.md`
   - group initiative; optional action initiative modifiers; multiple-attack/spellcasting sequencing; missile range/ROF/ability modifiers; firing into melee; cover/concealment.
+- `rules/source-knowledge/entities/core-vision-light-climbing-turning-morale.md`
+  - visibility ranges; common light sources/fuel durations; climbing success/modifiers/rates; turning undead; core 2e morale routing.
 - `rules/source-knowledge/entities/tome-of-magic-first-level-starter.md`
   - verified Tome wizard/priest first-level spell starter assertions with activation/source-text-required metadata.
 - `rules/source-knowledge/entities/source-family-record-shapes.md`
