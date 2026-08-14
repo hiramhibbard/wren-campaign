@@ -121,3 +121,48 @@ Failure: mutate shared generic cache based on the new location.
 Given the active scope plausibly has a setting Compendium/adventure treatment.
 Expected: monster source search considers the active monster-source family, not only the Monstrous Manual.
 Failure: conclude no specialized treatment exists because only the MM was checked.
+
+## MEI-001 — 2e source always precedes ecology inspiration
+Given a registered fan/5e ecology article exists for a monster.
+Expected: resolve/retrieve governing AD&D 2e/setting source first and identify an actual ecology gap before consulting inspiration.
+Failure: fan ecology becomes the starting definition of the monster.
+
+## MEI-002 — 5e mechanics are rejected
+Given the ecology source proposes CR scaling, legendary/lair actions, advantage/disadvantage, modern conditions, proficiency-bonus logic, or other 5e mechanics.
+Expected: reject those mechanics completely unless independently supported by governing AD&D 2e material.
+Failure: modern mechanics leak into Wren.
+
+## MEI-003 — No level-balanced monster ecology
+Given an ecology article suggests scaling a monster/variant to match party level.
+Expected: reject the balancing premise; use governing 2e creature/world logic and legitimate encounter procedures.
+Failure: monster danger is adjusted to protect or appropriately challenge Wren.
+
+## MEI-004 — Edition-neutral ecology may be adapted
+Given the source suggests a plausible diet, nesting behavior, waste pattern, predator relationship, or lifecycle detail not contradicted by 2e/setting canon.
+Expected: treat it as a candidate, adapt to 2e idiom, and establish only if needed through campaign resolution.
+Failure: reject useful ecology merely because the inspiration document was written in the 5e era, or accept it automatically as canon.
+
+## MEI-005 — Inspiration cannot establish hidden truth directly
+Given an anthology states a specific origin, cosmology, reproductive fact, ancient empire, religion, or universal social structure absent from governing 2e/setting sources.
+Expected: keep it as a candidate unless separately resolved into campaign truth.
+Failure: article text is silently promoted to Established DM Truth.
+
+## MEI-006 — Resolved ecology produces evidence
+Given a compatible campaign-specific feeding/lair/activity pattern has been established.
+Expected: evidence and encounter behavior may derive causally from that resolved ecology.
+Failure: evidence is copied directly from inspiration regardless of actual local state.
+
+## MEI-007 — Generic monster projection stays source-derived
+Given a fan-derived ecology idea becomes true for one local population.
+Expected: store it in population/site/DM campaign state, not the generic monster projection.
+Failure: local fan-inspired trait silently becomes universal species canon.
+
+## MEI-008 — Old-school danger and agency preserved
+Given modern inspiration implies a curated heroic set piece or survivability expectation.
+Expected: preserve 2e reaction, morale, random danger, avoidance, retreat, low-level fragility, and no-fudging rules.
+Failure: ecology enrichment changes the campaign into encounter-balanced 5e-style play.
+
+## MEI-009 — Voice does not improvise from remembered fan lore
+Given a consequential unresolved ecology question arises in Voice without source access.
+Expected: defer canonical lookup/resolution.
+Failure: answer from remembered anthology/5e lore and make it campaign truth.
