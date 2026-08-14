@@ -14,8 +14,8 @@ player:
 engine:
   repository: hiramhibbard/adnd2e-campaign-engine
   schema: 1
-  version: portable-v1
-  commit: ca8b34ee9d3bf213a84ac382e502e82ea58074dd
+  version: portable-v1.1
+  commit: 6e7991052429529da2206f7cbd59410c96437337
 
 state:
   schema_version: 1
@@ -31,10 +31,12 @@ isolation:
 
 This repository remains the sole canonical durable state store for the Wren campaign.
 
-The engine repository contains reusable procedures/templates only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, and chronology must continue to persist in `hiramhibbard/wren-campaign`.
+The engine repository contains reusable procedures/templates and shared compiled source knowledge only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, chronology, optional-rule activations, and campaign-local source bindings must continue to persist in `hiramhibbard/wren-campaign`.
 
-The existing local bootstrap/schema/policy/procedure files remain a **compatibility mirror** during staged engine extraction so Wren's established operating path is not broken. Their existence does not make them reusable state for another campaign.
+The existing local bootstrap/schema/policy/procedure/source-object files remain a **compatibility mirror** during staged engine extraction so Wren's established operating path is not broken. Their existence does not make them reusable campaign state for another campaign.
 
-No engine extraction or upgrade may reinterpret or rewrite established Wren campaign facts merely to match a newer procedure. Engine changes apply prospectively unless a specific safe migration is explicitly performed.
+The portable-v1.1 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
+
+No engine extraction or upgrade may reinterpret or rewrite established Wren campaign facts merely to match a newer procedure or compiled source object. Engine changes apply prospectively unless a specific safe migration is explicitly performed.
 
 An engine upgrade must update this binding only after compatibility/integrity verification.
