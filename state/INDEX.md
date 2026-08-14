@@ -92,8 +92,17 @@ Compiled source objects are derived accelerators. Uploaded published sources rem
 
 ### Core/supplement rules
 - Structured rules policy: `RULES_PROJECTION_POLICY.md`
+- Optional-rule startup/review policy: `OPTIONAL_RULES_STARTUP_POLICY.md`
 - Specialist supplement resolver: `SUPPLEMENT_SOURCE_RESOLUTION_POLICY.md`
 - Source-role registry: `rules/sources/INDEX.md`
+
+Optional-rule routing:
+`new campaign -> offer common/useful shortlist -> resolve selected items or defer -> persist explicit decisions`
+
+Later changes:
+`player requests optional-rule review/change -> exact governing source -> dependency/conflict check -> canonical prospective activation/deactivation`
+
+Unreviewed/deferred optional rules remain inactive under core/default non-option behavior. Obscure/narrow/scope-specific options are not included in the startup questionnaire unless explicitly requested or required by an active source.
 
 ### Monsters
 - Source resolver: `MONSTER_SOURCE_RESOLUTION_POLICY.md`
