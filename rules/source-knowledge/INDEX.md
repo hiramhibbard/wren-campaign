@@ -56,6 +56,7 @@ Individual source documents/articles/modules continue to be registered as bulk i
 
 ## Current compiled entity/assertion shards
 
+### Current-Wren PHB fast path
 - `rules/source-knowledge/entities/wren-core-phb-fast-path.md`
   - `adnd2e.spell.wizard.armor`
   - `adnd2e.class.wizard` / Table 20 XP & Hit Dice progression
@@ -64,7 +65,13 @@ Individual source documents/articles/modules continue to be registered as bulk i
   - `adnd2e.rule.encumbrance.basic` / Table 47 breakpoints
   - `adnd2e.rule.thac0.calculated` / wizard THAC0 progression
 
-These objects were source-verified against the uploaded PHB and eliminate repeated broad PDF lookup for current Wren fast-path mechanics.
+### Core movement / travel
+- `rules/source-knowledge/entities/core-movement-travel-fast-path.md`
+  - `adnd2e.rule.movement.base-rates` / PHB Table 64
+  - `adnd2e.rule.movement.cross-country` / normal march + force-march fast fields
+  - `adnd2e.rule.movement.terrain-round` / DMG Table 73 extreme terrain movement
+
+These source objects eliminate repeated broad PHB/DMG lookup for common movement/travel routing while preserving exact-source escalation for optional/exception-sensitive details.
 
 ## Existing verified projections registered conceptually
 
