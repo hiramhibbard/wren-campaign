@@ -54,8 +54,9 @@ Because this index is part of the always-loaded resume working set, resumed play
 ## Engineering
 - Architecture decisions, operational status, known limitations, validation plan, and prior future-work notes: `CAMPAIGN_ENGINEERING.md`
 - Durable standalone-product evolution roadmap: `docs/APPLICATION_ROADMAP.md`
-- Load engineering documents when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, application/product development, maintenance, scaling, performance, or related system design.
-- `docs/APPLICATION_ROADMAP.md` is deliberately non-canonical product planning. Runtime invariants belong in the normative policy/protocol files, not roadmap prose.
+- DM runtime, provider/model routing, subscription, metering, and unit-economics roadmap module: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
+- Load engineering documents when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, application/product development, maintenance, scaling, performance, model/provider strategy, subscriptions, pricing, or related system design.
+- `docs/APPLICATION_ROADMAP.md` and its roadmap modules are deliberately non-canonical product planning. Runtime invariants belong in the normative policy/protocol files, not roadmap prose.
 
 ## Protocol
 - Full operating protocol: `CAMPAIGN_BOOTSTRAP.md`
@@ -67,6 +68,7 @@ Because this index is part of the always-loaded resume working set, resumed play
 - State templates/scaffolds: `STATE_TEMPLATES.md`
 - Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
 - Standalone application evolution roadmap: `docs/APPLICATION_ROADMAP.md`
+- DM runtime/unit-economics roadmap module: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
 - Root manifest/resume/baseline: `Wren_Campaign_Ledger.md`
 
 Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient. Derived retrieval may identify candidates, but canonical records remain authoritative.
