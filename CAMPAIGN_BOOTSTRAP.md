@@ -40,6 +40,22 @@ In a fresh chat inside the Wren Project, the single word **`Wren`** is sufficien
 
 Hiram may still use any longer natural-language request if desired; he does not need to memorize one.
 
+## NEW CAMPAIGN OPTIONAL-RULE REVIEW
+
+For a newly created AD&D 2e campaign, follow `OPTIONAL_RULES_STARTUP_POLICY.md` before ordinary play materially depends on unresolved optional rules.
+
+After the campaign's core rules baseline and initial character premise are established, ask the player whether they want to review the compact list of common/useful optional rules. Do not force the review and do not dump every optional rule in the source library.
+
+The player may resolve all, some, or none of the shortlist. Any deferred or unreviewed option remains inactive under the core/default non-option behavior until explicitly adopted.
+
+Deferred options do not block play. At the beginning of a later session, the player may choose to review them; a concise non-repeating reminder is allowed, but do not interrogate the player every session.
+
+Obscure, narrow, supplement-specific, setting-specific, class-specific, item-specific, or rarely useful optional rules are not part of the default startup questionnaire. They remain scope-gated/inactive unless the player explicitly asks to activate them or an active source requires them.
+
+A player may later activate or deactivate an optional rule by clearly stating the desired change. Retrieve the exact governing source, identify dependencies/conflicts, record the decision canonically, and apply the change prospectively unless the player explicitly requests a safe retroactive reconciliation.
+
+This startup policy does not itself activate any optional rule and does not override existing canonical campaign rulings.
+
 ## AUTOMATIC CANONICAL RETRIEVAL — MANDATORY
 
 Hiram should speak and play naturally. He does not administer repository retrieval.
