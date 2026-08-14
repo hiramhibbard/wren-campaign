@@ -31,6 +31,15 @@ This index routes canonical campaign state. Absence from the current working set
 - Location routing index: `state/locations/index.md`
 - Current harbor/boarding-house state: `state/locations/harbor/current.md`
 
+## Campaign assets / media
+- Top-level campaign asset registry: `assets/INDEX.md`
+- Map asset registry: `assets/maps/INDEX.md`
+- Wren’s Home Coast map asset metadata: `assets/maps/asset-map-home-coast-001.md`
+- Pending binary-ingest work requiring human transport: `assets/PENDING_INGEST.md`
+- Normative campaign asset policy: `ASSET_LIBRARY.md`
+
+When Hiram refers to an established map, portrait, handout, diagram, scene image, or other persistent campaign media, route through the asset registry before assuming the media is unavailable. Asset metadata is canonical; a payload marked `pending-ingest` is not yet durably retrievable and must not be described as fully saved.
+
 ## Rulings / DM procedures
 - Campaign rulings and unresolved rule checks: `state/rulings/adnd2e-campaign-rulings.md`
 - Dice protocol: `state/rulings/dice-protocol.md`
@@ -56,7 +65,8 @@ Because this index is part of the always-loaded resume working set, resumed play
 - Durable standalone-product evolution roadmap: `docs/APPLICATION_ROADMAP.md`
 - DM runtime, provider/model routing, subscription, metering, and unit-economics roadmap module: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
 - Competitive landscape, product teardown, differentiation, and gap analysis: `docs/COMPETITIVE_LANDSCAPE.md`
-- Load engineering documents when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, application/product development, maintenance, scaling, performance, model/provider strategy, subscriptions, pricing, competition, positioning, differentiation, or related system design.
+- Campaign Asset Library and media-provenance roadmap module: `docs/ASSET_LIBRARY_ARCHITECTURE.md`
+- Load engineering documents when Hiram asks to continue infrastructure, persistence, Voice workflow, memory, application/product development, maintenance, scaling, performance, model/provider strategy, subscriptions, pricing, competition, positioning, differentiation, assets/media, maps/images, or related system design.
 - `docs/APPLICATION_ROADMAP.md` and its roadmap modules/research documents are deliberately non-canonical product planning. Runtime invariants belong in the normative policy/protocol files, not roadmap prose.
 
 ## Protocol
@@ -66,11 +76,13 @@ Because this index is part of the always-loaded resume working set, resumed play
 - Automatic growth/sharding policy: `GROWTH_POLICY.md`
 - Context compiler architecture: `CONTEXT_ARCHITECTURE.md`
 - Derived retrieval/index policy: `DERIVED_INDEX_POLICY.md`
+- Campaign asset library policy: `ASSET_LIBRARY.md`
 - State templates/scaffolds: `STATE_TEMPLATES.md`
 - Engineering roadmap/design log: `CAMPAIGN_ENGINEERING.md`
 - Standalone application evolution roadmap: `docs/APPLICATION_ROADMAP.md`
 - DM runtime/unit-economics roadmap module: `docs/DM_RUNTIME_AND_UNIT_ECONOMICS.md`
 - Competitive landscape/product gap research: `docs/COMPETITIVE_LANDSCAPE.md`
+- Campaign asset/media architecture roadmap module: `docs/ASSET_LIBRARY_ARCHITECTURE.md`
 - Root manifest/resume/baseline: `Wren_Campaign_Ledger.md`
 
 Repository search is the fallback for fuzzy natural-language references when an explicit route is not sufficient. Derived retrieval may identify candidates, but canonical records remain authoritative.
