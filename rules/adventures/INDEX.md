@@ -1,6 +1,8 @@
 # Wren Published Adventure Source Registry
 
-This registry is a lightweight routing accelerator for `ADVENTURE_OPPORTUNITY_POLICY.md`. It does not instantiate adventures and does not replace exact uploaded-source retrieval.
+This registry routes published adventure candidates for `ADVENTURE_OPPORTUNITY_POLICY.md`. It does not instantiate adventures and does not replace exact uploaded-source authority.
+
+Published-source routing is one branch of the broader adventure resolver; original DM-created material remains first-class when it fits campaign causality better.
 
 ## Source families
 
@@ -17,9 +19,9 @@ Dungeon Magazine is explicitly a first-class source family.
 
 ## Runtime behavior
 
-Use:
+When published search is promising, prefer:
 
-`opportunity trigger -> current facets -> likely adventure families -> targeted uploaded-source search -> candidate fit review -> exact source inspection -> optional seeding`
+`opportunity trigger -> current facets -> compiled adventure/article metadata if available -> likely source families -> targeted source search for missing candidates -> fit review -> exact source inspection only for surviving candidates -> optional seeding`
 
 Current facets may include:
 - active setting/source scope;
@@ -28,30 +30,49 @@ Current facets may include:
 - settlement/site type;
 - active thread/faction/NPC/process;
 - scenario form needed;
-- approximate published level/risk range;
+- source-stated level/risk range as world-danger metadata;
 - tone;
-- expected adaptation burden.
+- adaptation burden;
+- assumed hook/player-compliance dependencies.
 
-Do not broad-scan the entire adventure library every turn.
+Do not broad-scan the entire adventure library every turn, and do not keep searching indefinitely when no strong fit emerges. `ADVENTURE_OPPORTUNITY_POLICY.md` may route to original creation instead.
 
-## Candidate metadata
+## Compiled adventure metadata
 
-For a repeatedly relevant candidate, lightweight derived metadata may record:
-- title/source;
-- source family;
-- issue/module/product identity;
+Under `SOURCE_KNOWLEDGE_SCHEMA.md`, published adventure/article objects may record:
+- stable adventure/entity ID;
+- title/source family/product/issue;
 - setting/edition;
-- stated level/risk range;
-- environment/site type;
-- short scenario-form tags;
-- exact source locator;
-- compatibility concerns;
-- current commitment state: Candidate / Prepared Possibility / Seeded / Active / Dormant / Bypassed / Resolved.
+- source-stated level/risk range;
+- environment/site types;
+- scenario-form/theme tags;
+- major actors/factions/monsters;
+- source dependencies;
+- assumed hooks;
+- maps/handouts;
+- compact scenario summary;
+- exact locators;
+- compatibility/adaptation notes;
+- typed relationships to other source entities;
+- verification/fingerprint metadata.
 
-Candidate metadata is routing/preparation state, not proof that the scenario exists in the campaign world.
+Compilation does **not** seed the scenario into Wren's world.
 
-## Registration policy
+## Commitment state
 
-Do not pre-create entries for every adventure or every Dungeon issue merely for completeness. Add indexes/locators lazily when repeated retrieval friction or campaign relevance makes them useful.
+Campaign-preparation state remains separate from source metadata:
+- Candidate;
+- Prepared Possibility;
+- Seeded;
+- Active;
+- Dormant / Bypassed / Resolved.
 
-Absence from this registry is never evidence that Hiram lacks a published adventure source. Search the uploaded source library when `state/rulings/adventure-opportunity-triggers.md` fires.
+Source objects describe published material. Campaign DM state records whether/how a scenario has actually entered Wren's causality.
+
+## Population strategy
+
+Ordinary play: compile discovered adventure metadata lazily when reusable.
+
+Maintenance/offline extraction: batch-extract adventure/module/Dungeon metadata and cross-links because it can make opportunity searches dramatically cheaper. Exact keyed prose/maps need not be copied; retain locators and fetch surviving candidate source sections when needed.
+
+Absence from this registry is never evidence that Hiram lacks a relevant published adventure source.
