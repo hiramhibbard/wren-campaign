@@ -105,6 +105,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] spellcasting/initiative timing fields
 - [x] missile range categories and attack modifiers
 - [x] missile ROF procedure
+- [x] complete PHB Table 45 common missile-weapon range/ROF lookup
 - [x] Strength/Dexterity missile rules
 - [x] firing-into-melee weighted-target procedure
 - [x] cover/concealment table and physical-damage spell save effects
@@ -127,9 +128,11 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] massive-damage threshold/check
 - [x] optional death's-door procedure with explicit non-activation boundary
 
-### Core armor / spell parsing
+### Core equipment / weapon parsing
 - [x] core armor class ratings
 - [x] common spell-entry field semantics
+- [x] generic PHB weapon size/type/speed semantics and optional-rule boundaries
+- [x] Wren-common Table 44 equipment price/weight lookup without altering canonical inventory
 
 ### Existing compatible DMG projections
 - [x] wilderness encounter checks
@@ -147,7 +150,8 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Monstrous Manual generic-core supersession/setting handoff assertion
 - [x] Mystara-scoped monster alias/mapping starter graph
 - [x] Mystara dragon specialization scope profile
-- [x] first complete generic-core monster object: Stirge, including stats/combat/habitat/ecology/variant routing
+- [x] complete generic-core monster object: Stirge
+- [x] complete generic-core monster object: Giant Crab
 - [ ] bulk stat/ecology entries by high-value/common/active-region priority
 
 ### Magic-item graph
@@ -168,11 +172,12 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] scoped monster aliases that do not contaminate generic namespace
 - [x] source-precedence handoff from generic Monstrous Manual to setting-specific appendices
 - [x] explicit edition/scope guard in morale compilation
-- [x] first end-to-end full monster entity using stats + combat + habitat/society + ecology + variant relationship
+- [x] multiple end-to-end full monster entities using stats + combat + habitat/society + ecology
+- [x] setting-specific equipment/weapon overrides remain separate scoped assertions instead of mutating generic PHB rows
 
 ## Active extraction queue
 
-1. remaining core fast paths: weapon/equipment tables, common save modifiers, doors/listening/searching where applicable;
+1. remaining core fast paths: broader Table 44 weapon rows, common save modifiers, doors/listening/searching where applicable;
 2. bulk common/high-value monster stat/ecology extraction from core, favoring exact-entry retrieval over partial snippets;
 3. Encyclopedia Magica alphabetical item metadata/provenance shards;
 4. continue Tome of Magic spell-definition shards;
