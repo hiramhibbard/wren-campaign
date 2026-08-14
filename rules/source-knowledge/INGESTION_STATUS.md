@@ -101,6 +101,10 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] DMG Table 57 surprise modifiers
 - [x] DMG Table 58 encounter distances
 
+### Core armor / spell parsing
+- [x] PHB Table 46 armor class ratings
+- [x] PHB spell-entry field semantics for components, duration, casting time, and area of effect
+
 ### Existing compatible DMG projections
 - [x] wilderness encounter checks
 - [x] ship weather
@@ -109,6 +113,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] Monstrous Compendium Annual entry-field schema and scope warning
 - [x] Encyclopedia Magica item/provenance entry-field schema
 - [x] Tome of Magic source structure / optional-system activation boundary
+- [x] common AD&D spell normalization schema derived from PHB field semantics
 
 ### Cross-source magic-item graph starter
 - [x] Winged Mask logical entity
@@ -125,6 +130,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 - [x] anthology -> original-publication relationship pattern demonstrated
 - [x] source-native monster and magic-item schemas established for future batch extraction
 - [x] Dragon issue registration can retain bibliographic discovery without mistaking reviews/references for source authority
+- [x] spell-family extraction now has common field semantics and activation/source-text-required gates
 
 ## Active extraction queue
 
@@ -132,7 +138,7 @@ Purpose: operational progress tracker for bulk source compilation. This file rec
 2. full high-value monster metadata/stat extraction from generic core + anthology/setting variants;
 3. Encyclopedia Magica alphabetical item metadata/provenance shards;
 4. Tome of Magic spell-definition shards and optional-system dependency metadata;
-5. equipment/weapon/armor tables;
+5. equipment/weapon/armor tables beyond base AC ratings;
 6. adventure/module/Dungeon metadata;
 7. broader Dragon issue/article metadata + entity relationships;
 8. PHBR/DMGR specialist assertions/procedures;
