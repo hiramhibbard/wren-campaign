@@ -14,8 +14,8 @@ player:
 engine:
   repository: hiramhibbard/adnd2e-campaign-engine
   schema: 1
-  version: portable-v1.2.3
-  commit: 6de2b15188643e7be480b5e7398ae6acaa50e77d
+  version: portable-v1.2.4
+  commit: 61aa2004ec7b030511e180a431b9dd97b7a25601
 
 state:
   schema_version: 1
@@ -31,12 +31,12 @@ isolation:
 
 This repository remains the sole canonical durable state store for the Wren campaign.
 
-The engine repository contains reusable procedures/templates, shared compiled source knowledge, source-availability routing, regional/world-motion procedure, specialist source routers, asset procedure, and growth/sharding procedure only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, chronology, optional-rule activations, campaign-local regional actors/clocks/populations, and campaign-local source bindings must continue to persist in `hiramhibbard/wren-campaign`.
+The engine repository contains reusable procedures/templates, shared compiled source knowledge, source-availability routing, adventure-inventory routing procedure, regional/world-motion procedure, specialist source routers, asset procedure, and growth/sharding procedure only. Normal Wren gameplay, checkpoints, preferences, rulings, character/world facts, DM-only state, maps/assets, chronology, optional-rule activations, campaign-local regional actors/clocks/populations, and campaign-local source bindings must continue to persist in `hiramhibbard/wren-campaign`.
 
 The existing local bootstrap/schema/policy/procedure/source-object files remain a **compatibility mirror** while Wren migration is staged. Their existence does not make them reusable campaign state for another campaign.
 
-The portable-v1.2.3 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
+The portable-v1.2.4 engine may provide shared verified source objects and portable adventure metadata by stable bibliographic IDs, but Hiram-specific uploaded-file references and corpus declarations remain local to Wren and are not part of the shared engine.
 
-The portable-v1.2.3 upgrade is procedural only: inclusive character-identity startup and stricter source-first published-adventure routing. It does not reinterpret or rewrite any established Wren fact. Wren's existing canonical state and local compatibility records remain authoritative for Wren.
+The portable-v1.2.4 upgrade is procedural/source-routing infrastructure only: inclusive character-identity startup, strict source-first published-adventure routing, and persistent campaign-local adventure inventory routing. It does not reinterpret or rewrite any established Wren fact. Wren's existing canonical state and local compatibility records remain authoritative for Wren.
 
 A future engine upgrade must update this binding only after compatibility/integrity verification.
