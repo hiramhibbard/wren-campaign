@@ -1,6 +1,8 @@
 # Adventure Opportunity and Scenario Triggers
 
-This is a mandatory event-driven companion to `ADVENTURE_OPPORTUNITY_POLICY.md` whenever a plausible adventure/site/situation opportunity arises.
+This is a mandatory event-driven companion to the bound engine's `ADVENTURE_OPPORTUNITY_POLICY.md` whenever a plausible adventure/site/situation opportunity arises.
+
+Campaign-local published-adventure inventory: `state/sources/adventure-index.md`.
 
 ## Automatic opportunity trigger
 When current play/world state creates a plausible need or opening for an adventure, site, or concrete situation, the DM should evaluate it **without waiting for Hiram to ask**.
@@ -19,13 +21,21 @@ Do not trigger because the campaign has gone "too long" without combat/dungeons.
 ## Source-or-create trigger
 First check whether existing seeded/active material already satisfies the need.
 
-If not, decide whether a targeted published-source search is likely to pay off. Candidate families include standalone modules, active-setting adventures, Dungeon Magazine adventures and side treks, boxed-set scenarios, sourcebook-embedded sites/seeds, and published mini-adventures/encounters.
+If not, and published material is allowed, **query `state/sources/adventure-index.md` before any live library search**. Candidate families include standalone modules, active-setting adventures, Dungeon Magazine adventures and side treks, boxed-set scenarios, sourcebook-embedded sites/seeds, and published mini-adventures/encounters.
 
-Dungeon Magazine is a first-class source family and should be considered automatically when fit is plausible.
+Dungeon Magazine is a first-class source family and is indexed at the individual-adventure level.
 
-Published search is **not mandatory before every original adventure**. If no strong fit appears after a reasonable targeted search, if source search would be disproportionately expensive for the immediate need, or if existing campaign causality implies a more specific situation, create original material freely.
+Required selection sequence:
+1. query the persistent campaign-local adventure inventory;
+2. filter to verified `available` sources;
+3. rank by current facets/fit;
+4. optionally perform one bounded local binding check for one promising indexed `unknown` source;
+5. retrieve exact adventure text only for a surviving eligible finalist;
+6. if no eligible candidate survives, create original material or accurately report an inventory/binding gap.
 
-Do not broad-scan the library merely to avoid improvisation.
+Do not broad-scan the library merely to avoid improvisation. Do not use web results or general knowledge to enlarge the playable candidate pool.
+
+A failed lookup for a source inside a Hiram-declared corpus is not proof he lacks the source. Preserve `unknown`/binding-gap semantics and try another indexed candidate or leave the source for later indexing rather than immediately telling him to upload it again.
 
 ## Fit-review trigger
 Before seeding a published candidate, check setting/scope, geography/environment, site type, risk/level as world danger, tone, required lore/factions/deities, adaptation burden, conflicts with established canon, duplication, and hook/player-agency assumptions.
@@ -84,7 +94,7 @@ Normal turn:
 `cheap opportunity check -> no trigger = no adventure work`
 
 Triggered turn/preparation point:
-`existing material? -> current facets -> targeted published search if promising -> use strong candidate OR create original -> persist only consequential state`
+`existing material? -> inventory query -> availability filter -> fit ranking -> bounded source check if needed -> exact source finalist OR create original -> persist only consequential state`
 
 Do not preload full magazines/adventures or scan every Dungeon issue each turn.
 
