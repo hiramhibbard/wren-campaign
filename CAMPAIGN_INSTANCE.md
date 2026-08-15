@@ -14,8 +14,8 @@ player:
 engine:
   repository: hiramhibbard/adnd2e-campaign-engine
   schema: 1
-  version: portable-v1.2
-  commit: 06108afed869f7d5189cab6df03e15bccfb72cc3
+  version: portable-v1.2.3
+  commit: 6de2b15188643e7be480b5e7398ae6acaa50e77d
 
 state:
   schema_version: 1
@@ -35,8 +35,8 @@ The engine repository contains reusable procedures/templates, shared compiled so
 
 The existing local bootstrap/schema/policy/procedure/source-object files remain a **compatibility mirror** while Wren migration is staged. Their existence does not make them reusable campaign state for another campaign.
 
-The portable-v1.2 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
+The portable-v1.2.3 engine may provide shared verified source objects by stable bibliographic IDs, but Hiram-specific uploaded-file references remain local to Wren and are not part of the shared engine.
 
-The portable-v1.2 extraction does not reinterpret or rewrite any established Wren fact. The extracted policies are prospective reusable procedure; Wren's existing canonical state and local compatibility records remain authoritative for Wren.
+The portable-v1.2.3 upgrade is procedural only: inclusive character-identity startup and stricter source-first published-adventure routing. It does not reinterpret or rewrite any established Wren fact. Wren's existing canonical state and local compatibility records remain authoritative for Wren.
 
 A future engine upgrade must update this binding only after compatibility/integrity verification.
